@@ -212,3 +212,14 @@ module.exports.switchColor = opts => {
         return msg;
     };
 };
+/**
+ * Exits process with error printing.
+ *
+ * @function
+ * @arg {string} source - Source of fatal error.
+ * @return {function} - Function with takes error to print and exits process.
+ */
+module.exports.exit = source => err => {
+    console.log(source + ":", err);
+    process.exit(1);
+};
