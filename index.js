@@ -6,11 +6,16 @@
  */
 
 var fs = require("fs");
+var os = require("os");
 var path = require("path");
 
 require("colors");
 var _ = require("lodash");
 var fse = require("fs-extra");
+/**
+ * @property {string} hostname - Machine host name.
+ */
+module.exports.hostname = os.hostname().toLowerCase();
 /**
  * Gets default value for variable among passed listed values.
  *
