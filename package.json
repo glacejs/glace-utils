@@ -1,7 +1,7 @@
 {
     "name": "glacejs-utils",
     "version": "0.0.1",
-    "description": "Glacejs utils",
+    "description": "GlaceJS utils",
     "main": "index.js",
     "scripts": {},
     "repository": {
