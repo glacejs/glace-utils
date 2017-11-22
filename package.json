@@ -1,0 +1,37 @@
+{
+    "name": "glacejs-utils",
+    "version": "0.0.1",
+    "description": "Glacejs utils",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/schipiga/glacejs-utils.git"
+    },
+    "author": "Sergei Chipiga",
+    "license": "MIT",
+    "bin": {},
+    "bugs": {
+        "url": "https://github.com/schipiga/glacejs-utils/issues"
+    },
+    "homepage": "https://schipiga.github.io/glacejs-utils",
+    "dependencies": {
+        "colors": "^1.1.2",
+        "fs-extra": "^4.0.2",
+        "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+        "cross-spawn": "^5.1.0",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "ink-docstrap": "^1.3.0",
+        "jsdoc-strip-async-await": "^0.1.0"
+    },
+    "engines": {
+        "node": ">= 8.9",
+        "npm": ">= 5.5"
+    },
+    "files": [
+        "index.js"
+    ]
+}
