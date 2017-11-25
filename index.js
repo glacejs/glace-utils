@@ -11,7 +11,9 @@ var path = require("path");
 
 require("colors");
 var _ = require("lodash");
+var argv = require("yargs").argv;
 var fse = require("fs-extra");
+var winston = require("winston");
 /**
  * @property {string} hostname - Machine host name.
  */
@@ -77,7 +79,7 @@ module.exports.sleep = (timeout, blocking) => {
     if (blocking) {
         (ms => {
             ms += new Date().getTime();
-            while (new Date < ms) {};
+            while (new Date() < ms) {};
         })(timeout);
     } else {
         return new Promise(resolve => {
@@ -228,3 +230,64 @@ module.exports.exit = source => err => {
     console.log(source + ":", err);
     process.exit(1);
 };
+/**
+ * @prop {string} cwd - Current work directory.
+ */
+var cwd = module.exports.cwd = process.cwd();
+/* Logger */
+/**
+ * @prop {Logger} logger - `GlaceJS` logger.
+ */
+var logger = module.exports.logger = new winston.Logger();
+logger.level = argv.logLevel || "debug";
+logger.add(winston.transports.File,
+           { filename: path.resolve(cwd, argv.log || "glace.log"),
+             json: false });
+if (argv.stdoutLog) {
+    logger.add(winston.transports.Console);
+};
+/**
+ * Sets log file to logger.
+ *
+ * @function
+ * @param {string} logFile - Name or path of log file.
+ */
+logger.setFile = logFile => {
+
+    var logPath = path.resolve(cwd, logFile);
+    if (!logPath.endsWith(".log")) logPath += ".log";
+    fse.mkdirsSync(path.dirname(logPath));
+
+    if (logger.transports.file) logger.remove(winston.transports.File);
+    logger.add(winston.transports.File, { filename: logPath, json: false });
+};
+/**
+ * Reset log file.
+ *
+ * @function
+ */
+logger.resetFile = () => {
+    if (!logger.transports.file) return;
+    var logPath = logger.transports.file.filename;
+    fs.unlinkSync(logPath);
+    logger.setFile(logPath);
+};
+/* Config */
+/**
+ * @prop {object} config - `GlaceJS` config.
+ */
+var config = module.exports.config = {};
+
+var argsConfig = {};
+var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
+
+if (fs.existsSync(argsConfigPath)) {
+    argsConfig = require(argsConfigPath);
+
+    for (var key in argsConfig) {
+        var val = argsConfig[key];
+        argsConfig[_.camelCase(key)] = val;
+    };
+};
+_.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
+config.args = argsConfig;
