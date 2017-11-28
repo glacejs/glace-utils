@@ -13,6 +13,7 @@ require("colors");
 var _ = require("lodash");
 var argv = require("yargs").argv;
 var fse = require("fs-extra");
+var json = require("comment-json");
 var winston = require("winston");
 /**
  * @property {string} hostname - Machine host name.
@@ -234,6 +235,23 @@ module.exports.exit = source => err => {
  * @prop {string} cwd - Current work directory.
  */
 var cwd = module.exports.cwd = process.cwd();
+/**
+ * Loads json file which may have comments.
+ *
+ * @function
+ * @param {string} name - Name of JSON file.
+ * @return {object} - Object.
+ * @throws {Error} - If JSON file isn't parsable.
+ */
+var loadJson = module.exports.loadJson = name => {
+    if (!name.endsWith(".json")) name += ".json";
+    var jsonPath = path.resolve(cwd, name);
+    try {
+        return json.parse(fs.readFileSync(jsonPath).toString(), null, true);
+    } catch (e) {
+        throw new Error(`Can't parse ${jsonPath}. ${e}`);
+    };
+};
 /* Logger */
 /**
  * @prop {Logger} logger - `GlaceJS` logger.
@@ -262,13 +280,23 @@ logger.setFile = logFile => {
     logger.add(winston.transports.File, { filename: logPath, json: false });
 };
 /**
- * Reset log file.
+ * Gets log file.
+ * 
+ * @function
+ * @return {?string} - Path to log file or `null`.
+ */
+logger.getFile = () => {
+    if (!logger.transports.file) return null;
+    return path.resolve(cwd, logger.transports.file.filename);
+};
+/**
+ * Resets log file.
  *
  * @function
  */
 logger.resetFile = () => {
-    if (!logger.transports.file) return;
-    var logPath = logger.transports.file.filename;
+    var logPath = logger.getFile();
+    if (!logPath) return;
     fs.unlinkSync(logPath);
     logger.setFile(logPath);
 };
@@ -282,7 +310,7 @@ var argsConfig = {};
 var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
 
 if (fs.existsSync(argsConfigPath)) {
-    argsConfig = require(argsConfigPath);
+    argsConfig = loadJson(argsConfigPath);
 
     for (var key in argsConfig) {
         var val = argsConfig[key];

@@ -1,6 +1,6 @@
 {
     "name": "glacejs-utils",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "GlaceJS utils",
     "main": "index.js",
     "scripts": {},
@@ -17,6 +17,7 @@
     "homepage": "https://schipiga.github.io/glacejs-utils",
     "dependencies": {
         "colors": "^1.1.2",
+        "comment-json": "^1.1.3",
         "fs-extra": "^4.0.2",
         "lodash": "^4.17.4",
         "winston": "^2.4.0",
