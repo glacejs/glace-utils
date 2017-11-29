@@ -253,10 +253,13 @@ var loadJson = module.exports.loadJson = name => {
     };
 };
 /* Logger */
+if (global.__glaceLogger) {
+    module.exports.logger = global.__glaceLogger;
+} else {
 /**
  * @prop {Logger} logger - `GlaceJS` logger.
  */
-var logger = module.exports.logger = new winston.Logger();
+var logger = module.exports.logger = global.__glaceLogger = new winston.Logger();
 logger.level = argv.logLevel || "debug";
 logger.add(winston.transports.File,
            { filename: path.resolve(cwd, argv.log || "glace.log"),
@@ -300,11 +303,15 @@ logger.resetFile = () => {
     fs.unlinkSync(logPath);
     logger.setFile(logPath);
 };
+};
 /* Config */
+if (global.__glaceConfig) {
+    module.exports.config = global.__glaceConfig;
+} else {
 /**
  * @prop {object} config - `GlaceJS` config.
  */
-var config = module.exports.config = {};
+var config = module.exports.config = global.__glaceConfig = {};
 
 var argsConfig = {};
 var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
@@ -319,3 +326,4 @@ if (fs.existsSync(argsConfigPath)) {
 };
 _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
 config.args = argsConfig;
+};
