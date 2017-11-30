@@ -327,3 +327,17 @@ if (fs.existsSync(argsConfigPath)) {
 _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
 config.args = argsConfig;
 };
+/**
+ * Wraps function inside other functions.
+ *
+ * @function
+ * @arg {function[]} wrappers - List of functions which will wrap target.
+ * @arg {function} target - Target function which will be wrapped.
+ * @return {function} - Wrapping function.
+ */
+module.exports.wrap = (wrappers, target) => {
+    _.clone(wrappers).reverse().forEach(wrapper => {
+        target = (target => () => wrapper(target))(target);
+    });
+    return target;
+};
