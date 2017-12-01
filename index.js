@@ -12,6 +12,7 @@ var path = require("path");
 require("colors");
 var _ = require("lodash");
 var argv = require("yargs").argv;
+var findProcess = require("find-process");
 var fse = require("fs-extra");
 var json = require("comment-json");
 var winston = require("winston");
@@ -340,4 +341,29 @@ module.exports.wrap = (wrappers, target) => {
         target = (target => () => wrapper(target))(target);
     });
     return target;
+};
+/**
+ * Helper to kill processes by name.
+ *
+ * @async
+ * @function
+ * @arg {string} procName - Process name or chunk of name.
+ * @return {Promise<void>}
+ */
+module.exports.killProcs = procName => {
+
+    return findProcess("name", procName).then(procList => {
+
+        return procList.forEach(proc => {
+            try {
+                process.kill(proc.pid, "SIGTERM");
+                logger.debug(`Kill ${procName} with PID ${proc.pid}`);
+
+            } catch (e) {
+                if (e.message !== "kill ESRCH") throw e;
+                logger.error(`Can't kill ${procName} with PID ${proc.pid}`,
+                             `because it doesn't exist`);
+            };
+        });
+    });
 };
