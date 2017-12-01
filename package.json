@@ -1,20 +1,20 @@
 {
-    "name": "glacejs-utils",
-    "version": "0.0.8",
+    "name": "glace-utils",
+    "version": "1.0.0",
     "description": "GlaceJS utils",
     "main": "index.js",
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/schipiga/glacejs-utils.git"
+        "url": "git+https://github.com/glacejs/glace-utils.git"
     },
     "author": "Sergei Chipiga",
     "license": "MIT",
     "bin": {},
     "bugs": {
-        "url": "https://github.com/schipiga/glacejs-utils/issues"
+        "url": "https://github.com/glacejs/glace-utils/issues"
     },
-    "homepage": "https://schipiga.github.io/glacejs-utils",
+    "homepage": "https://glacejs.github.io/glace-utils",
     "dependencies": {
         "colors": "^1.1.2",
         "comment-json": "^1.1.3",
