@@ -11,11 +11,13 @@ var path = require("path");
 
 require("colors");
 var _ = require("lodash");
-var argv = require("yargs").argv;
+var yargs = require("yargs");
 var findProcess = require("find-process");
 var fse = require("fs-extra");
 var json = require("comment-json");
 var winston = require("winston");
+
+var argv = yargs.argv;
 /**
  * @property {string} hostname - Machine host name.
  */
@@ -366,4 +368,40 @@ module.exports.killProcs = procName => {
             };
         });
     });
+};
+/**
+ * Help
+ *
+ * @function
+ * @arg {function} d - Function to manage describe message: join, colorize, etc.
+ * @return {yargs} - Preconfigured yargs.
+ */
+module.exports.help = d => {
+    return yargs
+        .options({
+            "config [config-path]": {
+                alias: "c",
+                describe: d("Path to JSON file with CLI arguments.",
+                            "Default is 'cwd/config.json' (if it exists)."),
+                type: "string",
+                group: "Arguments:",
+            },
+            "stdout-log": {
+                describe: d("Print log messages to stdout."),
+                type: "boolean",
+                group: "Log:",
+            },
+            "log [file-path]": {
+                describe: d("Path to log file. Default is 'cwd/glace.log'."),
+                type: "string",
+                group: "Log:",
+            },
+            "log-level [level]": {
+                describe: d("Log level. Default is 'debug'."),
+                type: "string",
+                group: "Log:",
+            },
+        })
+        .help("h")
+        .alias("h", "help");
 };
