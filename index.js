@@ -379,7 +379,7 @@ module.exports.killProcs = procName => {
 module.exports.help = d => {
     return yargs
         .options({
-            "config [config-path]": {
+            "config [path]": {
                 alias: "c",
                 describe: d("Path to JSON file with CLI arguments.",
                             "Default is 'cwd/config.json' (if it exists)."),
@@ -391,7 +391,7 @@ module.exports.help = d => {
                 type: "boolean",
                 group: "Log:",
             },
-            "log [file-path]": {
+            "log [path]": {
                 describe: d("Path to log file. Default is 'cwd/glace.log'."),
                 type: "string",
                 group: "Log:",
