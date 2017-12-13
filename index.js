@@ -12,7 +12,7 @@ var path = require("path");
 require("colors");
 var _ = require("lodash");
 var yargs = require("yargs");
-var findProcess = require("find-process");
+module.exports.__findProcess = require("find-process");
 var fse = require("fs-extra");
 var json = require("comment-json");
 var winston = require("winston");
@@ -257,7 +257,7 @@ var loadJson = module.exports.loadJson = name => {
 };
 /* Logger */
 if (global.__glaceLogger) {
-    module.exports.logger = global.__glaceLogger;
+    var logger = module.exports.logger = global.__glaceLogger;
 } else {
 /**
  * @prop {Logger} logger - `GlaceJS` logger.
@@ -354,7 +354,7 @@ module.exports.wrap = (wrappers, target) => {
  */
 module.exports.killProcs = procName => {
 
-    return findProcess("name", procName).then(procList => {
+    return self.__findProcess("name", procName).then(procList => {
 
         return procList.forEach(proc => {
             try {
@@ -405,3 +405,5 @@ module.exports.help = d => {
         .help("h")
         .alias("h", "help");
 };
+
+var self = module.exports;
