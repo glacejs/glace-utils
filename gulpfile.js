@@ -16,3 +16,11 @@ gulp.task("mk-docs", () => {
 gulp.task("rm-docs", () => {
     gulp.src("docs", { read: false }).pipe(clean());
 });
+
+gulp.task("test", () => {
+    spawn.sync("./node_modules/glace-core/bin/glace",
+               [
+                   "tests.js",
+               ],
+               { stdio: "inherit" });
+});
