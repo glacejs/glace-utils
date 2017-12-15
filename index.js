@@ -26,8 +26,8 @@ module.exports.hostname = os.hostname().toLowerCase();
  * Gets default value for variable among passed listed values.
  *
  * @function
- * @arg {...*} values - variable values
- * @return {*} - last specified value or null if last is undefined.
+ * @arg {...*} values - Sequence of variable values.
+ * @return {*} Last specified value or null if last is undefined.
  */
 module.exports.defVal = function () {
     for (var arg of arguments)
@@ -40,8 +40,8 @@ module.exports.defVal = function () {
  * of other letters.
  *
  * @function
- * @arg {string} string - string to capitalize
- * @return {string} - capitalized string
+ * @arg {string} string - String to capitalize.
+ * @return {string} Capitalized string.
  */
 module.exports.capitalize = string => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -50,7 +50,7 @@ module.exports.capitalize = string => {
  * Clears empty folders recursive.
  *
  * @function
- * @arg {string} folder - path to root folder
+ * @arg {string} folder - Path to root folder.
  */
 var clearEmptyFolders = module.exports.clearEmptyFolders = folder => {
     var files = fs.readdirSync(folder);
@@ -75,8 +75,8 @@ var clearEmptyFolders = module.exports.clearEmptyFolders = folder => {
  * @arg {number} timeout - Time to sleep, ms.
  * @arg {boolean} [blocking=false] - Flag whether sleep should be
  *  block code execution.
- * @return {Promise} - If sleep isn't blocking.
- * @return {undefined} - If sleep is blocking.
+ * @return {Promise<void>} If sleep isn't blocking.
+ * @return {undefined} If sleep is blocking.
  */
 module.exports.sleep = (timeout, blocking) => {
     blocking = !!blocking;
@@ -97,7 +97,7 @@ module.exports.sleep = (timeout, blocking) => {
  *
  * @function
  * @arg {...string} paths - A sequence of paths or path segments.
- * @return {string} - Composed path.
+ * @return {string} Composed path.
  */
 module.exports.mkpath = function () {
     var result = path.resolve.apply(path, arguments);
@@ -110,7 +110,7 @@ module.exports.mkpath = function () {
  *
  * @function
  * @arg {Request} req - Client request.
- * @return {string} - Request key according to its method, host, url.
+ * @return {string} Request key according to its method, host, url.
  */
 module.exports.getReqKey = req => req.method + "_" + req.headers.host + req.url;
 /**
@@ -120,7 +120,7 @@ module.exports.getReqKey = req => req.method + "_" + req.headers.host + req.url;
  * @arg {string} dir - Path to directory.
  * @arg {object} [opts] - Options.
  * @arg {boolean} [opts.desc=false] - Flag to reverse order.
- * @return {string[]} - Sequence of files sorted by date
+ * @return {string[]} Sequence of files sorted by date
  */
 module.exports.filesByDate = (dir, opts) => {
     opts = opts || {};
@@ -150,7 +150,7 @@ module.exports.filesByDate = (dir, opts) => {
  * @arg {string} dir - Path to directory.
  * @arg {object} [opts] - Options.
  * @arg {boolean} [opts.desc=false] - Flag to reverse order.
- * @return {string[]} - Sequence of files sorted by order.
+ * @return {string[]} Sequence of files sorted by order.
  */
 module.exports.filesByOrder = (dir, opts) => {
     opts = opts || {};
@@ -180,7 +180,7 @@ module.exports.filesByOrder = (dir, opts) => {
  * @arg {object} [opts] - Options.
  * @arg {boolean} [opts.nameOnly=false] - Gets only folder names. By default,
  *  full paths.
- * @return {string[]} - Sequence of results.
+ * @return {string[]} Sequence of results.
  */
 module.exports.subFolders = (dir, opts) => {
     opts = opts || {};
@@ -208,7 +208,7 @@ module.exports.subFolders = (dir, opts) => {
  * @arg {object} [opts] - Options.
  * @arg {string} [opts.c1=magenta] - Color #1.
  * @arg {string} [opts.c2=cyan] - Color #2.
- * @return {function} - Function to switch color of passed text in terminal.
+ * @return {function} Function to switch color of passed text in terminal.
  */
 module.exports.switchColor = opts => {
     opts = opts || {};
@@ -228,7 +228,7 @@ module.exports.switchColor = opts => {
  *
  * @function
  * @arg {string} source - Source of fatal error.
- * @return {function} - Function with takes error to print and exits process.
+ * @return {function} Function with takes error to print and exits process.
  */
 module.exports.exit = source => err => {
     console.log(source + ":", err);
@@ -241,12 +241,14 @@ var cwd = module.exports.cwd = process.cwd();
 /**
  * Loads json file which may have comments.
  * 
- * If json file has key `__parent` it will be loaded and merged recursively.
+ * If json file has key `__parent` with path to parent json
+ * it will be loaded and merged recursively.
  *
  * @function
  * @arg {string} name - Name of JSON file.
  * @return {object} - Object.
- * @throws {Error} - If JSON file isn't parsable.
+ * @throws {Error} If JSON file isn't parsable.
+ * @throws {Error} If there is circular parent reference.
  */
 var loadJson = module.exports.loadJson = name => {
     var alreadyLoaded = [];
@@ -298,7 +300,7 @@ if (argv.stdoutLog) {
  * Sets log file to logger.
  *
  * @function
- * @param {string} logFile - Name or path of log file.
+ * @arg {string} logFile - Name or path of log file.
  */
 logger.setFile = logFile => {
 
@@ -313,7 +315,7 @@ logger.setFile = logFile => {
  * Gets log file.
  * 
  * @function
- * @return {?string} - Path to log file or `null`.
+ * @return {?string} Path to log file or `null`.
  */
 logger.getFile = () => {
     if (!logger.transports.file) return null;
@@ -360,7 +362,7 @@ config.args = argsConfig;
  * @function
  * @arg {function[]} wrappers - List of functions which will wrap target.
  * @arg {function} target - Target function which will be wrapped.
- * @return {function} - Wrapping function.
+ * @return {function} Wrapping function.
  */
 module.exports.wrap = (wrappers, target) => {
     _.clone(wrappers).reverse().forEach(wrapper => {
@@ -398,7 +400,7 @@ module.exports.killProcs = procName => {
  *
  * @function
  * @arg {function} d - Function to manage describe message: join, colorize, etc.
- * @return {yargs} - Preconfigured yargs.
+ * @return {yargs} Preconfigured yargs.
  */
 module.exports.help = d => {
     return yargs
