@@ -1,3 +1,7 @@
+### v1.0.5
+
+- Added functions `isInScene` and `toKebab`.
+
 ### v1.0.4
 
 - Supports recursive json load if key `__parent` with path to parent json is specified in json file. Arguments config file supports `__parent` key too.
