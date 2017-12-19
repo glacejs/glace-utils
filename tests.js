@@ -1,8 +1,11 @@
 "use strict";
 
 var fs = require("fs");
+var format = require("util").format;
 
 var temp = require("temp").track();
+
+var U = require(".");
 
 test("internal logger", () => {
 
@@ -31,11 +34,6 @@ test("internal logger", () => {
 });
 
 test(".loadJson()", () => {
-    var U;
-
-    before(() => {
-        U = require(".");
-    });
 
     chunk("loads plain json file", () => {
         var json = '{ "a": 1 }';
@@ -118,5 +116,57 @@ test(".loadJson()", () => {
 
         expect(() => U.loadJson(jPath1)).to.throw("Circular reference");
         expect(() => U.loadJson(jPath2)).to.throw("Circular reference");
+    });
+});
+
+test(".isInScene()", () => {
+
+    scope("partially", () => {
+        [
+            [{x: 0, y: 0, width: 1, height: 1}, {x: 0, y: 0, width: 1, height: 1}, true],
+            [{x: -1, y: -1, width: 3, height: 3}, {x: 0, y: 0, width: 1, height: 1}, true],
+            [{x: 1, y: 1, width: 2, height: 2}, {x: 0, y: 0, width: 3, height: 3}, true],
+            [{x: 1, y: 0, width: 1, height: 1}, {x: 0, y: 0, width: 1, height: 1}, false],
+            [{x: 0, y: 1, width: 1, height: 1}, {x: 0, y: 0, width: 1, height: 1}, false],
+            [{x: -1, y: 0, width: 1, height: 1}, {x: 0, y: 0, width: 1, height: 1}, false],
+            [{x: 1, y: -1, width: 1, height: 1}, {x: 0, y: 0, width: 1, height: 1}, false],
+        ].forEach(([obj, screen, result]) => {
+            chunk(format(obj, "in", screen, "is", result), () => {
+                expect(U.isInScreen(obj, screen)).to.be.equal(result);
+            });
+        });
+    });
+
+    scope("fully", () => {
+        [
+            [{x: 0, y: 0, width: 1, height: 1}, {x: 0, y: 0, width: 1, height: 1}, true],
+            [{x: 1, y: 1, width: 2, height: 2}, {x: 0, y: 0, width: 3, height: 3}, true],
+            [{x: -1, y: -1, width: 3, height: 3}, {x: 0, y: 0, width: 1, height: 1}, false],
+        ].forEach(([obj, screen, result]) => {
+            chunk(format(obj, "in", screen, "is", result), () => {
+                expect(U.isInScreen(obj, screen, { fully: true })).to.be.equal(result);
+            });
+        });
+    });
+});
+
+test(".toKebab()", () => {
+    [
+        ["", ""],
+        ["a", "a"],
+        [" ", ""],
+        [" a ", "a"],
+        [" !#@$!@#$ a @#@#$ ", "a"],
+        ["a @#$@#$ a", "a-a"],
+        ["a #.a", "a.a"],
+        ["a #_a", "a_a"],
+        ["a@^", "a"],
+        ["$@a", "a"],
+        ["a1", "a1"],
+        ["1a", "1a"],
+    ].forEach(([str, res]) => {
+        chunk(`'${str}' -> '${res}'`, () => {
+            expect(U.toKebab(str)).to.be.equal(res);
+        });
     });
 });

@@ -29,7 +29,7 @@ module.exports.hostname = os.hostname().toLowerCase();
  * @arg {...*} values - Sequence of variable values.
  * @return {*} Last specified value or null if last is undefined.
  */
-module.exports.defVal = function () {
+var defVal = module.exports.defVal = function () {
     for (var arg of arguments)
         if (typeof arg !== "undefined")
             return arg;
@@ -430,6 +430,50 @@ module.exports.help = d => {
         })
         .help("h")
         .alias("h", "help");
+};
+/**
+ * Defines whether object is located on screen or no.
+ *
+ * @function
+ * @arg {object} obj - Object which should be on screen.
+ * @arg {object} screen - Screen object.
+ * @arg {object} [opts] - Options.
+ * @arg {boolean} [opts.fully=false] - Flag to check full presence on screen.
+ * @return {boolean} `true` if it is on screen, `false` otherwise.
+ */
+module.exports.isInScreen = (obj, screen, opts) => {
+    opts = defVal(opts, {});
+    var fully = defVal(opts.fully, false);
+
+    if (fully) {
+        return ((obj.x >= screen.x) &&
+                (obj.y >= screen.y) &&
+                (obj.x + obj.width <= screen.x + screen.width) &&
+                (obj.y + obj.height <= screen.y + screen.height));
+    } else {
+        return !((obj.x >= screen.x + screen.width) ||
+                 (obj.y >= screen.y + screen.height) ||
+                 (obj.x + obj.width <= screen.x) ||
+                 (obj.y + obj.height <= screen.y));
+    };
+};
+/**
+ * Transforms string to kebab case. Replace all symbols, except numbers,
+ *  chars and dots with dashes.
+ *
+ * @function
+ * @arg {string} str - String to transform.
+ * @return {string} Transformed string.
+ */
+module.exports.toKebab = str => {
+    return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^A-Za-z0-9_\.]+/g, "-")
+        .replace(/\-\./g, ".")
+        .replace(/\-\_/g, "_")
+        .replace(/\-$/g, "")
+        .replace(/^\-/g, "");
 };
 
 var self = module.exports;
