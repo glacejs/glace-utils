@@ -435,7 +435,7 @@ module.exports.help = d => {
  * Defines whether object is located on screen or no.
  *
  * @function
- * @arg {object} obj - Object which should be on screen.
+ * @arg {object} obj - Object which may be on screen.
  * @arg {object} screen - Screen object.
  * @arg {object} [opts] - Options.
  * @arg {boolean} [opts.fully=false] - Flag to check full presence on screen.
@@ -456,6 +456,39 @@ module.exports.isInScreen = (obj, screen, opts) => {
                  (obj.x + obj.width <= screen.x) ||
                  (obj.y + obj.height <= screen.y));
     };
+};
+/**
+ * Gets object position on screen.
+ *
+ * @function
+ * @arg {object} obj - Object which should be on screen.
+ * @arg {object} screen - Screen object.
+ * @return {object} Object position on screen.
+ * @throws {Error} If object isn't located on screen.
+ */
+module.exports.objOnScreenPos = (obj, screen) => {
+
+    if (!self.isInScreen(obj, screen)) {
+        throw new Error(
+            `Object { x: ${obj.x}, y: ${obj.y}, width: ${obj.width}, ` +
+            `height: ${obj.height} } isn't on screen { x: ${screen.x}, ` +
+            `y: ${screen.y}, width: ${screen.width}, height: ${screen.height} }`);
+    };
+
+    var res = _.clone(obj);
+
+    if (res.x < screen.x) res.x = screen.x;
+    if (res.y < screen.y) res.y = screen.y;
+
+    if (res.x + res.width > screen.x + screen.width) {
+        res.width = screen.x + screen.width - res.x;
+    };
+
+    if (res.y + res.height > screen.y + screen.height) {
+        res.height = screen.y + screen.height - res.y;
+    };
+
+    return res;
 };
 /**
  * Transforms string to kebab case. Replace all symbols, except numbers,
