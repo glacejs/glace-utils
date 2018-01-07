@@ -1,3 +1,7 @@
+### v1.0.6
+
+- [Added](https://github.com/glacejs/glace-utils/commit/5602ff75c6933e19840f7e99cd892cd73727a85f) function [`objOnScreenPos`](module-index.html#.objOnScreenPos__anchor).
+
 ### v1.0.5
 
 - Added functions `isInScene` and `toKebab`.
