@@ -170,3 +170,27 @@ test(".toKebab()", () => {
         });
     });
 });
+
+test(".objOnScreenPos()", () => {
+
+    chunk("throws error if object isn't on screen", () => {
+        expect(() => U.objOnScreenPos(
+            { x: 5, y: 0, width: 1, height: 1 },
+            { x: 0, y: 0, width: 1, height: 1 }
+        )).to.throw("isn't on screen");
+    });
+
+    chunk("returns the same if object is fully on screen", () => {
+        expect(U.objOnScreenPos(
+            { x: 1, y: 2, width: 3, height: 4 },
+            { x: 0, y: 0, width: 10, height: 10 }
+        )).to.include({ x: 1, y: 2, width: 3, height: 4 });
+    });
+
+    chunk("returns restricted part if object oversizes screen", () => {
+        expect(U.objOnScreenPos(
+            { x: 0, y: 0, width: 10, height: 10 },
+            { x: 1, y: 2, width: 3, height: 4 }
+        )).to.include({ x: 1, y: 2, width: 3, height: 4 });
+    });
+});
