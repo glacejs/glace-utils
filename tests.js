@@ -62,13 +62,13 @@ test(".loadJson()", () => {
 
     chunk("loads json parents", () => {
         var json1 = '{ "a": 1, "b": 1, "c": 1 }';
-        var jPath1 = temp.path({ suffix: ".json" });
+        var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         var json2 = '{ "a": 2, "b": 2, "__parent": "' + jPath1 + '" }';
-        var jPath2 = temp.path({ suffix: ".json" });
+        var jPath2 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         var json3 = '{ "a": 3, "__parent": "' + jPath2 + '" }';
-        var jPath3 = temp.path({ suffix: ".json" });
+        var jPath3 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         fs.writeFileSync(jPath1, json1);
         fs.writeFileSync(jPath2, json2);
@@ -93,20 +93,20 @@ test(".loadJson()", () => {
 
     chunk("throws error if json parent isn't parsable", () => {
         var json1 = '{ "a": 1, "b": 1, "c": 1, }';
-        var jPath1 = temp.path({ suffix: ".json" });
+        var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         var json2 = '{ "a": 2, "b": 2, "__parent": "' + jPath1 + '" }';
-        var jPath2 = temp.path({ suffix: ".json" });
+        var jPath2 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         fs.writeFileSync(jPath1, json1);
         fs.writeFileSync(jPath2, json2);
 
-        expect(() => U.loadJson(jPath2)).to.throw(jPath1);
+        expect(() => U.loadJson(jPath2)).to.throw(jPath1.replace(/\\\\/g, "\\"));
     });
 
     chunk("throws error if circular parent reference detected", () => {
-        var jPath1 = temp.path({ suffix: ".json" });
-        var jPath2 = temp.path({ suffix: ".json" });
+        var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
+        var jPath2 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         var json1 = '{ "__parent": "' + jPath2 + '" }';
         var json2 = '{ "__parent": "' + jPath1 + '" }';
@@ -192,5 +192,41 @@ test(".objOnScreenPos()", () => {
             { x: 0, y: 0, width: 10, height: 10 },
             { x: 1, y: 2, width: 3, height: 4 }
         )).to.include({ x: 1, y: 2, width: 3, height: 4 });
+    });
+});
+
+test(".waitFor()", () => {
+    var now;
+
+    beforeChunk(() => {
+        now = new Date().getTime();
+    });
+
+    chunk("works with default options", async () => {
+        expect(await U.waitFor(() => true)).to.be.true;
+        expect(new Date().getTime() - now).to.below(1000);
+    });
+
+    chunk("returns predicate result if success", async () => {
+        var i = 0;
+        var predicate = () => {
+            if (i === 5) return 5;
+            i++;
+        };
+
+        expect(await U.waitFor(predicate, { timeout: 2 })).to.be.equal(5);
+        expect(new Date().getTime() - now).to.be.gte(500).and.below(2000);
+    });
+
+    chunk("returns false if didn't wait for timeout", async () => {
+        expect(await U.waitFor(() => false, { timeout: 2 })).to.be.false;
+        expect(new Date().getTime() - now).to.be.gte(2000);
+    });
+
+    chunk("throws the same error as predicate", async () => {
+        var predicate = () => {
+            throw new Error("BOOM!");
+        };
+        await expect(U.waitFor(predicate)).to.be.rejectedWith("BOOM!");
     });
 });
