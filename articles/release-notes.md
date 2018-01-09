@@ -1,6 +1,6 @@
 ### v1.0.7
 
-- [Added](https://github.com/glacejs/glace-utils/commit/726b785a9037b322004ddced01171fe4805dc007) function [waitFor](module-index.html#.waitFor__anchor).
+- [Added](https://github.com/glacejs/glace-utils/commit/726b785a9037b322004ddced01171fe4805dc007) function [`waitFor`](module-index.html#.waitFor__anchor).
 
 ### v1.0.6
 
