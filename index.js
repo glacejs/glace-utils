@@ -508,5 +508,33 @@ module.exports.toKebab = str => {
         .replace(/\-$/g, "")
         .replace(/^\-/g, "");
 };
+/**
+ * Waits for predicate returns truly value.
+ *
+ * @async
+ * @function
+ * @arg {function} predicate - Function which should return truly value during
+ *  timeout.
+ * @arg {object} [opts] - Options.
+ * @arg {number} [opts.timeout=1] - Time to wait for predicate result, sec.
+ * @arg {number} [opts.polling=0.1] - Time to poll predicate result, sec.
+ * @return {Promise<boolean>} `false` if predicate didn't return truly value
+ *  during expected time.
+ * @return {Promise<object>} Predicate truly value.
+ */
+module.exports.waitFor = async (predicate, opts) => {
+    opts = self.defVal(opts, {});
+    var timeout = self.defVal(opts.timeout, 1) * 1000;
+    var polling = self.defVal(opts.polling, 0.1) * 1000;
+    var limit = new Date().getTime() + timeout;
+
+    while(limit > new Date().getTime()) {
+        var result = await predicate();
+        if (result) return result;
+        await self.sleep(polling);
+    };
+
+    return false;
+};
 
 var self = module.exports;
