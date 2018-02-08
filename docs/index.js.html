@@ -87,8 +87,12 @@
 var fs = require("fs");
 var os = require("os");
 var path = require("path");
+var readline = require("readline");
+var util = require("util");
 
-require("colors");
+var colors = require("colors");
+var espree = require("espree");
+var highlight = require("cli-highlight").highlight;
 var _ = require("lodash");
 var yargs = require("yargs");
 module.exports.__findProcess = require("find-process");
@@ -616,6 +620,148 @@ module.exports.waitFor = async (predicate, opts) => {
     return false;
 };
 
+var complete = line => {
+    line = colors.strip(line);
+    var tokens = line.split(/ /).filter(i => i);
+
+    if (!tokens.length) return [[], line];
+
+    var targetToken = tokens[tokens.length - 1];
+
+    var namespace = global;
+    var filterPrefix = targetToken;
+
+    var targetObject;
+    if (targetToken.includes(".")) {
+
+        targetObject = targetToken.split('.');
+        filterPrefix = targetObject.pop();
+        targetObject = targetObject.join(".");
+
+        if (!targetObject) return [[], line];
+
+        try {
+            namespace = eval(targetObject);
+        } catch (e) {
+            return [[], line];
+        };
+    };
+
+    var completions = Object
+        .getOwnPropertyNames(namespace)
+        .filter(i => i.startsWith(filterPrefix));
+
+    if (targetObject) {
+        completions = completions.map(i => targetObject + "." + i);
+    };
+    return [completions, line];
+};
+/**
+ * Interactive debugger.
+ *
+ * @async
+ * @function
+ * @return {Promise}
+ */
+module.exports.debug = async function () {
+    console.log("interactive mode".yellow);
+
+    var rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+        completer: complete,
+    });
+
+    var ttyWrite = rl._ttyWrite;
+    rl._ttyWrite = function (s, key) {
+
+        if (this.cursor &lt;= this.line.length) {
+            this.line = colors.strip(this.line);
+            if (this.cursor > this.line.length) {
+                this._moveCursor(+Infinity);
+            };
+        };
+
+        ttyWrite.call(this, s, key);
+
+        if (this.cursor &lt; this.line.length) {
+            this.line = colors.strip(this.line);
+            if (this.cursor > this.line.length) {
+                this._moveCursor(+Infinity);
+            };
+        } else {
+            this.line = highlight(colors.strip(this.line), { language: "js" });
+            this._moveCursor(+Infinity);
+        };
+        if (key.name !== "return") {
+            this._refreshLine();
+        };
+    };
+
+    var origGlobals = {};
+    var isFinished = false;
+
+    while (!isFinished) {
+        isFinished = await new Promise((resolve, reject) => {
+            rl.question("> ".red, answer => {
+                answer = colors.strip(answer);
+
+                if (answer === "exit") {
+                    console.log("emergency exit".red)
+                    process.exit(1);
+                };
+
+                if (answer === "go") {
+                    console.log("continue execution".green);
+                    resolve(true);
+                    return;
+                };
+
+                if (["help", "h"].includes(answer)) {
+                    console.log(("In interactive mode you may execute any nodejs code.\n" +
+                                 "Also next commands are available:\n" +
+                                 "- h, help - show interactive mode help;\n" +
+                                 "- go - continue code execution;\n" +
+                                 "- exit - finish current nodejs process;").white);
+                    resolve(false);
+                    return;
+                };
+
+                var ast, varName;
+
+                try {
+                    ast = espree.parse(answer, { ecmaVersion: 9 });
+                    varName = ast.body[0].expression.left.name;
+                } catch (e) {
+                    try {
+                        varName = ast.body[0].declarations[0].id.name;
+                    } catch (e) {};
+                };
+
+                Promise
+                    .resolve()
+                    .then(() => {
+                        var result = eval(answer);
+                        if (varName) {
+                            if (!Object.keys(origGlobals).includes(varName)) {
+                                origGlobals[varName] = global[varName];
+                            };
+                            global[varName] = eval(varName);
+                        };
+                        return result;
+                    })
+                    .then(result => console.log(util.format(result).yellow))
+                    .catch(e => console.log(util.format(e).red))
+                    .then(() => resolve(false));
+            });
+        });
+    };
+
+    for (var [k, v] of Object.entries(origGlobals)) {
+        global[k] = v;
+    };
+};
+
 var self = module.exports;
 </pre>
     </article>
@@ -662,7 +808,7 @@ var self = module.exports;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-01-09T15:57:28+02:00
+		on 2018-02-08T23:11:54+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
