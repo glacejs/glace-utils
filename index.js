@@ -1,4 +1,3 @@
-"use strict";
 /**
  * `GlaceJS` utils.
  *
@@ -568,9 +567,10 @@ var complete = line => {
         };
     };
 
-    var completions = Object
-        .getOwnPropertyNames(namespace)
-        .filter(i => i.startsWith(filterPrefix));
+    var completions = _.union(
+        Object.getOwnPropertyNames(namespace),
+        Object.getOwnPropertyNames(Object.getPrototypeOf(namespace))
+    ).sort().filter(i => i.startsWith(filterPrefix));
 
     if (targetObject) {
         completions = completions.map(i => targetObject + "." + i);
