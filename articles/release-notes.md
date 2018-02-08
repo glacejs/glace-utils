@@ -1,3 +1,7 @@
+### v1.0.9
+
+- [Fixed](https://github.com/glacejs/glace-utils/commit/2dce00942e3a4f1d12e5498f421dd394abd79124) bugs, that it wasn't possible to assign variables and not all object properties and methods were shown.
+
 ### v1.0.8
 
 - [Added](https://github.com/glacejs/glace-utils/commit/326da491dc3ce2c2d5efc2014a466fead1fb47d9) interactive debugger.
