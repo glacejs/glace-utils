@@ -1,3 +1,7 @@
+### v1.0.8
+
+- [Added](https://github.com/glacejs/glace-utils/commit/326da491dc3ce2c2d5efc2014a466fead1fb47d9) interactive debugger.
+
 ### v1.0.7
 
 - [Added](https://github.com/glacejs/glace-utils/commit/726b785a9037b322004ddced01171fe4805dc007) function [`waitFor`](module-index.html#.waitFor__anchor).
