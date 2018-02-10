@@ -671,7 +671,7 @@ module.exports.debug = async function () {
                     .then(() => {
                         var result = eval(answer);
                         if (varName) {
-                            if (!Object.keys(origGlobals).includes(varName)) {
+                            if (!origGlobals.hasOwnProperty(varName)) {
                                 origGlobals[varName] = global[varName];
                             };
                             global[varName] = eval(varName);
