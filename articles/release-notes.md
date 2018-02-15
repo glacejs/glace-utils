@@ -1,3 +1,7 @@
+### v1.1.2
+
+- [Fixed](https://github.com/glacejs/glace-utils/commit/bd372541597d983f989a9d022b64280af2fc6c16) bug that `killProcs` killed current process.
+
 ### v1.1.1
 
 - [Fixed](https://github.com/glacejs/glace-utils/commit/103c356d9c12c5669562ffabe1b89e8fe82eddd3) bug that code completion showed variants which are started with numbers or contain non-alphanumeric symbols.
