@@ -10,6 +10,7 @@ var path = require("path");
 var readline = require("readline");
 var util = require("util");
 
+var BaseError = require("es6-error");
 var colors = require("colors");
 var espree = require("espree");
 var highlight = require("cli-highlight").highlight;
@@ -21,6 +22,18 @@ var json = require("comment-json");
 var winston = require("winston");
 
 var argv = yargs.argv;
+
+/**
+ * Creates new instance of `Glace` error.
+ *
+ * @class
+ * @arg {string} message - Error message.
+ */
+var GlaceError = module.exports.GlaceError = function (message) {
+    BaseError.call(this, message);
+};
+util.inherits(GlaceError, BaseError);
+
 /**
  * @property {string} hostname - Machine host name.
  */
