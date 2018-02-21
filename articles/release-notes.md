@@ -1,3 +1,7 @@
+### v1.1.4
+
+- [Fixed](https://github.com/glacejs/glace-utils/commit/57c88d88c36a6bc2a87dc511b0c18fb648972dff) bug that autocomplete didn't show full list of object properties.
+
 ### v1.1.3
 
 - [Added](https://github.com/glacejs/glace-utils/commit/b344f15069fa4db53e1a57fecfbe893f832198e3) `GlaceError` class.
