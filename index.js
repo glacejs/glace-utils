@@ -557,7 +557,7 @@ module.exports.waitFor = async (predicate, opts) => {
 
 var complete = line => {
     line = colors.strip(line);
-    var tokens = line.split(/ /).filter(i => i);
+    var tokens = line.split(/ +/).filter(i => i);
 
     if (!tokens.length) return [[], line];
 
@@ -583,10 +583,11 @@ var complete = line => {
     };
 
     try {
-        var completions = _.union(
-            Object.getOwnPropertyNames(namespace),
-            Object.getOwnPropertyNames(Object.getPrototypeOf(namespace))
-        ).sort()
+        var completions = [];
+        for (var key in namespace) {
+            completions.push(key);
+        };
+        completions = completions.sort()
             .filter(i => i.startsWith(filterPrefix))
             .filter(i => /^\w+$/.test(i))
             .filter(i => /^\D/.test(i));
