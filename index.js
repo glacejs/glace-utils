@@ -587,7 +587,11 @@ var complete = line => {
         for (var key in namespace) {
             completions.push(key);
         };
-        completions = completions.sort()
+        completions = _.union(
+            completions,
+            Object.getOwnPropertyNames(namespace),
+            Object.getOwnPropertyNames(Object.getPrototypeOf(namespace))
+        ).sort()
             .filter(i => i.startsWith(filterPrefix))
             .filter(i => /^\w+$/.test(i))
             .filter(i => /^\D/.test(i));
