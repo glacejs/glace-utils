@@ -1,3 +1,7 @@
+### v1.1.5
+
+- [Expanded](https://github.com/glacejs/glace-utils/commit/7f826037af43f0fe86efe0e492bd68cf4f2ce032) list of autocomplete variants.
+
 ### v1.1.4
 
 - [Fixed](https://github.com/glacejs/glace-utils/commit/57c88d88c36a6bc2a87dc511b0c18fb648972dff) bug that autocomplete didn't show full list of object properties.
