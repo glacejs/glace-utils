@@ -161,14 +161,14 @@ var clearEmptyFolders = module.exports.clearEmptyFolders = folder => {
         var filePath = path.join(folder, fileName);
         if (fs.statSync(filePath).isDirectory()) {
             clearEmptyFolders(filePath);
-        };
-    };
+        }
+    }
     if (!_.isEmpty(files)) {
         files = fs.readdirSync(folder);
-    };
+    }
     if (_.isEmpty(files)) {
         fs.rmdirSync(folder);
-    };
+    }
 };
 /**
  * Makes delay (sleep) during code execution.
@@ -185,13 +185,13 @@ module.exports.sleep = (timeout, blocking) => {
     if (blocking) {
         (ms => {
             ms += new Date().getTime();
-            while (new Date() &lt; ms) {};
+            while (new Date() &lt; ms) { /* nothing */ }
         })(timeout);
     } else {
         return new Promise(resolve => {
             setTimeout(resolve, timeout);
         });
-    };
+    }
 };
 /**
  * Composes file path from segments. If folder of file is absent, it will
@@ -237,7 +237,7 @@ module.exports.filesByDate = (dir, opts) => {
         .map(filename => {
             var filePath = path.resolve(dir, filename);
             return { path: filePath,
-                     time: fs.statSync(filePath).mtime.getTime() };
+                time: fs.statSync(filePath).mtime.getTime() };
         })
         .sort((a, b) => a.time - b.time)
         .map(el => el.path);
@@ -266,7 +266,7 @@ module.exports.filesByOrder = (dir, opts) => {
         })
         .map(filename => {
             return { path: path.resolve(dir, filename),
-                     number: parseInt(_.split(filename, '-', 1)[0]) || 0 };
+                number: parseInt(_.split(filename, "-", 1)[0]) || 0 };
         })
         .sort((a, b) => a.number - b.number)
         .map(el => el.path);
@@ -299,10 +299,10 @@ module.exports.subFolders = (dir, opts) => {
 
     if (!opts.nameOnly) {
         dirsList = dirsList.map(name => path.resolve(dir, name));
-    };
+    }
 
     return dirsList;
-}
+};
 /**
  * Returns function which switches message color.
  *
@@ -342,7 +342,7 @@ module.exports.exit = source => err => {
 var cwd = module.exports.cwd = process.cwd();
 /**
  * Loads json file which may have comments.
- * 
+ *
  * If json file has key `__parent` with path to parent json
  * it will be loaded and merged recursively.
  *
@@ -362,7 +362,7 @@ var loadJson = module.exports.loadJson = name => {
         if (alreadyLoaded.includes(jsonPath)) {
             throw new Error(
                 `Circular reference detected, '${jsonPath}' is loaded already`);
-        };
+        }
         alreadyLoaded.push(jsonPath);
 
         try {
@@ -370,12 +370,12 @@ var loadJson = module.exports.loadJson = name => {
                 fs.readFileSync(jsonPath).toString(), null, true);
         } catch (e) {
             throw new Error(`Can't parse ${jsonPath}. ${e}`);
-        };
+        }
 
         if (result.__parent) {
             var parent = load(result.__parent);
             result = _.merge(parent, result);
-        };
+        }
 
         delete result.__parent;
         return result;
@@ -384,57 +384,58 @@ var loadJson = module.exports.loadJson = name => {
     return load(name);
 };
 /* Logger */
+var logger;
 if (global.__glaceLogger) {
-    var logger = module.exports.logger = global.__glaceLogger;
+    logger = module.exports.logger = global.__glaceLogger;
 } else {
-/**
- * @prop {Logger} logger - `GlaceJS` logger.
- */
-var logger = module.exports.logger = global.__glaceLogger = new winston.Logger();
-logger.level = argv.logLevel || "debug";
-logger.add(winston.transports.File,
-           { filename: path.resolve(cwd, argv.log || "glace.log"),
-             json: false });
-if (argv.stdoutLog) {
-    logger.add(winston.transports.Console);
-};
-/**
+    /**
+     * @prop {Logger} logger - `GlaceJS` logger.
+     */
+    logger = module.exports.logger = global.__glaceLogger = new winston.Logger();
+    logger.level = argv.logLevel || "debug";
+    logger.add(winston.transports.File,
+        { filename: path.resolve(cwd, argv.log || "glace.log"),
+            json: false });
+    if (argv.stdoutLog) {
+        logger.add(winston.transports.Console);
+    }
+    /**
  * Sets log file to logger.
  *
  * @function
  * @arg {string} logFile - Name or path of log file.
  */
-logger.setFile = logFile => {
+    logger.setFile = logFile => {
 
-    var logPath = path.resolve(cwd, logFile);
-    if (!logPath.endsWith(".log")) logPath += ".log";
-    fse.mkdirsSync(path.dirname(logPath));
+        var logPath = path.resolve(cwd, logFile);
+        if (!logPath.endsWith(".log")) logPath += ".log";
+        fse.mkdirsSync(path.dirname(logPath));
 
-    if (logger.transports.file) logger.remove(winston.transports.File);
-    logger.add(winston.transports.File, { filename: logPath, json: false });
-};
-/**
+        if (logger.transports.file) logger.remove(winston.transports.File);
+        logger.add(winston.transports.File, { filename: logPath, json: false });
+    };
+    /**
  * Gets log file.
- * 
+ *
  * @function
  * @return {?string} Path to log file or `null`.
  */
-logger.getFile = () => {
-    if (!logger.transports.file) return null;
-    return path.resolve(cwd, logger.transports.file.filename);
-};
-/**
+    logger.getFile = () => {
+        if (!logger.transports.file) return null;
+        return path.resolve(cwd, logger.transports.file.filename);
+    };
+    /**
  * Resets log file.
  *
  * @function
  */
-logger.resetFile = () => {
-    var logPath = logger.getFile();
-    if (!logPath) return;
-    fs.unlinkSync(logPath);
-    logger.setFile(logPath);
-};
-};
+    logger.resetFile = () => {
+        var logPath = logger.getFile();
+        if (!logPath) return;
+        fs.unlinkSync(logPath);
+        logger.setFile(logPath);
+    };
+}
 /* Config */
 if (global.__glaceConfig) {
     module.exports.config = global.__glaceConfig;
@@ -442,22 +443,22 @@ if (global.__glaceConfig) {
 /**
  * @prop {object} config - `GlaceJS` config.
  */
-var config = module.exports.config = global.__glaceConfig = {};
+    var config = module.exports.config = global.__glaceConfig = {};
 
-var argsConfig = {};
-var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
+    var argsConfig = {};
+    var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
 
-if (fs.existsSync(argsConfigPath)) {
-    argsConfig = loadJson(argsConfigPath);
+    if (fs.existsSync(argsConfigPath)) {
+        argsConfig = loadJson(argsConfigPath);
 
-    for (var key in argsConfig) {
-        var val = argsConfig[key];
-        argsConfig[_.camelCase(key)] = val;
-    };
-};
-_.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
-config.args = argsConfig;
-};
+        for (var key in argsConfig) {
+            var val = argsConfig[key];
+            argsConfig[_.camelCase(key)] = val;
+        }
+    }
+    _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
+    config.args = argsConfig;
+}
 /**
  * Wraps function inside other functions.
  *
@@ -494,8 +495,8 @@ module.exports.killProcs = procName => {
             } catch (e) {
                 if (e.message !== "kill ESRCH") throw e;
                 logger.error(`Can't kill ${procName} with PID ${proc.pid}`,
-                             `because it doesn't exist`);
-            };
+                    "because it doesn't exist");
+            }
         });
     });
 };
@@ -512,7 +513,7 @@ module.exports.help = d => {
             "config [path]": {
                 alias: "c",
                 describe: d("Path to JSON file with CLI arguments.",
-                            "Default is 'cwd/config.json' (if it exists)."),
+                    "Default is 'cwd/config.json' (if it exists)."),
                 type: "string",
                 group: "Arguments:",
             },
@@ -559,7 +560,7 @@ module.exports.isInScreen = (obj, screen, opts) => {
                  (obj.y >= screen.y + screen.height) ||
                  (obj.x + obj.width &lt;= screen.x) ||
                  (obj.y + obj.height &lt;= screen.y));
-    };
+    }
 };
 /**
  * Gets object position on screen.
@@ -577,7 +578,7 @@ module.exports.objOnScreenPos = (obj, screen) => {
             `Object { x: ${obj.x}, y: ${obj.y}, width: ${obj.width}, ` +
             `height: ${obj.height} } isn't on screen { x: ${screen.x}, ` +
             `y: ${screen.y}, width: ${screen.width}, height: ${screen.height} }`);
-    };
+    }
 
     var res = _.clone(obj);
 
@@ -586,11 +587,11 @@ module.exports.objOnScreenPos = (obj, screen) => {
 
     if (res.x + res.width > screen.x + screen.width) {
         res.width = screen.x + screen.width - res.x;
-    };
+    }
 
     if (res.y + res.height > screen.y + screen.height) {
         res.height = screen.y + screen.height - res.y;
-    };
+    }
 
     return res;
 };
@@ -606,11 +607,11 @@ module.exports.toKebab = str => {
     return str
         .trim()
         .toLowerCase()
-        .replace(/[^A-Za-z0-9_\.]+/g, "-")
-        .replace(/\-\./g, ".")
-        .replace(/\-\_/g, "_")
-        .replace(/\-$/g, "")
-        .replace(/^\-/g, "");
+        .replace(/[^A-Za-z0-9_.]+/g, "-")
+        .replace(/-\./g, ".")
+        .replace(/-_/g, "_")
+        .replace(/-$/g, "")
+        .replace(/^-/g, "");
 };
 /**
  * Waits for predicate returns truly value.
@@ -636,7 +637,7 @@ module.exports.waitFor = async (predicate, opts) => {
         var result = await predicate();
         if (result) return result;
         await self.sleep(polling);
-    };
+    }
 
     return false;
 };
@@ -666,7 +667,7 @@ module.exports.waitDuring = async (predicate, opts) => {
         var result = await predicate();
         if (!result) return false;
         await self.sleep(polling);
-    };
+    }
 
     return result;
 };
@@ -685,7 +686,7 @@ var complete = line => {
     var targetObject;
     if (targetToken.includes(".")) {
 
-        targetObject = targetToken.split('.');
+        targetObject = targetToken.split(".");
         filterPrefix = targetObject.pop();
         targetObject = targetObject.join(".");
 
@@ -695,14 +696,14 @@ var complete = line => {
             namespace = eval(targetObject);
         } catch (e) {
             return [[], line];
-        };
-    };
+        }
+    }
 
     try {
         var completions = [];
         for (var key in namespace) {
             completions.push(key);
-        };
+        }
         completions = _.union(
             completions,
             Object.getOwnPropertyNames(namespace),
@@ -713,11 +714,11 @@ var complete = line => {
             .filter(i => /^\D/.test(i));
     } catch (e) {
         return [[], line];
-    };
+    }
 
     if (targetObject) {
         completions = completions.map(i => targetObject + "." + i);
-    };
+    }
     return [completions, line];
 };
 /**
@@ -743,8 +744,8 @@ module.exports.debug = async function () {
             this.line = colors.strip(this.line);
             if (this.cursor > this.line.length) {
                 this._moveCursor(+Infinity);
-            };
-        };
+            }
+        }
 
         ttyWrite.call(this, s, key);
 
@@ -752,34 +753,34 @@ module.exports.debug = async function () {
             this.line = colors.strip(this.line);
             if (this.cursor > this.line.length) {
                 this._moveCursor(+Infinity);
-            };
+            }
         } else {
             this.line = highlight(colors.strip(this.line), { language: "js" });
             this._moveCursor(+Infinity);
-        };
+        }
         if (key.name !== "return") {
             this._refreshLine();
-        };
+        }
     };
 
     var origGlobals = {};
     var isFinished = false;
 
     while (!isFinished) {
-        isFinished = await new Promise((resolve, reject) => {
+        isFinished = await new Promise(resolve => {
             rl.question("> ".red, answer => {
                 answer = colors.strip(answer);
 
                 if (answer === "exit") {
-                    console.log("emergency exit".red)
+                    console.log("emergency exit".red);
                     process.exit(1);
-                };
+                }
 
                 if (answer === "go") {
                     console.log("continue execution".green);
                     resolve(true);
                     return;
-                };
+                }
 
                 if (["help", "h"].includes(answer)) {
                     console.log(("In interactive mode you may execute any nodejs code.\n" +
@@ -789,7 +790,7 @@ module.exports.debug = async function () {
                                  "- exit - finish current nodejs process;").white);
                     resolve(false);
                     return;
-                };
+                }
 
                 var ast, varName;
 
@@ -799,8 +800,8 @@ module.exports.debug = async function () {
                 } catch (e) {
                     try {
                         varName = ast.body[0].declarations[0].id.name;
-                    } catch (e) {};
-                };
+                    } catch (e) { /* nothing */ }
+                }
 
                 Promise
                     .resolve()
@@ -809,9 +810,9 @@ module.exports.debug = async function () {
                         if (varName) {
                             if (!origGlobals.hasOwnProperty(varName)) {
                                 origGlobals[varName] = global[varName];
-                            };
+                            }
                             global[varName] = eval(varName);
-                        };
+                        }
                         return result;
                     })
                     .then(result => console.log(util.format(result).yellow))
@@ -819,11 +820,11 @@ module.exports.debug = async function () {
                     .then(() => resolve(false));
             });
         });
-    };
+    }
 
     for (var [k, v] of Object.entries(origGlobals)) {
         global[k] = v;
-    };
+    }
 };
 /**
  * Activates docstring support for js functions.
@@ -890,7 +891,7 @@ var self = module.exports;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-03-13T19:09:06+02:00
+		on 2018-03-14T00:49:45+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
