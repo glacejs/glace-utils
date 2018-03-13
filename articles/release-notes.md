@@ -1,3 +1,8 @@
+### v1.1.6
+
+- [Added](https://github.com/glacejs/glace-utils/commit/5743f4e6e6456fcaedc461457b04a9a40504a096) support for docstring style in `js` functions.
+- [Added](https://github.com/glacejs/glace-utils/commit/d916638e64e8c3d3f853e36365cee99be155e054) helper `waitDuring`.
+
 ### v1.1.5
 
 - [Expanded](https://github.com/glacejs/glace-utils/commit/7f826037af43f0fe86efe0e492bd68cf4f2ce032) list of autocomplete variants.
