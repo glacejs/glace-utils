@@ -257,3 +257,33 @@ test(".docString()", () => {
         expect(z.__doc__).to.be.equal("");
     });
 });
+
+test(".waitDuring()", () => {
+    var now;
+
+    beforeChunk(() => {
+        now = new Date().getTime();
+    });
+
+    chunk("works with default options", async () => {
+        expect(await U.waitDuring(() => true)).to.be.true;
+        expect(new Date().getTime() - now).to.be.gte(1000);
+    });
+
+    chunk("returns predicate result if success", async () => {
+        expect(await U.waitDuring(() => 5, { timeout: 0.5 })).to.be.equal(5);
+        expect(new Date().getTime() - now).to.be.gte(500);
+    });
+
+    chunk("returns false if didn't wait for timeout", async () => {
+        expect(await U.waitDuring(() => false)).to.be.false;
+        expect(new Date().getTime() - now).to.be.below(1000);
+    });
+
+    chunk("throws the same error as predicate", async () => {
+        var predicate = () => {
+            throw new Error("BOOM!");
+        };
+        await expect(U.waitDuring(predicate)).to.be.rejectedWith("BOOM!");
+    });
+});
