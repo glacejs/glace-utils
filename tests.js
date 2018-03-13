@@ -230,3 +230,30 @@ test(".waitFor()", () => {
         await expect(U.waitFor(predicate)).to.be.rejectedWith("BOOM!");
     });
 });
+
+test(".docString()", () => {
+    var x, y;
+
+    beforeChunk(() => {
+        U.docString();
+        x = function () {
+            /** docstring */
+            return 1;
+        };
+        y = function () {};
+    });
+
+    chunk("creates property __doc__", () => {
+        expect(x.__doc__).to.be.equal(" docstring ");
+        expect(y.__doc__).to.be.equal("");
+    });
+
+    chunk("creates function bond", () => {
+        var z = x.bond({});
+        expect(z.name).to.be.equal("bound x");
+        expect(z.__doc__).to.be.equal(" docstring ");
+        z = y.bond({});
+        expect(z.name).to.be.equal("bound y");
+        expect(z.__doc__).to.be.equal("");
+    });
+});

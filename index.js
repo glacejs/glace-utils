@@ -709,5 +709,23 @@ module.exports.debug = async function () {
         global[k] = v;
     };
 };
+/**
+ * Activates docstring support for js functions.
+ *
+ * @function
+ */
+module.exports.docString = () => {
+    if (Function.prototype.hasOwnProperty("__doc__")) return;
+    require("docstring");
+
+    Function.prototype.bond = function (ctx) {
+        var result = this.bind(ctx);
+        Object.defineProperty(result, "__doc__", {
+            value: this.__doc__,
+            writable: false,
+        });
+        return result;
+    };
+};
 
 var self = module.exports;
