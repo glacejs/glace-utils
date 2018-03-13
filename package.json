@@ -3,7 +3,20 @@
     "version": "1.1.6",
     "description": "GlaceJS utils",
     "main": "index.js",
-    "scripts": {},
+    "scripts": {
+        "ci": "npm run lint && npm test",
+        "lint": "eslint index.js tests.js",
+        "lint:fix": "eslint index.js tests.js --fix",
+        "docs": "rm -rf docs && jsdoc -c jsdoc.json -d docs",
+        "docs:publish": "npm run docs && git add -A && git commit -m \"update docs\" && git push origin master",
+        "test": "nyc glace tests.js",
+        "test:cover": "nyc --reporter=lcov glace tests.js",
+        "test:commit": "glace tests.js"
+    },
+    "pre-commit": [
+        "lint",
+        "test:commit"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/glacejs/glace-utils.git"
@@ -17,24 +30,26 @@
     "homepage": "https://glacejs.github.io/glace-utils",
     "dependencies": {
         "cli-highlight": "^1.2.3",
-        "colors": "^1.1.2",
+        "colors": "^1.2.1",
         "comment-json": "^1.1.3",
         "docstring": "^1.1.0",
         "es6-error": "^4.1.1",
-        "espree": "^3.5.3",
+        "espree": "^3.5.4",
         "find-process": "^1.1.0",
         "fs-extra": "^4.0.3",
         "lodash": "^4.17.5",
-        "winston": "^2.4.0",
+        "winston": "^2.4.1",
         "yargs": "^10.1.2"
     },
     "devDependencies": {
         "cross-spawn": "^5.1.0",
-        "glace-core": "^1.2.0",
-        "gulp": "^3.9.1",
-        "gulp-clean": "^0.3.2",
+        "eslint": "^4.18.2",
+        "glace-core": "^1.3.3",
         "ink-docstrap": "^1.3.0",
+        "jsdoc": "^3.5.5",
         "jsdoc-strip-async-await": "^0.1.0",
+        "nyc": "^11.6.0",
+        "pre-commit": "^1.2.2",
         "temp": "^0.8.3"
     },
     "engines": {

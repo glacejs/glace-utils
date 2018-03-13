@@ -36,7 +36,7 @@ test("internal logger", () => {
 test(".loadJson()", () => {
 
     chunk("loads plain json file", () => {
-        var json = '{ "a": 1 }';
+        var json = "{ \"a\": 1 }";
         var jPath = temp.path({ suffix: ".json" });
 
         fs.writeFileSync(jPath, json);
@@ -45,12 +45,12 @@ test(".loadJson()", () => {
     });
 
     chunk("loads json with comments", () => {
-        var json = ' \
+        var json = " \
             {\n \
-                // "b": 2,\n \
-                "a": 1\n \
+                // \"b\": 2,\n \
+                \"a\": 1\n \
             } \
-        ';
+        ";
         var jPath = temp.path({ suffix: ".json" });
 
         fs.writeFileSync(jPath, json);
@@ -61,13 +61,13 @@ test(".loadJson()", () => {
     });
 
     chunk("loads json parents", () => {
-        var json1 = '{ "a": 1, "b": 1, "c": 1 }';
+        var json1 = "{ \"a\": 1, \"b\": 1, \"c\": 1 }";
         var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
-        var json2 = '{ "a": 2, "b": 2, "__parent": "' + jPath1 + '" }';
+        var json2 = "{ \"a\": 2, \"b\": 2, \"__parent\": \"" + jPath1 + "\" }";
         var jPath2 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
-        var json3 = '{ "a": 3, "__parent": "' + jPath2 + '" }';
+        var json3 = "{ \"a\": 3, \"__parent\": \"" + jPath2 + "\" }";
         var jPath3 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         fs.writeFileSync(jPath1, json1);
@@ -83,7 +83,7 @@ test(".loadJson()", () => {
     });
 
     chunk("throws error if json isn't parsable", () => {
-        var json = '{ "a": 1, }';
+        var json = "{ \"a\": 1, }";
         var jPath = temp.path({ suffix: ".json" });
 
         fs.writeFileSync(jPath, json);
@@ -92,10 +92,10 @@ test(".loadJson()", () => {
     });
 
     chunk("throws error if json parent isn't parsable", () => {
-        var json1 = '{ "a": 1, "b": 1, "c": 1, }';
+        var json1 = "{ \"a\": 1, \"b\": 1, \"c\": 1, }";
         var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
-        var json2 = '{ "a": 2, "b": 2, "__parent": "' + jPath1 + '" }';
+        var json2 = "{ \"a\": 2, \"b\": 2, \"__parent\": \"" + jPath1 + "\" }";
         var jPath2 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
         fs.writeFileSync(jPath1, json1);
@@ -108,8 +108,8 @@ test(".loadJson()", () => {
         var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
         var jPath2 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
 
-        var json1 = '{ "__parent": "' + jPath2 + '" }';
-        var json2 = '{ "__parent": "' + jPath1 + '" }';
+        var json1 = "{ \"__parent\": \"" + jPath2 + "\" }";
+        var json2 = "{ \"__parent\": \"" + jPath1 + "\" }";
 
         fs.writeFileSync(jPath1, json1);
         fs.writeFileSync(jPath2, json2);
