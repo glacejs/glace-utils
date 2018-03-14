@@ -1,3 +1,8 @@
+### v1.1.7
+
+- [Added](https://github.com/glacejs/glace-utils/commit/60280858c1b1ffa061ef22da7f1ea33ea62231d7) helper `textContains`.
+- [Added](https://github.com/glacejs/glace-utils/commit/6d621e8ed44b88dd8c6239825d0b49e89adea3c3) infrastructure scripts.
+
 ### v1.1.6
 
 - [Added](https://github.com/glacejs/glace-utils/commit/5743f4e6e6456fcaedc461457b04a9a40504a096) support for docstring style in `js` functions.
