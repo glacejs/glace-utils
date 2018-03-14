@@ -759,4 +759,25 @@ module.exports.docString = () => {
     };
 };
 
+/**
+ * Checks whether text contains words or no.
+ *
+ * @function
+ * @arg {string} string - Original text.
+ * @arg {string} words - Checking words.
+ * @return {boolean} - `true` if text contains words, `false` otherwise.
+ */
+module.exports.textContains = (text, words) => {
+    if (!text) return false;
+    if (!words) return true;
+
+    text = text.toLowerCase();
+    words = words.toLowerCase().split(/ +/g);
+
+    for (var word of words) {
+        if (!text.includes(word)) return false;
+    }
+    return true;
+};
+
 var self = module.exports;

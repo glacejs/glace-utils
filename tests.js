@@ -287,3 +287,22 @@ test(".waitDuring()", () => {
         await expect(U.waitDuring(predicate)).to.be.rejectedWith("BOOM!");
     });
 });
+
+test(".textContains()", () => {
+
+    chunk("returns false if no text", () => {
+        expect(U.textContains(null, null)).to.be.false;
+    });
+
+    chunk("returns true if no words", () => {
+        expect(U.textContains("hello world", null)).to.be.true;
+    });
+
+    chunk("returns false if doesn't contain any word", () => {
+        expect(U.textContains("hello world", "hello man")).to.be.false;
+    });
+
+    chunk("returns true if contains all words", () => {
+        expect(U.textContains("Nice weather, man!", "weather Man")).to.be.true;
+    });
+});
