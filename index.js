@@ -401,7 +401,7 @@ module.exports.killProcs = procName => {
 
         return procList.forEach(proc => {
 
-            if (process.pid === +proc.pid) return;
+            if ([process.pid, process.ppid].includes(+proc.pid)) return;
             try {
                 process.kill(proc.pid, "SIGTERM");
                 logger.debug(`Kill ${procName} with PID ${proc.pid}`);
