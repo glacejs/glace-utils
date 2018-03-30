@@ -1,3 +1,7 @@
+### v1.1.8
+
+- [Don't kill](https://github.com/glacejs/glace-utils/commit/4b7c7a28f9e5e8a891ece5abfe452c025b398db6) parent process.
+
 ### v1.1.7
 
 - [Added](https://github.com/glacejs/glace-utils/commit/60280858c1b1ffa061ef22da7f1ea33ea62231d7) helper `textContains`.
