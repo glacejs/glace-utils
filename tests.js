@@ -29,7 +29,7 @@ test("internal logger", () => {
 
     chunk("is defined if global logger is already created", async () => {
         await U.killProcs("test");
-        expect(__glaceLogger.debug.calledOnce).to.be.true;
+        expect(__glaceLogger.debug.calledThrice).to.be.true;
     });
 });
 
