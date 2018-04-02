@@ -396,15 +396,18 @@ module.exports.wrap = (wrappers, target) => {
  * @return {Promise<void>}
  */
 module.exports.killProcs = procName => {
+    logger.debug(`Looking for ${procName} processes to kill...`);
 
     return self.__findProcess("name", procName).then(procList => {
 
         return procList.forEach(proc => {
 
             if ([process.pid, process.ppid].includes(+proc.pid)) return;
+            logger.debug(`Killing ${procName} with PID ${proc.pid}...`);
+
             try {
                 process.kill(proc.pid, "SIGTERM");
-                logger.debug(`Kill ${procName} with PID ${proc.pid}`);
+                logger.debug("Process is killed");
 
             } catch (e) {
                 if (e.message !== "kill ESRCH") throw e;
