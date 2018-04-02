@@ -1,3 +1,7 @@
+### v1.1.9
+
+- [Expanded](https://github.com/glacejs/glace-utils/commit/e133363d3514d023ec388e9fb970866b1fa957f7) logs of processes killing.
+
 ### v1.1.8
 
 - [Don't kill](https://github.com/glacejs/glace-utils/commit/4b7c7a28f9e5e8a891ece5abfe452c025b398db6) parent process.
