@@ -297,6 +297,30 @@ var loadJson = module.exports.loadJson = name => {
 
     return load(name);
 };
+/* Config */
+var config;
+if (global.__glaceConfig) {
+    config = module.exports.config = global.__glaceConfig;
+} else {
+    /**
+    * @prop {object} config - `GlaceJS` config.
+    */
+    config = module.exports.config = global.__glaceConfig = {};
+
+    var argsConfig = {};
+    var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
+
+    if (fs.existsSync(argsConfigPath)) {
+        argsConfig = loadJson(argsConfigPath);
+
+        for (var key in argsConfig) {
+            var val = argsConfig[key];
+            argsConfig[_.camelCase(key)] = val;
+        }
+    }
+    _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
+    config.args = argsConfig;
+}
 /* Logger */
 var logger;
 if (global.__glaceLogger) {
@@ -306,11 +330,11 @@ if (global.__glaceLogger) {
      * @prop {Logger} logger - `GlaceJS` logger.
      */
     logger = module.exports.logger = global.__glaceLogger = new winston.Logger();
-    logger.level = argv.logLevel || "debug";
+    logger.level = config.args.logLevel || "debug";
     logger.add(winston.transports.File,
-        { filename: path.resolve(cwd, argv.log || "glace.log"),
+        { filename: path.resolve(cwd, config.args.log || "glace.log"),
             json: false });
-    if (argv.stdoutLog) {
+    if (config.args.stdoutLog) {
         logger.add(winston.transports.Console);
     }
     /**
@@ -349,29 +373,6 @@ if (global.__glaceLogger) {
         fs.unlinkSync(logPath);
         logger.setFile(logPath);
     };
-}
-/* Config */
-if (global.__glaceConfig) {
-    module.exports.config = global.__glaceConfig;
-} else {
-/**
- * @prop {object} config - `GlaceJS` config.
- */
-    var config = module.exports.config = global.__glaceConfig = {};
-
-    var argsConfig = {};
-    var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
-
-    if (fs.existsSync(argsConfigPath)) {
-        argsConfig = loadJson(argsConfigPath);
-
-        for (var key in argsConfig) {
-            var val = argsConfig[key];
-            argsConfig[_.camelCase(key)] = val;
-        }
-    }
-    _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
-    config.args = argsConfig;
 }
 /**
  * Wraps function inside other functions.
