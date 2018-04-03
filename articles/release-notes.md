@@ -1,3 +1,7 @@
+### v1.2.0
+
+- [Provided](https://github.com/glacejs/glace-utils/commit/3b75715d5a932c2e16dc26806d013477555f50e8) logger options in config.
+
 ### v1.1.9
 
 - [Expanded](https://github.com/glacejs/glace-utils/commit/e133363d3514d023ec388e9fb970866b1fa957f7) logs of processes killing.
