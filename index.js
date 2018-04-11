@@ -18,10 +18,6 @@ var _ = require("lodash");
 var yargs = require("yargs");
 module.exports.__findProcess = require("find-process");
 var fse = require("fs-extra");
-var json = require("comment-json");
-var winston = require("winston");
-
-var argv = yargs.argv;
 
 /**
  * Creates new instance of `Glace` error.
@@ -253,127 +249,12 @@ module.exports.exit = source => err => {
 /**
  * @prop {string} cwd - Current work directory.
  */
-var cwd = module.exports.cwd = process.cwd();
-/**
- * Loads json file which may have comments.
- *
- * If json file has key `__parent` with path to parent json
- * it will be loaded and merged recursively.
- *
- * @function
- * @arg {string} name - Name of JSON file.
- * @return {object} - Object.
- * @throws {Error} If JSON file isn't parsable.
- * @throws {Error} If there is circular parent reference.
- */
-var loadJson = module.exports.loadJson = name => {
-    var alreadyLoaded = [];
+module.exports.cwd = process.cwd();
 
-    var load = name => {
-        if (!name.endsWith(".json")) name += ".json";
-        var jsonPath = path.resolve(cwd, name);
+module.exports.loadJson = require("./lib/loadJson");
+module.exports.config = require("./lib/config");
+module.exports.logger = require("./lib/logger");
 
-        if (alreadyLoaded.includes(jsonPath)) {
-            throw new Error(
-                `Circular reference detected, '${jsonPath}' is loaded already`);
-        }
-        alreadyLoaded.push(jsonPath);
-
-        try {
-            var result = json.parse(
-                fs.readFileSync(jsonPath).toString(), null, true);
-        } catch (e) {
-            throw new Error(`Can't parse ${jsonPath}. ${e}`);
-        }
-
-        if (result.__parent) {
-            var parent = load(result.__parent);
-            result = _.merge(parent, result);
-        }
-
-        delete result.__parent;
-        return result;
-    };
-
-    return load(name);
-};
-/* Config */
-var config;
-if (global.__glaceConfig) {
-    config = module.exports.config = global.__glaceConfig;
-} else {
-    /**
-    * @prop {object} config - `GlaceJS` config.
-    */
-    config = module.exports.config = global.__glaceConfig = {};
-
-    var argsConfig = {};
-    var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
-
-    if (fs.existsSync(argsConfigPath)) {
-        argsConfig = loadJson(argsConfigPath);
-
-        for (var key in argsConfig) {
-            var val = argsConfig[key];
-            argsConfig[_.camelCase(key)] = val;
-        }
-    }
-    _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
-    config.args = argsConfig;
-}
-/* Logger */
-var logger;
-if (global.__glaceLogger) {
-    logger = module.exports.logger = global.__glaceLogger;
-} else {
-    /**
-     * @prop {Logger} logger - `GlaceJS` logger.
-     */
-    logger = module.exports.logger = global.__glaceLogger = new winston.Logger();
-    logger.level = config.args.logLevel || "debug";
-    logger.add(winston.transports.File,
-        { filename: path.resolve(cwd, config.args.log || "glace.log"),
-            json: false });
-    if (config.args.stdoutLog) {
-        logger.add(winston.transports.Console);
-    }
-    /**
- * Sets log file to logger.
- *
- * @function
- * @arg {string} logFile - Name or path of log file.
- */
-    logger.setFile = logFile => {
-
-        var logPath = path.resolve(cwd, logFile);
-        if (!logPath.endsWith(".log")) logPath += ".log";
-        fse.mkdirsSync(path.dirname(logPath));
-
-        if (logger.transports.file) logger.remove(winston.transports.File);
-        logger.add(winston.transports.File, { filename: logPath, json: false });
-    };
-    /**
- * Gets log file.
- *
- * @function
- * @return {?string} Path to log file or `null`.
- */
-    logger.getFile = () => {
-        if (!logger.transports.file) return null;
-        return path.resolve(cwd, logger.transports.file.filename);
-    };
-    /**
- * Resets log file.
- *
- * @function
- */
-    logger.resetFile = () => {
-        var logPath = logger.getFile();
-        if (!logPath) return;
-        fs.unlinkSync(logPath);
-        logger.setFile(logPath);
-    };
-}
 /**
  * Wraps function inside other functions.
  *
@@ -397,6 +278,7 @@ module.exports.wrap = (wrappers, target) => {
  * @return {Promise<void>}
  */
 module.exports.killProcs = procName => {
+    var logger = self.logger;
     logger.debug(`Looking for ${procName} processes to kill...`);
 
     return self.__findProcess("name", procName).then(procList => {
@@ -783,5 +665,8 @@ module.exports.textContains = (text, words) => {
     }
     return true;
 };
+
+module.exports.download = require("./lib/download");
+module.exports.Pool = require("./lib/pool");
 
 var self = module.exports;

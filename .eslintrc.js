@@ -4,15 +4,22 @@ module.exports = {
         "node": true
     },
     "globals": {
-        "test": true,
+        "SS": true,
         "before": true,
+        "after": true,
         "beforeChunk": true,
+        "afterChunk": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "scope": true,
+        "test": true,
+        "describe": true,
+        "it": true,
         "chunk": true,
         "expect": true,
         "sinon": true,
-        "scope": true,
-        "after": true,
-        "__glaceLogger": true
+        "forEachLanguage": true,
+        "session": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -20,9 +27,8 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-        "no-trailing-spaces": 1,
         "no-console": 0,
-        "no-extra-semi": 1,
+        "no-extra-semi": 0,
         "indent": [
             "error",
             4
