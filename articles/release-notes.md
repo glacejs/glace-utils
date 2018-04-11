@@ -1,3 +1,7 @@
+### v1.2.1
+
+- [Added](https://github.com/glacejs/glace-utils/commit/b92a06964e009c4ecbbdb19f6f282397c7041295) function to download files.
+
 ### v1.2.0
 
 - [Provided](https://github.com/glacejs/glace-utils/commit/3b75715d5a932c2e16dc26806d013477555f50e8) logger options in config.
