@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GlaseJS Utils Tutorials</title>
+	<title>GlaseJS Utils Source: lib/config.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,106 +81,61 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Tutorials</h1>
+		<h1 class="page-title">Source: lib/config.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">"use strict";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+/**
+ * GlaceJS config.
+ *
+ * @module
+ */
 
+var fs = require("fs");
+var path = require("path");
 
-<article>
-    <div class="container-overview">
-    
-        
+var _ = require("lodash");
+var argv = require("yargs").argv;
 
-        
-<dl class="details">
-    
+var loadJson = require("./loadJson");
 
-	
+var config;
+if (global.__glaceConfig) {
+    config = global.__glaceConfig;
+} else {
+    /**
+    * @prop {object} config - `GlaceJS` config.
+    */
+    config = global.__glaceConfig = {};
 
-	
+    var argsConfig = {};
+    var argsConfigPath = path.resolve(process.cwd(), (argv.c || argv.config || "config.json"));
 
-	
+    if (fs.existsSync(argsConfigPath)) {
+        argsConfig = loadJson(argsConfigPath);
 
-    
+        for (var key in argsConfig) {
+            var val = argsConfig[key];
+            argsConfig[_.camelCase(key)] = val;
+        }
+    }
+    _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
+    config.args = argsConfig;
+}
 
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="LOG.html">LOG</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-index-GlaceError.html">GlaceError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Queue.html">Queue</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+module.exports = config;
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -190,10 +145,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

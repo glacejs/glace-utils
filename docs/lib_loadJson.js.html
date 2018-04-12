@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GlaseJS Utils Tutorials</title>
+	<title>GlaseJS Utils Source: lib/loadJson.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,106 +81,73 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Tutorials</h1>
+		<h1 class="page-title">Source: lib/loadJson.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">"use strict";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+/**
+ * Loads json file which may have comments.
+ *
+ * If json file has key `__parent` with path to parent json
+ * it will be loaded and merged recursively.
+ *
+ * @function loadJson
+ * @arg {string} name - Name of JSON file.
+ * @return {object} - Object.
+ * @throws {Error} If JSON file isn't parsable.
+ * @throws {Error} If there is circular parent reference.
+ */
 
+var fs = require("fs");
+var path = require("path");
 
-<article>
-    <div class="container-overview">
-    
-        
+var _ = require("lodash");
+var json = require("comment-json");
 
-        
-<dl class="details">
-    
+module.exports = name => {
+    var alreadyLoaded = [];
+    var cwd = process.cwd();
 
-	
+    var load = name => {
+        if (!name.endsWith(".json")) name += ".json";
+        var jsonPath = path.resolve(cwd, name);
 
-	
+        if (alreadyLoaded.includes(jsonPath)) {
+            throw new Error(
+                `Circular reference detected, '${jsonPath}' is loaded already`);
+        }
+        alreadyLoaded.push(jsonPath);
 
-	
+        try {
+            var result = json.parse(
+                fs.readFileSync(jsonPath).toString(), null, true);
+        } catch (e) {
+            throw new Error(`Can't parse ${jsonPath}. ${e}`);
+        }
 
-    
+        if (result.__parent) {
+            var parent = load(result.__parent);
+            result = _.merge(parent, result);
+        }
 
-    
+        delete result.__parent;
+        return result;
+    };
 
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="LOG.html">LOG</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-index-GlaceError.html">GlaceError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Queue.html">Queue</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+    return load(name);
+};
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -190,10 +157,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

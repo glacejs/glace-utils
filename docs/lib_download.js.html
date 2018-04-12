@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GlaseJS Utils Tutorials</title>
+	<title>GlaseJS Utils Source: lib/download.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,106 +81,145 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Tutorials</h1>
+		<h1 class="page-title">Source: lib/download.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">"use strict";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+/**
+ * Downloads files.
+ *
+ * @memberOf module:index
+ * @function download
+ * @arg {string[]} urls - List of URLs to download.
+ * @arg {object} opts - Options.
+ * @arg {string} [opts.dir] - Folder to download. Omitted if `paths` is specified.
+ * @arg {string[]} [opts.paths] - List of paths to download. Corresponds to list of `urls`.
+ * @arg {number} [opts.attempts=1] - Number of attempts to download.
+ * @arg {number} [opts.threads=1] - Number of threads to download.
+ * @arg {number} [opts.polling=100] - Number of ms to check downloading state.
+ */
 
+var fs = require("fs");
+var https = require("https");
+var path = require("path");
+var url = require("url");
 
-<article>
-    <div class="container-overview">
-    
-        
+var _ = require("lodash");
 
-        
-<dl class="details">
-    
+var LOG = require("./logger");
+var Pool = require("./pool");
 
-	
+var downloadFile = (fileUrl, filePath) => {
+    var file = fs.createWriteStream(filePath);
 
-	
+    LOG.silly(`Downloading '${fileUrl}' to '${filePath}' ...`);
 
-	
+    return new Promise((resolve, reject) => {
 
-    
+        https.get(fileUrl, response => {
 
-    
+            response.pipe(file);
+            file.on("finish", () => {
+                LOG.silly(`Downloaded '${fileUrl}' to '${filePath}'`);
+                file.close(resolve);
+            });
 
-    
+        }).on("error", err => {
 
-    
+            LOG.silly(`Failed to download '${fileUrl}' to '${filePath}'`);
+            if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+            reject(err);
+        });
+    });
+};
 
-	
+var rmEl = (el, arr) => {
+    arr.splice(arr.indexOf(el), 1);
+};
 
-	
+var downloadAttempt = (pool, _url, _path, urls, passed, failed, attempts) => () => {
+    return downloadFile(_url, _path).then(() => {
 
-	
+        rmEl(_url, urls);
+        passed[_url] = _path;
 
-	
+    }).catch(() => {
 
-	
+        failed[_url] = (failed[_url] || 0) + 1;
+        rmEl(_url, urls);
 
+        if (failed[_url] &lt; attempts) {
+            LOG.silly(`Retry to download '${_url}' to '${_path}'`);
+            urls.push(_url);
+            pool.add(downloadAttempt(pool, _url, _path, urls, passed, failed, attempts));
+        };
+    });
+};
 
+var download = async (urls, opts) => {
+    opts = opts || {};
+    var dir = opts.dir;
+    var paths = opts.paths;
 
-	
+    if (!dir &amp;&amp; !paths) {
+        throw new Error("Option 'dir' or 'paths' should be provided");
+    }
 
-	
+    if (paths &amp;&amp; paths.length !== urls.length) {
+        throw new Error(`Length of 'paths' should be ${urls.length}`);
+    }
 
-	
+    var attempts = opts.attempts || 1;
+    var threads = opts.threads || 1;
+    var polling = opts.polling || 100;
 
-	
-</dl>
+    var pool = new Pool(threads);
+    var passed = {}, failed = {};
 
+    urls = _.clone(urls);
+    for (var i = 0; i &lt; urls.length; i++) {
+        var _url = urls[i];
+        if (paths) {
+            var _path = paths[i];
+        } else {
+            _path = path.resolve(dir, path.posix.basename(url.parse(_url).pathname));
+        }
+        pool.add(downloadAttempt(pool, _url, _path, urls, passed, failed, attempts));
+    };
 
-        
-    
-    </div>
+    await new Promise(resolve => {
+        var timerId = setInterval(() => {
+            if (urls.length) return;
+            clearInterval(timerId);
+            resolve();
+        }, polling);
+    });
 
-    
+    var notDownloaded = [];
+    for (var [key, val] of Object.entries(failed)) {
+        if (val &lt; attempts) continue;
+        notDownloaded.push(key);
+    };
 
-    
+    return {
+        downloaded: passed,
+        failed: notDownloaded,
+    };
+};
 
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="LOG.html">LOG</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-index-GlaceError.html">GlaceError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Queue.html">Queue</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+module.exports = download;
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -190,10 +229,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

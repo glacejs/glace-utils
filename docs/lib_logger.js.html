@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GlaseJS Utils Tutorials</title>
+	<title>GlaseJS Utils Source: lib/logger.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,106 +81,92 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Tutorials</h1>
+		<h1 class="page-title">Source: lib/logger.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">"use strict";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+/**
+ * GlaceJS logger.
+ *
+ * @module
+ */
 
+var fs = require("fs");
+var path = require("path");
 
-<article>
-    <div class="container-overview">
-    
-        
+var fse = require("fs-extra");
+var winston = require("winston");
 
-        
-<dl class="details">
-    
+var config = require("./config");
 
-	
+var cwd = process.cwd();
 
-	
+var logger;
+if (global.__glaceLogger) {
+    logger = global.__glaceLogger;
+} else {
+    /**
+     * @prop {Logger} logger - `GlaceJS` logger.
+     */
+    logger = global.__glaceLogger = new winston.Logger();
+    logger.level = config.args.logLevel || "debug";
+    logger.add(winston.transports.File,
+        { filename: path.resolve(cwd, config.args.log || "glace.log"),
+            json: false });
+    if (config.args.stdoutLog) {
+        logger.add(winston.transports.Console);
+    }
+    /**
+     * Sets log file to logger.
+     *
+     * @function
+     * @arg {string} logFile - Name or path of log file.
+     */
+    logger.setFile = logFile => {
 
-	
+        var logPath = path.resolve(cwd, logFile);
+        if (!logPath.endsWith(".log")) logPath += ".log";
+        fse.mkdirsSync(path.dirname(logPath));
 
-    
+        if (logger.transports.file) logger.remove(winston.transports.File);
+        logger.add(winston.transports.File, { filename: logPath, json: false });
+    };
+    /**
+     * Gets log file.
+     *
+     * @function
+     * @return {?string} Path to log file or `null`.
+     */
+    logger.getFile = () => {
+        if (!logger.transports.file) return null;
+        return path.resolve(cwd, logger.transports.file.filename);
+    };
+    /**
+     * Resets log file.
+     *
+     * @function
+     */
+    logger.resetFile = () => {
+        var logPath = logger.getFile();
+        if (!logPath) return;
+        fs.unlinkSync(logPath);
+        logger.setFile(logPath);
+    };
+}
 
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="LOG.html">LOG</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-index-GlaceError.html">GlaceError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Queue.html">Queue</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+module.exports = logger;
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -190,10 +176,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>
