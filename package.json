@@ -8,7 +8,7 @@
         "lint": "eslint index.js tests.js lib",
         "lint:fix": "npm run lint -- --fix",
         "docs": "rm -rf docs && jsdoc -c jsdoc.json -d docs",
-        "docs:publish": "npm run docs && git add -A && git commit -m \"update docs\" && git push origin master",
+        "docs:publish": "npm run docs && git add docs && git commit -m \"update docs\" && git push origin master",
         "test": "nyc glace tests.js",
         "test:cover": "nyc --reporter=lcov glace tests.js",
         "test:commit": "glace tests.js"
