@@ -1,3 +1,7 @@
+### v1.2.2
+
+- [Fixed](https://github.com/glacejs/glace-utils/commit/5e63be059687c412173652b22ffa51df5bd6487b) bug in download function in order to download only 200-response files.
+
 ### v1.2.1
 
 - [Added](https://github.com/glacejs/glace-utils/commit/b92a06964e009c4ecbbdb19f6f282397c7041295) function to download files.
