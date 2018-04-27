@@ -328,7 +328,8 @@ module.exports.help = d => {
                 group: "Log:",
             },
             "log-level [level]": {
-                describe: d("Log level. Default is 'debug'."),
+                describe: d("Log level. Supported values are 'error', 'warn',",
+                    "'info', 'verbose', 'debug', 'silly'. Default is 'debug'."),
                 type: "string",
                 group: "Log:",
             },
