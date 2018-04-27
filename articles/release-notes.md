@@ -1,3 +1,7 @@
+### v1.2.3
+
+- [Added](https://github.com/glacejs/glace-utils/commit/ce5a65a08434bd3bef444d2012926d4dd939f6ff) download timeout option.
+
 ### v1.2.2
 
 - [Fixed](https://github.com/glacejs/glace-utils/commit/5e63be059687c412173652b22ffa51df5bd6487b) bug in download function in order to download only 200-response files.
