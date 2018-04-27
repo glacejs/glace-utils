@@ -1,3 +1,7 @@
+### v1.2.4
+
+- [Mentioned](https://github.com/glacejs/glace-utils/commit/843c8425685bbc82958e837419b6b59a41bef1e9) log levels in help.
+
 ### v1.2.3
 
 - [Added](https://github.com/glacejs/glace-utils/commit/ce5a65a08434bd3bef444d2012926d4dd939f6ff) download timeout option.
