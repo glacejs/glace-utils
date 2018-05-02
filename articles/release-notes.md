@@ -1,3 +1,7 @@
+### v1.2.5
+
+- [Destroy](https://github.com/glacejs/glace-utils/commit/dfa57a4ded7fb06ccf6975e1c1caa0aeef4aeff0) file stream on download error.
+
 ### v1.2.4
 
 - [Mentioned](https://github.com/glacejs/glace-utils/commit/843c8425685bbc82958e837419b6b59a41bef1e9) log levels in help.
