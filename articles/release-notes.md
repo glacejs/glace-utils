@@ -1,3 +1,7 @@
+### v1.2.6
+
+- [Destroy](https://github.com/glacejs/glace-utils/commit/6f16da054e41299750bb816899045a67db45bfbc) file stream on network error.
+
 ### v1.2.5
 
 - [Destroy](https://github.com/glacejs/glace-utils/commit/dfa57a4ded7fb06ccf6975e1c1caa0aeef4aeff0) file stream on download error.
