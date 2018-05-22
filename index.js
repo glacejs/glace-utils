@@ -523,7 +523,9 @@ var complete = line => {
     return [completions, line];
 };
 /**
- * Interactive debugger.
+ * Interactive debugger with syntax highlighting and autocomplete.
+ *
+ * <img src="./debug_example.gif" title="Debug example" />
  *
  * @async
  * @function
@@ -668,7 +670,7 @@ module.exports.textContains = (text, words) => {
 };
 
 /**
- * Creates each to each combinations.
+ * Creates each to each combinations _(see examples below)_.
  *
  * @function
  * @arg {Array<Array>} l - Array of arrays to combinate.
