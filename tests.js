@@ -3,6 +3,7 @@
 var fs = require("fs");
 var format = require("util").format;
 
+var _ = require("lodash");
 var temp = require("temp").track();
 
 var U = require(".");
@@ -310,5 +311,17 @@ scope("Utils", () => {
         chunk("returns true if contains all words", () => {
             expect(U.textContains("Nice weather, man!", "weather Man")).to.be.true;
         });
-    });    
+    });
+
+    test(".each2each()", () => {
+        chunk("with default options", () => {
+            expect(U.each2each([[1, 2], [3, 4]]))
+                .to.be.eql([[1, 3], [1, 4], [2, 3], [2, 4]]);
+        });
+
+        chunk("with custom addition", () => {
+            expect(U.each2each([[1, 2], [3, 4]], (a, e) => a.push(_.sum(a) + e)))
+                .to.be.eql([[1, 4], [1, 5], [2, 5], [2, 6]]);
+        });
+    });
 });
