@@ -667,6 +667,46 @@ module.exports.textContains = (text, words) => {
     return true;
 };
 
+/**
+ * Creates each to each combinations.
+ *
+ * @function
+ * @arg {Array<Array>} l - Array of arrays to combinate.
+ * @arg {?function} [add] - Function to add element to combination. Passes two
+ *  arguments: `arr` - combination, `el` - element to add. By default it just
+ * pushes `el` to `arr`.
+ * @return {Array<Array>} List of combinations.
+ *
+ * @example <caption><b>Simple combination</b></caption>
+ *
+ * each2each([[1, 2], [3, 4]])
+ * // -> [[1, 3], [1, 4], [2, 3], [2, 4]]
+ *
+ * @example <caption><b>Combination with custom addition</b></caption>
+ *
+ * each2each([[1, 2], [3, 4]], (arr, el) => arr.push([el]));
+ * // -> [[[1], [3]], [[1], [4]], [[2], [3]], [[2], [4]]]
+ *
+ * each2each([[1, 2], [3, 4]], (a, e) => a.push(_.sum(a) + e))
+ * // -> [[1, 4], [1, 5], [2, 5], [2, 6]]
+ */
+module.exports.each2each = (l, add) => {
+    var r = [[]];
+    for (var i of l) {
+        var t = [];
+        for (var j of r) {
+            for (var e of i) {
+                var c = _.clone(j);
+                if (add) add(c, e);
+                else c.push(e);
+                t.push(c);
+            }
+        }
+        r = t;
+    }
+    return r;
+};
+
 module.exports.download = require("./lib/download");
 module.exports.Pool = require("./lib/pool");
 
