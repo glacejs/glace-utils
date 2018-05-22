@@ -1,3 +1,7 @@
+### v1.2.7
+
+- [Added](https://github.com/glacejs/glace-utils/commit/2d739984fe8ad78b6f1250f26e3c88879375ce74) function `each2each` to create combinations.
+
 ### v1.2.6
 
 - [Destroy](https://github.com/glacejs/glace-utils/commit/6f16da054e41299750bb816899045a67db45bfbc) file stream on network error.
