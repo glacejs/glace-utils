@@ -709,6 +709,16 @@ module.exports.each2each = (l, add) => {
     return r;
 };
 
+/**
+ * Splits string to array by delimiter.
+ *
+ * @function
+ * @arg {string} s - String to split.
+ * @arg {char} d - String delimiter.
+ * @return {array<string>}
+ */
+module.exports.splitBy = (s, d) => _.filter(_.map(s.split(d), e => e.trim()));
+
 module.exports.download = require("./lib/download");
 module.exports.Pool = require("./lib/pool");
 
