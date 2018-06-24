@@ -8,7 +8,7 @@ var temp = require("temp").track();
 
 var U = require(".");
 
-scope("Utils", () => {
+suite("Utils", () => {
     var sandbox = sinon.createSandbox();
 
     afterChunk(() => {
@@ -322,6 +322,20 @@ scope("Utils", () => {
         chunk("with custom addition", () => {
             expect(U.each2each([[1, 2], [3, 4]], (a, e) => a.push(_.sum(a) + e)))
                 .to.be.eql([[1, 4], [1, 5], [2, 5], [2, 6]]);
+        });
+    });
+
+    test(".splitBy", () => {
+        chunk("splits by comma", () => {
+            expect(U.splitBy("a, b, c,", ",")).to.be.eql(["a", "b", "c"]);
+        });
+
+        chunk("splits by pipe", () => {
+            expect(U.splitBy("a | b | c", "|")).to.be.eql(["a", "b", "c"]);
+        });
+
+        chunk("gets empty array", () => {
+            expect(U.splitBy("", ",")).to.be.empty;
         });
     });
 });

@@ -12,6 +12,7 @@ module.exports = {
         "beforeEach": true,
         "afterEach": true,
         "scope": true,
+        "suite": true,
         "test": true,
         "describe": true,
         "it": true,
