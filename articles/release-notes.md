@@ -1,3 +1,7 @@
+### v1.2.8
+
+- [Added](https://github.com/glacejs/glace-utils/commit/8ddb78d63ab786552adbd56e0f299bb8490aff01) function `splitBy`.
+
 ### v1.2.7
 
 - [Added](https://github.com/glacejs/glace-utils/commit/2d739984fe8ad78b6f1250f26e3c88879375ce74) function `each2each` to create combinations.
