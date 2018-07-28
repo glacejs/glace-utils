@@ -19,7 +19,7 @@
         },
         "theme": "cosmo",
         "outputSourceFiles": true,
-        "systemName": "GlaseJS Utils",
+        "systemName": "GlaceJS Utils",
         "copyright": "Copyright 2017",
         "linenums": true
     }

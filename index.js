@@ -529,9 +529,20 @@ var complete = line => {
  *
  * @async
  * @function
+ * @arg {string} [helpMessage] - Help message.
  * @return {Promise}
  */
-module.exports.debug = async function () {
+module.exports.debug = async function (helpMessage) {
+
+    const defaultHelp = "In interactive mode you can execute any nodejs code.\n" +
+        "Also next commands are available:\n";
+
+    helpMessage = helpMessage || defaultHelp;
+
+    helpMessage += "- h, help - show interactive mode help;\n" +
+        "- go - continue code execution;\n" +
+        "- exit - finish current nodejs process;";
+
     console.log("interactive mode".yellow);
 
     var rl = readline.createInterface({
@@ -586,11 +597,7 @@ module.exports.debug = async function () {
                 }
 
                 if (["help", "h"].includes(answer)) {
-                    console.log(("In interactive mode you may execute any nodejs code.\n" +
-                                 "Also next commands are available:\n" +
-                                 "- h, help - show interactive mode help;\n" +
-                                 "- go - continue code execution;\n" +
-                                 "- exit - finish current nodejs process;").white);
+                    console.log(helpMessage);
                     resolve(false);
                     return;
                 }
