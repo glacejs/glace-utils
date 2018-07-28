@@ -1,0 +1,137 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "internal logger",
+    "uid" : "ea80242b16cf71cd",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756030756,
+      "stop" : 1532756030769,
+      "duration" : 13
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".loadJson()",
+    "uid" : "ae39e544491f0255",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756030769,
+      "stop" : 1532756030781,
+      "duration" : 12
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".isInScene()",
+    "uid" : "f7f4a227c568a5c3",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756030781,
+      "stop" : 1532756030788,
+      "duration" : 7
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".toKebab()",
+    "uid" : "e534a58853eb04f6",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756030788,
+      "stop" : 1532756030793,
+      "duration" : 5
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".objOnScreenPos()",
+    "uid" : "5f3da28a0f49cdb4",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756030794,
+      "stop" : 1532756030798,
+      "duration" : 4
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".waitFor()",
+    "uid" : "5cc246ccc32769d3",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756030798,
+      "stop" : 1532756033323,
+      "duration" : 2525
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".docString()",
+    "uid" : "b712aceab74517ce",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756033324,
+      "stop" : 1532756033339,
+      "duration" : 15
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".waitDuring()",
+    "uid" : "e861903a84c00844",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756033340,
+      "stop" : 1532756034858,
+      "duration" : 1518
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".textContains()",
+    "uid" : "a211670c9b4f948",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756034859,
+      "stop" : 1532756034866,
+      "duration" : 7
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".each2each()",
+    "uid" : "d3aa98eb54fa5ec1",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756034867,
+      "stop" : 1532756034873,
+      "duration" : 6
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".splitBy",
+    "uid" : "84f231de7b95b80",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1532756034873,
+      "stop" : 1532756034878,
+      "duration" : 5
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  } ],
+  "name" : "behaviors"
+}

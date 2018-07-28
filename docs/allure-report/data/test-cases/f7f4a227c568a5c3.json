@@ -1,0 +1,248 @@
+{
+  "uid" : "f7f4a227c568a5c3",
+  "name" : ".isInScene()",
+  "fullName" : "Utils..isInScene()",
+  "historyId" : "c14a54a843689dfb6f4913e88b691a0a",
+  "time" : {
+    "start" : 1532756030781,
+    "stop" : 1532756030788,
+    "duration" : 7
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "partially",
+      "time" : {
+        "start" : 1532756030782,
+        "stop" : 1532756030786,
+        "duration" : 4
+      },
+      "status" : "unknown",
+      "statusDetails" : {
+        "flaky" : false
+      },
+      "steps" : [ {
+        "name" : "{ x: 0, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' true",
+        "time" : {
+          "start" : 1532756030782,
+          "stop" : 1532756030783,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: -1, y: -1, width: 3, height: 3 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' true",
+        "time" : {
+          "start" : 1532756030783,
+          "stop" : 1532756030784,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: 1, y: 1, width: 2, height: 2 } 'in' { x: 0, y: 0, width: 3, height: 3 } 'is' true",
+        "time" : {
+          "start" : 1532756030784,
+          "stop" : 1532756030784,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: 1, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
+        "time" : {
+          "start" : 1532756030784,
+          "stop" : 1532756030784,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: 0, y: 1, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
+        "time" : {
+          "start" : 1532756030785,
+          "stop" : 1532756030785,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: -1, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
+        "time" : {
+          "start" : 1532756030785,
+          "stop" : 1532756030785,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: 1, y: -1, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
+        "time" : {
+          "start" : 1532756030785,
+          "stop" : 1532756030786,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "fully",
+      "time" : {
+        "start" : 1532756030786,
+        "stop" : 1532756030787,
+        "duration" : 1
+      },
+      "status" : "unknown",
+      "statusDetails" : {
+        "flaky" : false
+      },
+      "steps" : [ {
+        "name" : "{ x: 0, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' true",
+        "time" : {
+          "start" : 1532756030786,
+          "stop" : 1532756030786,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: 1, y: 1, width: 2, height: 2 } 'in' { x: 0, y: 0, width: 3, height: 3 } 'is' true",
+        "time" : {
+          "start" : 1532756030787,
+          "stop" : 1532756030787,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "{ x: -1, y: -1, width: 3, height: 3 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
+        "time" : {
+          "start" : 1532756030787,
+          "stop" : 1532756030787,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 12,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Utils"
+  }, {
+    "name" : "testClass",
+    "value" : "Utils"
+  }, {
+    "name" : "testMethod",
+    "value" : ".isInScene()"
+  }, {
+    "name" : "package",
+    "value" : "Utils"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f7f4a227c568a5c3.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
