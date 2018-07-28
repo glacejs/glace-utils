@@ -511,7 +511,7 @@ var complete = line => {
             Object.getOwnPropertyNames(Object.getPrototypeOf(namespace))
         ).sort()
             .filter(i => i.startsWith(filterPrefix))
-            .filter(i => /^\w+$/.test(i))
+            .filter(i => /^(\w|\$)+$/.test(i))
             .filter(i => /^\D/.test(i));
     } catch (e) {
         return [[], line];
