@@ -15,6 +15,11 @@
         "allure:report": "npm run test:cover && allure generate report/allure --report-dir ./docs/allure-report",
         "test:commit": "glace tests.js"
     },
+    "nyc": {
+      "exclude": [
+        "tests.js"
+      ]
+    },
     "pre-commit": [
         "lint",
         "test:commit"
