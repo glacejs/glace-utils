@@ -1,12 +1,12 @@
 {
-  "uid" : "5f3da28a0f49cdb4",
-  "name" : ".objOnScreenPos()",
-  "fullName" : "Utils..objOnScreenPos()",
-  "historyId" : "d88aa048c95cc5031b13ce99e0377c69",
+  "uid" : "49bc32ef609c00ec",
+  "name" : ".waitDuring()",
+  "fullName" : "Utils..waitDuring()",
+  "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
   "time" : {
-    "start" : 1532756030794,
-    "stop" : 1532756030798,
-    "duration" : 4
+    "start" : 1532776077838,
+    "stop" : 1532776079353,
+    "duration" : 1515
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "throws error if object isn't on screen",
+      "name" : "works with default options",
       "time" : {
-        "start" : 1532756030794,
-        "stop" : 1532756030795,
-        "duration" : 1
+        "start" : 1532776077839,
+        "stop" : 1532776078843,
+        "duration" : 1004
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,10 +33,25 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns the same if object is fully on screen",
+      "name" : "returns predicate result if success",
       "time" : {
-        "start" : 1532756030795,
-        "stop" : 1532756030797,
+        "start" : 1532776078843,
+        "stop" : 1532776079347,
+        "duration" : 504
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns false if didn't wait for timeout",
+      "time" : {
+        "start" : 1532776079348,
+        "stop" : 1532776079350,
         "duration" : 2
       },
       "status" : "passed",
@@ -48,11 +63,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns restricted part if object oversizes screen",
+      "name" : "throws the same error as predicate",
       "time" : {
-        "start" : 1532756030797,
-        "stop" : 1532756030798,
-        "duration" : 1
+        "start" : 1532776079350,
+        "stop" : 1532776079352,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -65,7 +80,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
+    "stepsCount" : 4,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -79,7 +94,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".objOnScreenPos()"
+    "value" : ".waitDuring()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -96,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5f3da28a0f49cdb4.json",
+  "source" : "49bc32ef609c00ec.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

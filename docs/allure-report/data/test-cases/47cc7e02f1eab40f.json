@@ -1,12 +1,12 @@
 {
-  "uid" : "84f231de7b95b80",
-  "name" : ".splitBy",
-  "fullName" : "Utils..splitBy",
-  "historyId" : "4c0ce5ddefcfaebafeb8f1a580d3f6b6",
+  "uid" : "47cc7e02f1eab40f",
+  "name" : ".each2each()",
+  "fullName" : "Utils..each2each()",
+  "historyId" : "727b4397c7518e233afa429bf06d12cc",
   "time" : {
-    "start" : 1532756034873,
-    "stop" : 1532756034878,
-    "duration" : 5
+    "start" : 1532776079362,
+    "stop" : 1532776079369,
+    "duration" : 7
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "splits by comma",
+      "name" : "with default options",
       "time" : {
-        "start" : 1532756034874,
-        "stop" : 1532756034875,
-        "duration" : 1
+        "start" : 1532776079363,
+        "stop" : 1532776079366,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,26 +33,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "splits by pipe",
+      "name" : "with custom addition",
       "time" : {
-        "start" : 1532756034876,
-        "stop" : 1532756034876,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "gets empty array",
-      "time" : {
-        "start" : 1532756034876,
-        "stop" : 1532756034877,
-        "duration" : 1
+        "start" : 1532776079366,
+        "stop" : 1532776079368,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -65,7 +50,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
+    "stepsCount" : 2,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -79,7 +64,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".splitBy"
+    "value" : ".each2each()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -96,7 +81,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "84f231de7b95b80.json",
+  "source" : "47cc7e02f1eab40f.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

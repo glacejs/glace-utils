@@ -1,12 +1,12 @@
 {
-  "uid" : "a211670c9b4f948",
-  "name" : ".textContains()",
-  "fullName" : "Utils..textContains()",
-  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
+  "uid" : "9d5255528bb3899c",
+  "name" : ".loadJson()",
+  "fullName" : "Utils..loadJson()",
+  "historyId" : "6c58a29cf99d1393b5e5573145dc5c43",
   "time" : {
-    "start" : 1532756034859,
-    "stop" : 1532756034866,
-    "duration" : 7
+    "start" : 1532776075269,
+    "stop" : 1532776075294,
+    "duration" : 25
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,10 +18,70 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "returns false if no text",
+      "name" : "loads plain json file",
       "time" : {
-        "start" : 1532756034860,
-        "stop" : 1532756034861,
+        "start" : 1532776075272,
+        "stop" : 1532776075278,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "loads json with comments",
+      "time" : {
+        "start" : 1532776075279,
+        "stop" : 1532776075281,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "loads json parents",
+      "time" : {
+        "start" : 1532776075282,
+        "stop" : 1532776075284,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "throws error if json isn't parsable",
+      "time" : {
+        "start" : 1532776075284,
+        "stop" : 1532776075287,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "throws error if json parent isn't parsable",
+      "time" : {
+        "start" : 1532776075288,
+        "stop" : 1532776075289,
         "duration" : 1
       },
       "status" : "passed",
@@ -33,41 +93,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns true if no words",
+      "name" : "throws error if circular parent reference detected",
       "time" : {
-        "start" : 1532756034862,
-        "stop" : 1532756034863,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns false if doesn't contain any word",
-      "time" : {
-        "start" : 1532756034863,
-        "stop" : 1532756034864,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns true if contains all words",
-      "time" : {
-        "start" : 1532756034864,
-        "stop" : 1532756034865,
-        "duration" : 1
+        "start" : 1532776075289,
+        "stop" : 1532776075293,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
@@ -80,7 +110,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 4,
+    "stepsCount" : 6,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -94,7 +124,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".textContains()"
+    "value" : ".loadJson()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +141,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a211670c9b4f948.json",
+  "source" : "9d5255528bb3899c.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

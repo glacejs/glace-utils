@@ -1,11 +1,11 @@
 {
-  "uid" : "d3aa98eb54fa5ec1",
-  "name" : ".each2each()",
-  "fullName" : "Utils..each2each()",
-  "historyId" : "727b4397c7518e233afa429bf06d12cc",
+  "uid" : "18059f543196d319",
+  "name" : ".splitBy",
+  "fullName" : "Utils..splitBy",
+  "historyId" : "4c0ce5ddefcfaebafeb8f1a580d3f6b6",
   "time" : {
-    "start" : 1532756034867,
-    "stop" : 1532756034873,
+    "start" : 1532776079369,
+    "stop" : 1532776079375,
     "duration" : 6
   },
   "description" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "with default options",
+      "name" : "splits by comma",
       "time" : {
-        "start" : 1532756034868,
-        "stop" : 1532756034871,
-        "duration" : 3
+        "start" : 1532776079370,
+        "stop" : 1532776079372,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,10 +33,25 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with custom addition",
+      "name" : "splits by pipe",
       "time" : {
-        "start" : 1532756034871,
-        "stop" : 1532756034872,
+        "start" : 1532776079372,
+        "stop" : 1532776079373,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "gets empty array",
+      "time" : {
+        "start" : 1532776079373,
+        "stop" : 1532776079374,
         "duration" : 1
       },
       "status" : "passed",
@@ -50,7 +65,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 2,
+    "stepsCount" : 3,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -64,7 +79,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".each2each()"
+    "value" : ".splitBy"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -81,7 +96,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "d3aa98eb54fa5ec1.json",
+  "source" : "18059f543196d319.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

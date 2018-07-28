@@ -1,12 +1,12 @@
 {
-  "uid" : "e861903a84c00844",
-  "name" : ".waitDuring()",
-  "fullName" : "Utils..waitDuring()",
-  "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
+  "uid" : "82f499bd3f36a8",
+  "name" : ".textContains()",
+  "fullName" : "Utils..textContains()",
+  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
   "time" : {
-    "start" : 1532756033340,
-    "stop" : 1532756034858,
-    "duration" : 1518
+    "start" : 1532776079354,
+    "stop" : 1532776079361,
+    "duration" : 7
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "works with default options",
+      "name" : "returns false if no text",
       "time" : {
-        "start" : 1532756033342,
-        "stop" : 1532756034348,
-        "duration" : 1006
+        "start" : 1532776079355,
+        "stop" : 1532776079357,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,25 +33,10 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns predicate result if success",
+      "name" : "returns true if no words",
       "time" : {
-        "start" : 1532756034349,
-        "stop" : 1532756034853,
-        "duration" : 504
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns false if didn't wait for timeout",
-      "time" : {
-        "start" : 1532756034854,
-        "stop" : 1532756034855,
+        "start" : 1532776079357,
+        "stop" : 1532776079358,
         "duration" : 1
       },
       "status" : "passed",
@@ -63,10 +48,25 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "throws the same error as predicate",
+      "name" : "returns false if doesn't contain any word",
       "time" : {
-        "start" : 1532756034856,
-        "stop" : 1532756034857,
+        "start" : 1532776079358,
+        "stop" : 1532776079359,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns true if contains all words",
+      "time" : {
+        "start" : 1532776079359,
+        "stop" : 1532776079360,
         "duration" : 1
       },
       "status" : "passed",
@@ -94,7 +94,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".waitDuring()"
+    "value" : ".textContains()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "e861903a84c00844.json",
+  "source" : "82f499bd3f36a8.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },
