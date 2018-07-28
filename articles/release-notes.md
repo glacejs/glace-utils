@@ -1,3 +1,8 @@
+### v1.2.9
+
+- [Fixed](https://github.com/glacejs/glace-utils/commit/9a369991bdf19a775c9d400db24aec06d5511aac) bug that autocompletion in debug mode didn't work for objects started with `$`.
+- [Provided](https://github.com/glacejs/glace-utils/commit/3ac6f38ef8e616acc27055b7207ae0e13dfc0762) help message customization in debug mode.
+
 ### v1.2.8
 
 - [Added](https://github.com/glacejs/glace-utils/commit/8ddb78d63ab786552adbd56e0f299bb8490aff01) function `splitBy`.
