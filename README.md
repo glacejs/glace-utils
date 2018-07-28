@@ -15,3 +15,7 @@ npm i glace-utils
 ```javascript
 var U = require("glace-utils");
 ```
+
+## Tests coverage
+
+Please see <a href="tests-cover/lcov-report/index.html" target="_blank">here</a>

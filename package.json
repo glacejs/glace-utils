@@ -8,10 +8,10 @@
         "release": "VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git add -u && git commit -m \"release $VERSION\" && git tag $VERSION && git push origin $VERSION && npm run docs:publish && npm publish",
         "lint": "eslint index.js tests.js lib",
         "lint:fix": "npm run lint -- --fix",
-        "docs": "rm -rf docs && jsdoc -c jsdoc.json -d docs",
+        "docs": "rm -rf docs && jsdoc -c jsdoc.json -d docs && npm run test:cover",
         "docs:publish": "npm run docs && git add docs && git commit -m \"update docs\" && git push origin master",
         "test": "nyc glace tests.js",
-        "test:cover": "nyc --reporter=lcov glace tests.js",
+        "test:cover": "nyc --reporter=lcov --report-dir ./docs/tests-cover glace tests.js",
         "test:commit": "glace tests.js"
     },
     "pre-commit": [
