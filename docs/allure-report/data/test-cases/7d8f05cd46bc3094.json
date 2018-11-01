@@ -1,12 +1,12 @@
 {
-  "uid" : "b72c011c9f445779",
-  "name" : ".docString()",
-  "fullName" : "Utils..docString()",
-  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
+  "uid" : "7d8f05cd46bc3094",
+  "name" : "internal logger",
+  "fullName" : "Utils.internal logger",
+  "historyId" : "53fcfdf07a321db9e08660a8e9afcc50",
   "time" : {
-    "start" : 1532776077834,
-    "stop" : 1532776077838,
-    "duration" : 4
+    "start" : 1541102824351,
+    "stop" : 1541102824365,
+    "duration" : 14
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,26 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "creates property __doc__",
+      "name" : "is defined if global logger is already created",
       "time" : {
-        "start" : 1532776077835,
-        "stop" : 1532776077836,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "creates function bond",
-      "time" : {
-        "start" : 1532776077836,
-        "stop" : 1532776077837,
-        "duration" : 1
+        "start" : 1541102824354,
+        "stop" : 1541102824363,
+        "duration" : 9
       },
       "status" : "passed",
       "steps" : [ ],
@@ -50,7 +35,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 2,
+    "stepsCount" : 1,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -64,7 +49,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".docString()"
+    "value" : "internal logger"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -81,7 +66,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "b72c011c9f445779.json",
+  "source" : "7d8f05cd46bc3094.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

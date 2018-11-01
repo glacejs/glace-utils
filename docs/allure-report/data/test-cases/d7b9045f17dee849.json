@@ -1,12 +1,12 @@
 {
-  "uid" : "eb9b4e8edab45bed",
-  "name" : "internal logger",
-  "fullName" : "Utils.internal logger",
-  "historyId" : "53fcfdf07a321db9e08660a8e9afcc50",
+  "uid" : "d7b9045f17dee849",
+  "name" : ".each2each()",
+  "fullName" : "Utils..each2each()",
+  "historyId" : "727b4397c7518e233afa429bf06d12cc",
   "time" : {
-    "start" : 1532776075244,
-    "stop" : 1532776075268,
-    "duration" : 24
+    "start" : 1541102828470,
+    "stop" : 1541102828481,
+    "duration" : 11
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,26 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "is defined if global logger is already created",
+      "name" : "with default options",
       "time" : {
-        "start" : 1532776075249,
-        "stop" : 1532776075266,
-        "duration" : 17
+        "start" : 1541102828472,
+        "stop" : 1541102828477,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "with custom addition",
+      "time" : {
+        "start" : 1541102828477,
+        "stop" : 1541102828480,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -35,7 +50,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 1,
+    "stepsCount" : 2,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -49,7 +64,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : "internal logger"
+    "value" : ".each2each()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -66,7 +81,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "eb9b4e8edab45bed.json",
+  "source" : "d7b9045f17dee849.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

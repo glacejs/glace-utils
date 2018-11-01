@@ -1,12 +1,12 @@
 {
-  "uid" : "a36bc8b4ae126f76",
-  "name" : ".waitFor()",
-  "fullName" : "Utils..waitFor()",
-  "historyId" : "12761c85ed7e5a7ededa6d3d9a78fd01",
+  "uid" : "db94023eef59be5d",
+  "name" : ".textContains()",
+  "fullName" : "Utils..textContains()",
+  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
   "time" : {
-    "start" : 1532776075319,
-    "stop" : 1532776077834,
-    "duration" : 2515
+    "start" : 1541102828458,
+    "stop" : 1541102828468,
+    "duration" : 10
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,10 +18,25 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "works with default options",
+      "name" : "returns false if no text",
       "time" : {
-        "start" : 1532776075320,
-        "stop" : 1532776075321,
+        "start" : 1541102828460,
+        "stop" : 1541102828462,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns true if no words",
+      "time" : {
+        "start" : 1541102828462,
+        "stop" : 1541102828463,
         "duration" : 1
       },
       "status" : "passed",
@@ -33,11 +48,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns predicate result if success",
+      "name" : "returns false if doesn't contain any word",
       "time" : {
-        "start" : 1532776075321,
-        "stop" : 1532776075824,
-        "duration" : 503
+        "start" : 1541102828464,
+        "stop" : 1541102828465,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,26 +63,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns false if didn't wait for timeout",
+      "name" : "returns true if contains all words",
       "time" : {
-        "start" : 1532776075824,
-        "stop" : 1532776077831,
-        "duration" : 2007
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "throws the same error as predicate",
-      "time" : {
-        "start" : 1532776077831,
-        "stop" : 1532776077834,
-        "duration" : 3
+        "start" : 1541102828466,
+        "stop" : 1541102828467,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -94,7 +94,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".waitFor()"
+    "value" : ".textContains()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a36bc8b4ae126f76.json",
+  "source" : "db94023eef59be5d.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

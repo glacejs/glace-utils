@@ -1,12 +1,12 @@
 {
-  "uid" : "82f499bd3f36a8",
-  "name" : ".textContains()",
-  "fullName" : "Utils..textContains()",
-  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
+  "uid" : "545539c651b09f14",
+  "name" : ".splitBy",
+  "fullName" : "Utils..splitBy",
+  "historyId" : "4c0ce5ddefcfaebafeb8f1a580d3f6b6",
   "time" : {
-    "start" : 1532776079354,
-    "stop" : 1532776079361,
-    "duration" : 7
+    "start" : 1541102828482,
+    "stop" : 1541102828491,
+    "duration" : 9
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,56 +18,41 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "returns false if no text",
+      "name" : "splits by comma",
       "time" : {
-        "start" : 1532776079355,
-        "stop" : 1532776079357,
+        "start" : 1541102828483,
+        "stop" : 1541102828486,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "splits by pipe",
+      "time" : {
+        "start" : 1541102828486,
+        "stop" : 1541102828487,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "gets empty array",
+      "time" : {
+        "start" : 1541102828488,
+        "stop" : 1541102828490,
         "duration" : 2
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns true if no words",
-      "time" : {
-        "start" : 1532776079357,
-        "stop" : 1532776079358,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns false if doesn't contain any word",
-      "time" : {
-        "start" : 1532776079358,
-        "stop" : 1532776079359,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns true if contains all words",
-      "time" : {
-        "start" : 1532776079359,
-        "stop" : 1532776079360,
-        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -80,7 +65,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 4,
+    "stepsCount" : 3,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -94,7 +79,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".textContains()"
+    "value" : ".splitBy"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +96,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "82f499bd3f36a8.json",
+  "source" : "545539c651b09f14.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

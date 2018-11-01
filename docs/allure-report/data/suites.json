@@ -4,133 +4,133 @@
     "name" : "Utils",
     "children" : [ {
       "name" : "internal logger",
-      "uid" : "eb9b4e8edab45bed",
+      "uid" : "7d8f05cd46bc3094",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776075244,
-        "stop" : 1532776075268,
-        "duration" : 24
+        "start" : 1541102824351,
+        "stop" : 1541102824365,
+        "duration" : 14
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".loadJson()",
-      "uid" : "9d5255528bb3899c",
+      "uid" : "b679a35cc3160a2a",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776075269,
-        "stop" : 1532776075294,
-        "duration" : 25
+        "start" : 1541102824365,
+        "stop" : 1541102824376,
+        "duration" : 11
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".isInScene()",
-      "uid" : "718c97e61488a3ef",
+      "uid" : "1b856cb46590537b",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776075294,
-        "stop" : 1532776075302,
-        "duration" : 8
+        "start" : 1541102824377,
+        "stop" : 1541102824382,
+        "duration" : 5
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".toKebab()",
-      "uid" : "36031aac42433f91",
+      "uid" : "d7d8381c5caa522a",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776075302,
-        "stop" : 1532776075312,
-        "duration" : 10
+        "start" : 1541102824383,
+        "stop" : 1541102824395,
+        "duration" : 12
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".objOnScreenPos()",
-      "uid" : "3b8b436d6ce765a1",
+      "uid" : "ab0040c9ae87a79",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776075312,
-        "stop" : 1532776075318,
+        "start" : 1541102824395,
+        "stop" : 1541102824401,
         "duration" : 6
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".waitFor()",
-      "uid" : "a36bc8b4ae126f76",
+      "uid" : "822cc095c97d4e52",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776075319,
-        "stop" : 1532776077834,
-        "duration" : 2515
+        "start" : 1541102824401,
+        "stop" : 1541102826927,
+        "duration" : 2526
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".docString()",
-      "uid" : "b72c011c9f445779",
+      "uid" : "995ab53943becbe8",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776077834,
-        "stop" : 1532776077838,
-        "duration" : 4
+        "start" : 1541102826928,
+        "stop" : 1541102826936,
+        "duration" : 8
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".waitDuring()",
-      "uid" : "49bc32ef609c00ec",
+      "uid" : "608d13c530e94b3e",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776077838,
-        "stop" : 1532776079353,
-        "duration" : 1515
+        "start" : 1541102826937,
+        "stop" : 1541102828456,
+        "duration" : 1519
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".textContains()",
-      "uid" : "82f499bd3f36a8",
+      "uid" : "db94023eef59be5d",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776079354,
-        "stop" : 1532776079361,
-        "duration" : 7
+        "start" : 1541102828458,
+        "stop" : 1541102828468,
+        "duration" : 10
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".each2each()",
-      "uid" : "47cc7e02f1eab40f",
+      "uid" : "d7b9045f17dee849",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776079362,
-        "stop" : 1532776079369,
-        "duration" : 7
+        "start" : 1541102828470,
+        "stop" : 1541102828481,
+        "duration" : 11
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : ".splitBy",
-      "uid" : "18059f543196d319",
+      "uid" : "545539c651b09f14",
       "parentUid" : "66ce23d8ac989773d96b13c919babce3",
       "status" : "passed",
       "time" : {
-        "start" : 1532776079369,
-        "stop" : 1532776079375,
-        "duration" : 6
+        "start" : 1541102828482,
+        "stop" : 1541102828491,
+        "duration" : 9
       },
       "flaky" : false,
       "parameters" : [ ]

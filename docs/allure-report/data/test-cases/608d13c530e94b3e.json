@@ -1,12 +1,12 @@
 {
-  "uid" : "49bc32ef609c00ec",
+  "uid" : "608d13c530e94b3e",
   "name" : ".waitDuring()",
   "fullName" : "Utils..waitDuring()",
   "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
   "time" : {
-    "start" : 1532776077838,
-    "stop" : 1532776079353,
-    "duration" : 1515
+    "start" : 1541102826937,
+    "stop" : 1541102828456,
+    "duration" : 1519
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -20,8 +20,8 @@
     "steps" : [ {
       "name" : "works with default options",
       "time" : {
-        "start" : 1532776077839,
-        "stop" : 1532776078843,
+        "start" : 1541102826939,
+        "stop" : 1541102827943,
         "duration" : 1004
       },
       "status" : "passed",
@@ -35,9 +35,9 @@
     }, {
       "name" : "returns predicate result if success",
       "time" : {
-        "start" : 1532776078843,
-        "stop" : 1532776079347,
-        "duration" : 504
+        "start" : 1541102827944,
+        "stop" : 1541102828449,
+        "duration" : 505
       },
       "status" : "passed",
       "steps" : [ ],
@@ -50,8 +50,8 @@
     }, {
       "name" : "returns false if didn't wait for timeout",
       "time" : {
-        "start" : 1532776079348,
-        "stop" : 1532776079350,
+        "start" : 1541102828450,
+        "stop" : 1541102828452,
         "duration" : 2
       },
       "status" : "passed",
@@ -65,9 +65,9 @@
     }, {
       "name" : "throws the same error as predicate",
       "time" : {
-        "start" : 1532776079350,
-        "stop" : 1532776079352,
-        "duration" : 2
+        "start" : 1541102828452,
+        "stop" : 1541102828455,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -111,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "49bc32ef609c00ec.json",
+  "source" : "608d13c530e94b3e.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

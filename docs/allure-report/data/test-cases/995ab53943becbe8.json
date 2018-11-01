@@ -1,12 +1,12 @@
 {
-  "uid" : "18059f543196d319",
-  "name" : ".splitBy",
-  "fullName" : "Utils..splitBy",
-  "historyId" : "4c0ce5ddefcfaebafeb8f1a580d3f6b6",
+  "uid" : "995ab53943becbe8",
+  "name" : ".docString()",
+  "fullName" : "Utils..docString()",
+  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
   "time" : {
-    "start" : 1532776079369,
-    "stop" : 1532776079375,
-    "duration" : 6
+    "start" : 1541102826928,
+    "stop" : 1541102826936,
+    "duration" : 8
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,10 +18,10 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "splits by comma",
+      "name" : "creates property __doc__",
       "time" : {
-        "start" : 1532776079370,
-        "stop" : 1532776079372,
+        "start" : 1541102826929,
+        "stop" : 1541102826931,
         "duration" : 2
       },
       "status" : "passed",
@@ -33,26 +33,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "splits by pipe",
+      "name" : "creates function bond",
       "time" : {
-        "start" : 1532776079372,
-        "stop" : 1532776079373,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "gets empty array",
-      "time" : {
-        "start" : 1532776079373,
-        "stop" : 1532776079374,
-        "duration" : 1
+        "start" : 1541102826932,
+        "stop" : 1541102826935,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -65,7 +50,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
+    "stepsCount" : 2,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -79,7 +64,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".splitBy"
+    "value" : ".docString()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -96,7 +81,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "18059f543196d319.json",
+  "source" : "995ab53943becbe8.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

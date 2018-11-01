@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">28.13% </span>
+        <span class="strong">27.27% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/32</span>
+        <span class='fraction'>9/33</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">6.25% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">32.14% </span>
+        <span class="strong">31.03% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/28</span>
+        <span class='fraction'>9/29</span>
       </div>
     </div>
     <p class="quiet">
@@ -118,7 +118,15 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,25 +152,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,13 +231,20 @@ var logger;
     /**
      * @prop {Logger} logger - `GlaceJS` logger.
      */
-<span class="cstat-no" title="statement not covered" >    logger = global.__glaceLogger = new winston.Logger();</span>
-<span class="cstat-no" title="statement not covered" >    logger.level = config.args.logLevel || "debug";</span>
-<span class="cstat-no" title="statement not covered" >    logger.add(winston.transports.File,</span>
-        { filename: path.resolve(cwd, config.args.log || "glace.log"),
-            json: false });
+<span class="cstat-no" title="statement not covered" >    logger = global.__glaceLogger = winston.createLogger({</span>
+        level: config.args.logLevel || "debug",
+        format: winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.printf(<span class="fstat-no" title="function not covered" >in</span>fo =&gt; {
+<span class="cstat-no" title="statement not covered" >                return `${info.timestamp} ${info.level}: ${info.message}`;</span>
+            }),
+        ),
+    });
+<span class="cstat-no" title="statement not covered" >    logger.add(new winston.transports.File({</span>
+        filename: path.resolve(cwd, config.args.log || "glace.log"),
+    }));
 <span class="cstat-no" title="statement not covered" >    if (config.args.stdoutLog) {</span>
-<span class="cstat-no" title="statement not covered" >        logger.add(winston.transports.Console);</span>
+<span class="cstat-no" title="statement not covered" >        logger.add(new winston.transports.Console());</span>
     }
     /**
      * Sets log file to logger.
@@ -235,8 +258,9 @@ var logger;
 <span class="cstat-no" title="statement not covered" >        if (!logPath.endsWith(".log")) <span class="cstat-no" title="statement not covered" >logPath += ".log";</span></span>
 <span class="cstat-no" title="statement not covered" >        fse.mkdirsSync(path.dirname(logPath));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (logger.transports.file) <span class="cstat-no" title="statement not covered" >logger.remove(winston.transports.File);</span></span>
-<span class="cstat-no" title="statement not covered" >        logger.add(winston.transports.File, { filename: logPath, json: false });</span>
+<span class="cstat-no" title="statement not covered" >        if (logger._file) <span class="cstat-no" title="statement not covered" >logger.remove(logger._file);</span></span>
+<span class="cstat-no" title="statement not covered" >        logger._file = new winston.transports.File({ filename: logPath });</span>
+<span class="cstat-no" title="statement not covered" >        logger.add(logger._file);</span>
     };
     /**
      * Gets log file.
@@ -245,8 +269,8 @@ var logger;
      * @return {?string} Path to log file or `null`.
      */
 <span class="cstat-no" title="statement not covered" >    logger.getFile = <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (!logger.transports.file) <span class="cstat-no" title="statement not covered" >return null;</span></span>
-<span class="cstat-no" title="statement not covered" >        return path.resolve(cwd, logger.transports.file.filename);</span>
+<span class="cstat-no" title="statement not covered" >        if (!logger._file) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >        return path.resolve(logger._file.dirname, logger._file.filename);</span>
     };
     /**
      * Resets log file.
@@ -268,7 +292,7 @@ module.exports = logger;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jul 28 2018 14:07:59 GMT+0300 (EEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 01 2018 22:07:08 GMT+0200 (EET)
 </div>
 </div>
 <script src="../../prettify.js"></script>
