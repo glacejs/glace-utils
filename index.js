@@ -47,6 +47,7 @@ var defVal = module.exports.defVal = function () {
             return arg;
     return null;
 };
+module.exports.coalesce = defVal;
 /**
  * Capitalizes first letter of string. Doesn"t influence to case
  * of other letters.
