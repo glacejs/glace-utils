@@ -222,7 +222,7 @@ module.exports.subFolders = (dir, opts) => {
  * @arg {string} [opts.c2=cyan] - Color #2.
  * @return {function} Function to switch color of passed text in terminal.
  */
-module.exports.switchColor = opts => {
+const switchColor = module.exports.switchColor = opts => {
     opts = opts || {};
     var c1 = opts.c1 || "magenta";
     var c2 = opts.c2 || "cyan";
@@ -304,10 +304,11 @@ module.exports.killProcs = procName => {
  * Help
  *
  * @function
- * @arg {function} d - Function to manage describe message: join, colorize, etc.
+ * @arg {function} [d] - Function to manage describe message: join, colorize, etc.
  * @return {yargs} Preconfigured yargs.
  */
 module.exports.help = d => {
+    d = d || switchColor();
     return yargs
         .options({
             "config [path]": {
