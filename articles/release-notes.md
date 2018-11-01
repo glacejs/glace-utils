@@ -1,3 +1,9 @@
+### v1.3.0
+
+- [Added](https://github.com/glacejs/glace-utils/commit/7258aa5f8edb5b94e539239958ee57014222a380) timestamp to stdout log.
+- [Added](https://github.com/glacejs/glace-utils/commit/62cb58e4365a1e7fa238a22d3133a1c9674624c6) alias `coalesce` for `defVal`.
+- [Fixed](https://github.com/glacejs/glace-utils/commit/18a92e23f275aeb9642a9e358fd12d735f81c8b3) bug that `--help` didn't show help menu.
+
 ### v1.2.9
 
 - [Fixed](https://github.com/glacejs/glace-utils/commit/9a369991bdf19a775c9d400db24aec06d5511aac) bug that autocompletion in debug mode didn't work for objects started with `$`.
