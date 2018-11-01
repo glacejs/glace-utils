@@ -15,7 +15,7 @@ var colors = require("colors");
 var espree = require("espree");
 var highlight = require("cli-highlight").highlight;
 var _ = require("lodash");
-var yargs = require("yargs");
+var yargs = require("yargs").help(" ");  // disable default `--help` capture
 module.exports.__findProcess = require("find-process");
 var fse = require("fs-extra");
 
