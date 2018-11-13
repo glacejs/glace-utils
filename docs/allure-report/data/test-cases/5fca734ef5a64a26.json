@@ -1,12 +1,12 @@
 {
-  "uid" : "d7b9045f17dee849",
-  "name" : ".each2each()",
-  "fullName" : "Utils..each2each()",
-  "historyId" : "727b4397c7518e233afa429bf06d12cc",
+  "uid" : "5fca734ef5a64a26",
+  "name" : ".textContains()",
+  "fullName" : "Utils..textContains()",
+  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
   "time" : {
-    "start" : 1541102828470,
-    "stop" : 1541102828481,
-    "duration" : 11
+    "start" : 1542136019182,
+    "stop" : 1542136019190,
+    "duration" : 8
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "with default options",
+      "name" : "returns false if no text",
       "time" : {
-        "start" : 1541102828472,
-        "stop" : 1541102828477,
-        "duration" : 5
+        "start" : 1542136019184,
+        "stop" : 1542136019186,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,11 +33,41 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with custom addition",
+      "name" : "returns true if no words",
       "time" : {
-        "start" : 1541102828477,
-        "stop" : 1541102828480,
-        "duration" : 3
+        "start" : 1542136019186,
+        "stop" : 1542136019187,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns false if doesn't contain any word",
+      "time" : {
+        "start" : 1542136019187,
+        "stop" : 1542136019188,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns true if contains all words",
+      "time" : {
+        "start" : 1542136019189,
+        "stop" : 1542136019189,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -50,7 +80,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 2,
+    "stepsCount" : 4,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -64,7 +94,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".each2each()"
+    "value" : ".textContains()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -81,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "d7b9045f17dee849.json",
+  "source" : "5fca734ef5a64a26.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

@@ -1,11 +1,11 @@
 {
-  "uid" : "7d8f05cd46bc3094",
+  "uid" : "186a74b1b8b10d0f",
   "name" : "internal logger",
   "fullName" : "Utils.internal logger",
   "historyId" : "53fcfdf07a321db9e08660a8e9afcc50",
   "time" : {
-    "start" : 1541102824351,
-    "stop" : 1541102824365,
+    "start" : 1542136015068,
+    "stop" : 1542136015082,
     "duration" : 14
   },
   "description" : "",
@@ -20,9 +20,9 @@
     "steps" : [ {
       "name" : "is defined if global logger is already created",
       "time" : {
-        "start" : 1541102824354,
-        "stop" : 1541102824363,
-        "duration" : 9
+        "start" : 1542136015073,
+        "stop" : 1542136015081,
+        "duration" : 8
       },
       "status" : "passed",
       "steps" : [ ],
@@ -66,7 +66,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "7d8f05cd46bc3094.json",
+  "source" : "186a74b1b8b10d0f.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

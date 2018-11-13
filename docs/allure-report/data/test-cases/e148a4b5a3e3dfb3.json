@@ -1,12 +1,12 @@
 {
-  "uid" : "995ab53943becbe8",
+  "uid" : "e148a4b5a3e3dfb3",
   "name" : ".docString()",
   "fullName" : "Utils..docString()",
   "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
   "time" : {
-    "start" : 1541102826928,
-    "stop" : 1541102826936,
-    "duration" : 8
+    "start" : 1542136017644,
+    "stop" : 1542136017656,
+    "duration" : 12
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -20,9 +20,9 @@
     "steps" : [ {
       "name" : "creates property __doc__",
       "time" : {
-        "start" : 1541102826929,
-        "stop" : 1541102826931,
-        "duration" : 2
+        "start" : 1542136017647,
+        "stop" : 1542136017651,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
@@ -35,9 +35,9 @@
     }, {
       "name" : "creates function bond",
       "time" : {
-        "start" : 1541102826932,
-        "stop" : 1541102826935,
-        "duration" : 3
+        "start" : 1542136017651,
+        "stop" : 1542136017655,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
@@ -81,7 +81,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "995ab53943becbe8.json",
+  "source" : "e148a4b5a3e3dfb3.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

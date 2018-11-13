@@ -1,12 +1,12 @@
 {
-  "uid" : "b679a35cc3160a2a",
+  "uid" : "c7e45e64c5787d96",
   "name" : ".loadJson()",
   "fullName" : "Utils..loadJson()",
   "historyId" : "6c58a29cf99d1393b5e5573145dc5c43",
   "time" : {
-    "start" : 1541102824365,
-    "stop" : 1541102824376,
-    "duration" : 11
+    "start" : 1542136015084,
+    "stop" : 1542136015099,
+    "duration" : 15
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -20,9 +20,9 @@
     "steps" : [ {
       "name" : "loads plain json file",
       "time" : {
-        "start" : 1541102824366,
-        "stop" : 1541102824368,
-        "duration" : 2
+        "start" : 1542136015086,
+        "stop" : 1542136015090,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
@@ -35,9 +35,9 @@
     }, {
       "name" : "loads json with comments",
       "time" : {
-        "start" : 1541102824369,
-        "stop" : 1541102824370,
-        "duration" : 1
+        "start" : 1542136015090,
+        "stop" : 1542136015092,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -50,9 +50,9 @@
     }, {
       "name" : "loads json parents",
       "time" : {
-        "start" : 1541102824370,
-        "stop" : 1541102824372,
-        "duration" : 2
+        "start" : 1542136015092,
+        "stop" : 1542136015095,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -65,8 +65,8 @@
     }, {
       "name" : "throws error if json isn't parsable",
       "time" : {
-        "start" : 1541102824372,
-        "stop" : 1541102824373,
+        "start" : 1542136015095,
+        "stop" : 1542136015096,
         "duration" : 1
       },
       "status" : "passed",
@@ -80,8 +80,8 @@
     }, {
       "name" : "throws error if json parent isn't parsable",
       "time" : {
-        "start" : 1541102824373,
-        "stop" : 1541102824374,
+        "start" : 1542136015096,
+        "stop" : 1542136015097,
         "duration" : 1
       },
       "status" : "passed",
@@ -95,8 +95,8 @@
     }, {
       "name" : "throws error if circular parent reference detected",
       "time" : {
-        "start" : 1541102824375,
-        "stop" : 1541102824376,
+        "start" : 1542136015097,
+        "stop" : 1542136015098,
         "duration" : 1
       },
       "status" : "passed",
@@ -141,7 +141,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "b679a35cc3160a2a.json",
+  "source" : "c7e45e64c5787d96.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

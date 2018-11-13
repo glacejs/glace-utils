@@ -2,133 +2,133 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "children" : [ {
     "name" : "internal logger",
-    "uid" : "7d8f05cd46bc3094",
+    "uid" : "186a74b1b8b10d0f",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1541102824351,
-      "stop" : 1541102824365,
+      "start" : 1542136015068,
+      "stop" : 1542136015082,
       "duration" : 14
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
-    "name" : ".each2each()",
-    "uid" : "d7b9045f17dee849",
+    "name" : ".docString()",
+    "uid" : "e148a4b5a3e3dfb3",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1541102828470,
-      "stop" : 1541102828481,
-      "duration" : 11
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".waitDuring()",
-    "uid" : "608d13c530e94b3e",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102826937,
-      "stop" : 1541102828456,
-      "duration" : 1519
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".splitBy",
-    "uid" : "545539c651b09f14",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102828482,
-      "stop" : 1541102828491,
-      "duration" : 9
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".objOnScreenPos()",
-    "uid" : "ab0040c9ae87a79",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102824395,
-      "stop" : 1541102824401,
-      "duration" : 6
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".loadJson()",
-    "uid" : "b679a35cc3160a2a",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102824365,
-      "stop" : 1541102824376,
-      "duration" : 11
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".waitFor()",
-    "uid" : "822cc095c97d4e52",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102824401,
-      "stop" : 1541102826927,
-      "duration" : 2526
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".isInScene()",
-    "uid" : "1b856cb46590537b",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102824377,
-      "stop" : 1541102824382,
-      "duration" : 5
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : ".toKebab()",
-    "uid" : "d7d8381c5caa522a",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1541102824383,
-      "stop" : 1541102824395,
+      "start" : 1542136017644,
+      "stop" : 1542136017656,
       "duration" : 12
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
-    "name" : ".docString()",
-    "uid" : "995ab53943becbe8",
+    "name" : ".textContains()",
+    "uid" : "5fca734ef5a64a26",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1541102826928,
-      "stop" : 1541102826936,
+      "start" : 1542136019182,
+      "stop" : 1542136019190,
       "duration" : 8
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
-    "name" : ".textContains()",
-    "uid" : "db94023eef59be5d",
+    "name" : ".waitDuring()",
+    "uid" : "3a170f717c4555ce",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1541102828458,
-      "stop" : 1541102828468,
-      "duration" : 10
+      "start" : 1542136017658,
+      "stop" : 1542136019180,
+      "duration" : 1522
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".splitBy",
+    "uid" : "eebcb9826e054e29",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136019203,
+      "stop" : 1542136019210,
+      "duration" : 7
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".toKebab()",
+    "uid" : "7fff3a9d04071d19",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136015107,
+      "stop" : 1542136015112,
+      "duration" : 5
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".waitFor()",
+    "uid" : "32c9fef4ffc266f6",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136015119,
+      "stop" : 1542136017643,
+      "duration" : 2524
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".each2each()",
+    "uid" : "57f2a7324f8a9fdf",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136019191,
+      "stop" : 1542136019202,
+      "duration" : 11
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".isInScene()",
+    "uid" : "eedac503e79e3449",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136015099,
+      "stop" : 1542136015106,
+      "duration" : 7
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".objOnScreenPos()",
+    "uid" : "8ce1130f23063b0c",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136015113,
+      "stop" : 1542136015118,
+      "duration" : 5
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : ".loadJson()",
+    "uid" : "c7e45e64c5787d96",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1542136015084,
+      "stop" : 1542136015099,
+      "duration" : 15
     },
     "flaky" : false,
     "parameters" : [ ]

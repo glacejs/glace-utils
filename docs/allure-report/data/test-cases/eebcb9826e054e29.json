@@ -1,12 +1,12 @@
 {
-  "uid" : "608d13c530e94b3e",
-  "name" : ".waitDuring()",
-  "fullName" : "Utils..waitDuring()",
-  "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
+  "uid" : "eebcb9826e054e29",
+  "name" : ".splitBy",
+  "fullName" : "Utils..splitBy",
+  "historyId" : "4c0ce5ddefcfaebafeb8f1a580d3f6b6",
   "time" : {
-    "start" : 1541102826937,
-    "stop" : 1541102828456,
-    "duration" : 1519
+    "start" : 1542136019203,
+    "stop" : 1542136019210,
+    "duration" : 7
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,40 +18,10 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "works with default options",
+      "name" : "splits by comma",
       "time" : {
-        "start" : 1541102826939,
-        "stop" : 1541102827943,
-        "duration" : 1004
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns predicate result if success",
-      "time" : {
-        "start" : 1541102827944,
-        "stop" : 1541102828449,
-        "duration" : 505
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns false if didn't wait for timeout",
-      "time" : {
-        "start" : 1541102828450,
-        "stop" : 1541102828452,
+        "start" : 1542136019204,
+        "stop" : 1542136019206,
         "duration" : 2
       },
       "status" : "passed",
@@ -63,11 +33,26 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "throws the same error as predicate",
+      "name" : "splits by pipe",
       "time" : {
-        "start" : 1541102828452,
-        "stop" : 1541102828455,
-        "duration" : 3
+        "start" : 1542136019207,
+        "stop" : 1542136019208,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "gets empty array",
+      "time" : {
+        "start" : 1542136019208,
+        "stop" : 1542136019209,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -80,7 +65,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 4,
+    "stepsCount" : 3,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -94,7 +79,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".waitDuring()"
+    "value" : ".splitBy"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +96,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "608d13c530e94b3e.json",
+  "source" : "eebcb9826e054e29.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },
