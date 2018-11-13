@@ -1,3 +1,7 @@
+### v1.3.1
+
+- [Updated](https://github.com/glacejs/glace-utils/commit/fd004c585488afda782133b2a9cf25a0112bf2df) log message format.
+
 ### v1.3.0
 
 - [Added](https://github.com/glacejs/glace-utils/commit/7258aa5f8edb5b94e539239958ee57014222a380) timestamp to stdout log.
