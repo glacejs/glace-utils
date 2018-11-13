@@ -295,8 +295,7 @@ module.exports.killProcs = procName => {
 
             } catch (e) {
                 if (e.message !== "kill ESRCH") throw e;
-                logger.error(`Can't kill ${procName} with PID ${proc.pid}`,
-                    "because it doesn't exist");
+                logger.error(`Can't kill ${procName} with PID ${proc.pid} because it doesn't exist`);
             }
         });
     });
