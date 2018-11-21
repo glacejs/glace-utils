@@ -718,6 +718,30 @@ module.exports.each2each = (l, add) => {
 };
 
 /**
+ * `Glace` fixtures factory.
+ *
+ * Provides easy way to make a fixture with hooks related with shared context.
+ *
+ * @function
+ * @arg {object} [opts] - Options.
+ * @arg {function} [opts.before] - Callback of `before` hook.
+ * @arg {function} [opts.after] - Callback of `after` hook.
+ * @arg {function} [opts.beforeChunk] - Callback of `beforeChunk` hook.
+ * @arg {function} [opts.afterChunk] - Callback of `afterChunk` hook.
+ * @return {function} - Fixture.
+ */
+module.exports.makeFixture = (opts = {}) => {
+    return func => {
+        const ctx = {};
+        if (opts.before) before(opts.before(ctx));
+        if (opts.beforeChunk) beforeChunk(opts.beforeChunk(ctx));
+        func();
+        if (opts.afterChunk) afterChunk(opts.afterChunk(ctx));
+        if (opts.after) after(opts.after(ctx));
+    };
+};
+
+/**
  * Splits string to array by delimiter.
  *
  * @function
