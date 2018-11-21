@@ -1,12 +1,12 @@
 {
-  "uid" : "eebcb9826e054e29",
-  "name" : ".splitBy",
-  "fullName" : "Utils..splitBy",
-  "historyId" : "4c0ce5ddefcfaebafeb8f1a580d3f6b6",
+  "uid" : "ac91080a00b10ed7",
+  "name" : ".splitBy()",
+  "fullName" : "Utils..splitBy()",
+  "historyId" : "b7ea77911752a195853d844cd1a4b3bf",
   "time" : {
-    "start" : 1542136019203,
-    "stop" : 1542136019210,
-    "duration" : 7
+    "start" : 1542819403204,
+    "stop" : 1542819403209,
+    "duration" : 5
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -20,9 +20,9 @@
     "steps" : [ {
       "name" : "splits by comma",
       "time" : {
-        "start" : 1542136019204,
-        "stop" : 1542136019206,
-        "duration" : 2
+        "start" : 1542819403205,
+        "stop" : 1542819403206,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -35,9 +35,9 @@
     }, {
       "name" : "splits by pipe",
       "time" : {
-        "start" : 1542136019207,
-        "stop" : 1542136019208,
-        "duration" : 1
+        "start" : 1542819403207,
+        "stop" : 1542819403207,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -50,8 +50,8 @@
     }, {
       "name" : "gets empty array",
       "time" : {
-        "start" : 1542136019208,
-        "stop" : 1542136019209,
+        "start" : 1542819403208,
+        "stop" : 1542819403209,
         "duration" : 1
       },
       "status" : "passed",
@@ -79,7 +79,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".splitBy"
+    "value" : ".splitBy()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -96,7 +96,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "eebcb9826e054e29.json",
+  "source" : "ac91080a00b10ed7.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

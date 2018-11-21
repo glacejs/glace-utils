@@ -1,12 +1,12 @@
 {
-  "uid" : "57f2a7324f8a9fdf",
-  "name" : ".each2each()",
-  "fullName" : "Utils..each2each()",
-  "historyId" : "727b4397c7518e233afa429bf06d12cc",
+  "uid" : "f818d72f98d406d7",
+  "name" : ".docString()",
+  "fullName" : "Utils..docString()",
+  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
   "time" : {
-    "start" : 1542136019191,
-    "stop" : 1542136019202,
-    "duration" : 11
+    "start" : 1542819401669,
+    "stop" : 1542819401676,
+    "duration" : 7
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "with default options",
+      "name" : "creates property __doc__",
       "time" : {
-        "start" : 1542136019193,
-        "stop" : 1542136019197,
-        "duration" : 4
+        "start" : 1542819401671,
+        "stop" : 1542819401672,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,11 +33,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with custom addition",
+      "name" : "creates function bond",
       "time" : {
-        "start" : 1542136019198,
-        "stop" : 1542136019201,
-        "duration" : 3
+        "start" : 1542819401672,
+        "stop" : 1542819401676,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
@@ -64,7 +64,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".each2each()"
+    "value" : ".docString()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -81,7 +81,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "57f2a7324f8a9fdf.json",
+  "source" : "f818d72f98d406d7.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

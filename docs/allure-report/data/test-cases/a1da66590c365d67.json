@@ -1,12 +1,12 @@
 {
-  "uid" : "5fca734ef5a64a26",
-  "name" : ".textContains()",
-  "fullName" : "Utils..textContains()",
-  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
+  "uid" : "a1da66590c365d67",
+  "name" : ".objOnScreenPos()",
+  "fullName" : "Utils..objOnScreenPos()",
+  "historyId" : "d88aa048c95cc5031b13ce99e0377c69",
   "time" : {
-    "start" : 1542136019182,
-    "stop" : 1542136019190,
-    "duration" : 8
+    "start" : 1542819399148,
+    "stop" : 1542819399152,
+    "duration" : 4
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,25 +18,10 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "returns false if no text",
+      "name" : "throws error if object isn't on screen",
       "time" : {
-        "start" : 1542136019184,
-        "stop" : 1542136019186,
-        "duration" : 2
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns true if no words",
-      "time" : {
-        "start" : 1542136019186,
-        "stop" : 1542136019187,
+        "start" : 1542819399149,
+        "stop" : 1542819399150,
         "duration" : 1
       },
       "status" : "passed",
@@ -48,10 +33,10 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns false if doesn't contain any word",
+      "name" : "returns the same if object is fully on screen",
       "time" : {
-        "start" : 1542136019187,
-        "stop" : 1542136019188,
+        "start" : 1542819399150,
+        "stop" : 1542819399151,
         "duration" : 1
       },
       "status" : "passed",
@@ -63,10 +48,10 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns true if contains all words",
+      "name" : "returns restricted part if object oversizes screen",
       "time" : {
-        "start" : 1542136019189,
-        "stop" : 1542136019189,
+        "start" : 1542819399152,
+        "stop" : 1542819399152,
         "duration" : 0
       },
       "status" : "passed",
@@ -80,7 +65,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 4,
+    "stepsCount" : 3,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -94,7 +79,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".textContains()"
+    "value" : ".objOnScreenPos()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +96,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5fca734ef5a64a26.json",
+  "source" : "a1da66590c365d67.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

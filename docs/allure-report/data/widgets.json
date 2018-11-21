@@ -6,17 +6,17 @@
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 11,
+      "passed" : 12,
       "unknown" : 0,
-      "total" : 11
+      "total" : 12
     },
     "time" : {
-      "start" : 1542136015068,
-      "stop" : 1542136019210,
-      "duration" : 4142,
-      "minDuration" : 5,
-      "maxDuration" : 2524,
-      "sumDuration" : 4130
+      "start" : 1542819398631,
+      "stop" : 1542819403229,
+      "duration" : 4598,
+      "minDuration" : 4,
+      "maxDuration" : 2516,
+      "sumDuration" : 4589
     }
   },
   "environment" : [ ],
@@ -29,9 +29,9 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 11,
+        "passed" : 12,
         "unknown" : 0,
-        "total" : 11
+        "total" : 12
       }
     } ]
   },
@@ -40,13 +40,13 @@
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 11,
+      "passed" : 12,
       "unknown" : 0,
-      "total" : 11
+      "total" : 12
     }
   } ],
   "behaviors" : {
-    "total" : 11,
+    "total" : 12,
     "items" : [ ]
   },
   "executors" : [ ],
