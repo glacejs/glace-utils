@@ -1,3 +1,7 @@
+### v1.3.2
+
+- [Added](https://github.com/glacejs/glace-utils/commit/9f25c6f87347a4c1b7e27a79214813d597726cf1) function to make fixture.
+
 ### v1.3.1
 
 - [Updated](https://github.com/glacejs/glace-utils/commit/fd004c585488afda782133b2a9cf25a0112bf2df) log message format.
