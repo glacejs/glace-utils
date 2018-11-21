@@ -6,7 +6,7 @@ var format = require("util").format;
 var _ = require("lodash");
 var temp = require("temp").track();
 
-var U = require(".");
+var U = rewire(".");
 
 suite("Utils", () => {
     var sandbox = sinon.createSandbox();
@@ -325,7 +325,7 @@ suite("Utils", () => {
         });
     });
 
-    test(".splitBy", () => {
+    test(".splitBy()", () => {
         chunk("splits by comma", () => {
             expect(U.splitBy("a, b, c,", ",")).to.be.eql(["a", "b", "c"]);
         });
@@ -336,6 +336,119 @@ suite("Utils", () => {
 
         chunk("gets empty array", () => {
             expect(U.splitBy("", ",")).to.be.empty;
+        });
+    });
+
+    test(".makeFixture()", () => {
+        let fixture, before_, after_, beforeChunk_, afterChunk_;
+
+        beforeChunk(() => {
+            before_ = sinon.stub();
+            after_ = sinon.stub();
+            beforeChunk_ = sinon.stub();
+            afterChunk_ = sinon.stub();
+
+            U.__set__("before", before_);
+            U.__set__("after", after_);
+            U.__set__("beforeChunk", beforeChunk_);
+            U.__set__("afterChunk", afterChunk_);
+        });
+
+        chunk("without hooks", () => {
+            fixture = U.makeFixture();
+            const cb = sinon.stub();
+            fixture(cb);
+            expect(cb).to.be.calledOnce;
+            expect(before_).to.not.be.called;
+            expect(after_).to.not.be.called;
+            expect(beforeChunk_).to.not.be.called;
+            expect(afterChunk_).to.not.be.called;
+        });
+
+        chunk("with all hooks", () => {
+            const beforeCb = sinon.stub();
+            const afterCb = sinon.stub();
+            const beforeChunkCb = sinon.stub();
+            const afterChunkCb = sinon.stub();
+
+            fixture = U.makeFixture({
+                before: beforeCb,
+                after: afterCb,
+                beforeChunk: beforeChunkCb,
+                afterChunk: afterChunkCb,
+            });
+
+            const cb = sinon.stub();
+            fixture(cb);
+            expect(cb).to.be.calledOnce;
+
+            expect(before_).to.be.calledOnce;
+            expect(after_).to.be.calledOnce;
+            expect(beforeChunk_).to.be.calledOnce;
+            expect(afterChunk_).to.be.calledOnce;
+
+            expect(beforeCb).to.be.calledOnce;
+            expect(afterCb).to.be.calledOnce;
+            expect(beforeChunkCb).to.be.calledOnce;
+            expect(afterChunkCb).to.be.calledOnce;
+
+            expect(beforeCb.args[0][0]).to.be.eql({});
+            expect(afterCb.args[0][0]).to.be.eql({});
+            expect(beforeChunkCb.args[0][0]).to.be.eql({});
+            expect(afterChunkCb.args[0][0]).to.be.eql({});
+
+            expect(beforeChunk_).to.be.calledAfter(before_);
+            expect(cb).to.be.calledAfter(beforeChunk_);
+            expect(afterChunk_).to.be.calledAfter(cb);
+            expect(after_).to.be.calledAfter(afterChunk_);
+        });
+
+        chunk("with 'before' hook", () => {
+            fixture = U.makeFixture({ before: () => {} });
+            const cb = sinon.stub();
+            fixture(cb);
+            expect(cb).to.be.calledOnce;
+
+            expect(before_).to.be.calledOnce;
+            expect(after_).to.not.be.called;
+            expect(beforeChunk_).to.not.be.called;
+            expect(afterChunk_).to.not.be.called;
+        });
+
+        chunk("with 'after' hook", () => {
+            fixture = U.makeFixture({ after: () => {} });
+            const cb = sinon.stub();
+            fixture(cb);
+            expect(cb).to.be.calledOnce;
+
+            expect(before_).to.not.be.called;
+            expect(after_).to.be.calledOnce;
+            expect(beforeChunk_).to.not.be.called;
+            expect(afterChunk_).to.not.be.called;
+        });
+
+        chunk("with 'beforeChunk' hook", () => {
+            fixture = U.makeFixture({ beforeChunk: () => {} });
+            const cb = sinon.stub();
+            fixture(cb);
+            expect(cb).to.be.calledOnce;
+
+            expect(before_).to.not.be.called;
+            expect(after_).to.not.be.called;
+            expect(beforeChunk_).to.be.calledOnce;
+            expect(afterChunk_).to.not.be.called;
+        });
+
+        chunk("with 'afterChunk' hook", () => {
+            fixture = U.makeFixture({ afterChunk: () => {} });
+            const cb = sinon.stub();
+            fixture(cb);
+            expect(cb).to.be.calledOnce;
+
+            expect(before_).to.not.be.called;
+            expect(after_).to.not.be.called;
+            expect(beforeChunk_).to.not.be.called;
+            expect(afterChunk_).to.be.calledOnce;
         });
     });
 });

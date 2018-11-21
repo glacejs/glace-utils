@@ -20,7 +20,8 @@ module.exports = {
         "expect": true,
         "sinon": true,
         "forEachLanguage": true,
-        "session": true
+        "rewire": true,
+        "session": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {
