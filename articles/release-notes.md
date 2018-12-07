@@ -1,3 +1,7 @@
+### v1.3.3
+
+- [Fixed](https://github.com/glacejs/glace-utils/commit/3532e7b495792f70bb8287931679bf4510da0b56) bug in interactive autocompletion.
+
 ### v1.3.2
 
 - [Added](https://github.com/glacejs/glace-utils/commit/9f25c6f87347a4c1b7e27a79214813d597726cf1) function to make fixture.
