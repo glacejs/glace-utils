@@ -1,12 +1,12 @@
 {
-  "uid" : "f818d72f98d406d7",
-  "name" : ".docString()",
-  "fullName" : "Utils..docString()",
-  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
+  "uid" : "8f061d5293e8d4b3",
+  "name" : ".waitFor()",
+  "fullName" : "Utils..waitFor()",
+  "historyId" : "12761c85ed7e5a7ededa6d3d9a78fd01",
   "time" : {
-    "start" : 1542819401669,
-    "stop" : 1542819401676,
-    "duration" : 7
+    "start" : 1544164081273,
+    "stop" : 1544164083800,
+    "duration" : 2527
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,10 +18,10 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "creates property __doc__",
+      "name" : "works with default options",
       "time" : {
-        "start" : 1542819401671,
-        "stop" : 1542819401672,
+        "start" : 1544164081274,
+        "stop" : 1544164081275,
         "duration" : 1
       },
       "status" : "passed",
@@ -33,10 +33,40 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "creates function bond",
+      "name" : "returns predicate result if success",
       "time" : {
-        "start" : 1542819401672,
-        "stop" : 1542819401676,
+        "start" : 1544164081275,
+        "stop" : 1544164081783,
+        "duration" : 508
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns false if didn't wait for timeout",
+      "time" : {
+        "start" : 1544164081783,
+        "stop" : 1544164083795,
+        "duration" : 2012
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "throws the same error as predicate",
+      "time" : {
+        "start" : 1544164083795,
+        "stop" : 1544164083799,
         "duration" : 4
       },
       "status" : "passed",
@@ -50,7 +80,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 2,
+    "stepsCount" : 4,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -64,7 +94,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".docString()"
+    "value" : ".waitFor()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -81,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "f818d72f98d406d7.json",
+  "source" : "8f061d5293e8d4b3.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

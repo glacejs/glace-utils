@@ -1,11 +1,11 @@
 {
-  "uid" : "d0c01d2edd183f25",
+  "uid" : "b3bb23af8b802cba",
   "name" : ".isInScene()",
   "fullName" : "Utils..isInScene()",
   "historyId" : "c14a54a843689dfb6f4913e88b691a0a",
   "time" : {
-    "start" : 1542819399135,
-    "stop" : 1542819399142,
+    "start" : 1544164081253,
+    "stop" : 1544164081260,
     "duration" : 7
   },
   "description" : "",
@@ -20,8 +20,8 @@
     "steps" : [ {
       "name" : "partially",
       "time" : {
-        "start" : 1542819399136,
-        "stop" : 1542819399140,
+        "start" : 1544164081254,
+        "stop" : 1544164081258,
         "duration" : 4
       },
       "status" : "unknown",
@@ -31,8 +31,8 @@
       "steps" : [ {
         "name" : "{ x: 0, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' true",
         "time" : {
-          "start" : 1542819399136,
-          "stop" : 1542819399137,
+          "start" : 1544164081254,
+          "stop" : 1544164081255,
           "duration" : 1
         },
         "status" : "passed",
@@ -46,8 +46,8 @@
       }, {
         "name" : "{ x: -1, y: -1, width: 3, height: 3 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' true",
         "time" : {
-          "start" : 1542819399137,
-          "stop" : 1542819399138,
+          "start" : 1544164081255,
+          "stop" : 1544164081256,
           "duration" : 1
         },
         "status" : "passed",
@@ -61,8 +61,8 @@
       }, {
         "name" : "{ x: 1, y: 1, width: 2, height: 2 } 'in' { x: 0, y: 0, width: 3, height: 3 } 'is' true",
         "time" : {
-          "start" : 1542819399138,
-          "stop" : 1542819399138,
+          "start" : 1544164081256,
+          "stop" : 1544164081256,
           "duration" : 0
         },
         "status" : "passed",
@@ -76,9 +76,9 @@
       }, {
         "name" : "{ x: 1, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
         "time" : {
-          "start" : 1542819399138,
-          "stop" : 1542819399138,
-          "duration" : 0
+          "start" : 1544164081256,
+          "stop" : 1544164081257,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ ],
@@ -91,8 +91,8 @@
       }, {
         "name" : "{ x: 0, y: 1, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
         "time" : {
-          "start" : 1542819399139,
-          "stop" : 1542819399139,
+          "start" : 1544164081257,
+          "stop" : 1544164081257,
           "duration" : 0
         },
         "status" : "passed",
@@ -106,8 +106,8 @@
       }, {
         "name" : "{ x: -1, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
         "time" : {
-          "start" : 1542819399139,
-          "stop" : 1542819399139,
+          "start" : 1544164081257,
+          "stop" : 1544164081257,
           "duration" : 0
         },
         "status" : "passed",
@@ -121,9 +121,9 @@
       }, {
         "name" : "{ x: 1, y: -1, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
         "time" : {
-          "start" : 1542819399139,
-          "stop" : 1542819399140,
-          "duration" : 1
+          "start" : 1544164081258,
+          "stop" : 1544164081258,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
@@ -143,9 +143,9 @@
     }, {
       "name" : "fully",
       "time" : {
-        "start" : 1542819399140,
-        "stop" : 1542819399141,
-        "duration" : 1
+        "start" : 1544164081258,
+        "stop" : 1544164081260,
+        "duration" : 2
       },
       "status" : "unknown",
       "statusDetails" : {
@@ -154,8 +154,8 @@
       "steps" : [ {
         "name" : "{ x: 0, y: 0, width: 1, height: 1 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' true",
         "time" : {
-          "start" : 1542819399140,
-          "stop" : 1542819399141,
+          "start" : 1544164081258,
+          "stop" : 1544164081259,
           "duration" : 1
         },
         "status" : "passed",
@@ -169,8 +169,8 @@
       }, {
         "name" : "{ x: 1, y: 1, width: 2, height: 2 } 'in' { x: 0, y: 0, width: 3, height: 3 } 'is' true",
         "time" : {
-          "start" : 1542819399141,
-          "stop" : 1542819399141,
+          "start" : 1544164081259,
+          "stop" : 1544164081259,
           "duration" : 0
         },
         "status" : "passed",
@@ -184,8 +184,8 @@
       }, {
         "name" : "{ x: -1, y: -1, width: 3, height: 3 } 'in' { x: 0, y: 0, width: 1, height: 1 } 'is' false",
         "time" : {
-          "start" : 1542819399141,
-          "stop" : 1542819399141,
+          "start" : 1544164081260,
+          "stop" : 1544164081260,
           "duration" : 0
         },
         "status" : "passed",
@@ -237,7 +237,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "d0c01d2edd183f25.json",
+  "source" : "b3bb23af8b802cba.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

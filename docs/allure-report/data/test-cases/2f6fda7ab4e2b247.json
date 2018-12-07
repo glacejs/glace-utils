@@ -1,12 +1,12 @@
 {
-  "uid" : "39906743e90f043",
-  "name" : ".makeFixture()",
-  "fullName" : "Utils..makeFixture()",
-  "historyId" : "490e58423406fedfec090d99bda2b80a",
+  "uid" : "2f6fda7ab4e2b247",
+  "name" : ".waitDuring()",
+  "fullName" : "Utils..waitDuring()",
+  "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
   "time" : {
-    "start" : 1542819403210,
-    "stop" : 1542819403229,
-    "duration" : 19
+    "start" : 1544164083812,
+    "stop" : 1544164085329,
+    "duration" : 1517
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "without hooks",
+      "name" : "works with default options",
       "time" : {
-        "start" : 1542819403211,
-        "stop" : 1542819403216,
-        "duration" : 5
+        "start" : 1544164083813,
+        "stop" : 1544164084818,
+        "duration" : 1005
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,11 +33,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with all hooks",
+      "name" : "returns predicate result if success",
       "time" : {
-        "start" : 1542819403217,
-        "stop" : 1542819403222,
-        "duration" : 5
+        "start" : 1544164084819,
+        "stop" : 1544164085324,
+        "duration" : 505
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,11 +48,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with 'before' hook",
+      "name" : "returns false if didn't wait for timeout",
       "time" : {
-        "start" : 1542819403222,
-        "stop" : 1542819403224,
-        "duration" : 2
+        "start" : 1544164085324,
+        "stop" : 1544164085327,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,40 +63,10 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with 'after' hook",
+      "name" : "throws the same error as predicate",
       "time" : {
-        "start" : 1542819403224,
-        "stop" : 1542819403226,
-        "duration" : 2
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "with 'beforeChunk' hook",
-      "time" : {
-        "start" : 1542819403226,
-        "stop" : 1542819403227,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "with 'afterChunk' hook",
-      "time" : {
-        "start" : 1542819403227,
-        "stop" : 1542819403228,
+        "start" : 1544164085327,
+        "stop" : 1544164085328,
         "duration" : 1
       },
       "status" : "passed",
@@ -110,7 +80,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 6,
+    "stepsCount" : 4,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -124,7 +94,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".makeFixture()"
+    "value" : ".waitDuring()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -141,7 +111,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "39906743e90f043.json",
+  "source" : "2f6fda7ab4e2b247.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

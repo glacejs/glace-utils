@@ -1,12 +1,12 @@
 {
-  "uid" : "a1da66590c365d67",
-  "name" : ".objOnScreenPos()",
-  "fullName" : "Utils..objOnScreenPos()",
-  "historyId" : "d88aa048c95cc5031b13ce99e0377c69",
+  "uid" : "75c068e2794c0233",
+  "name" : ".each2each()",
+  "fullName" : "Utils..each2each()",
+  "historyId" : "727b4397c7518e233afa429bf06d12cc",
   "time" : {
-    "start" : 1542819399148,
-    "stop" : 1542819399152,
-    "duration" : 4
+    "start" : 1544164085339,
+    "stop" : 1544164085347,
+    "duration" : 8
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "throws error if object isn't on screen",
+      "name" : "with default options",
       "time" : {
-        "start" : 1542819399149,
-        "stop" : 1542819399150,
-        "duration" : 1
+        "start" : 1544164085341,
+        "stop" : 1544164085344,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,26 +33,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns the same if object is fully on screen",
+      "name" : "with custom addition",
       "time" : {
-        "start" : 1542819399150,
-        "stop" : 1542819399151,
+        "start" : 1544164085345,
+        "stop" : 1544164085346,
         "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns restricted part if object oversizes screen",
-      "time" : {
-        "start" : 1542819399152,
-        "stop" : 1542819399152,
-        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -65,7 +50,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
+    "stepsCount" : 2,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -79,7 +64,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".objOnScreenPos()"
+    "value" : ".each2each()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -96,7 +81,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a1da66590c365d67.json",
+  "source" : "75c068e2794c0233.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },

@@ -1,12 +1,12 @@
 {
-  "uid" : "eec31aca29c4dcf9",
-  "name" : ".waitDuring()",
-  "fullName" : "Utils..waitDuring()",
-  "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
+  "uid" : "5297e4ef11896b7d",
+  "name" : ".loadJson()",
+  "fullName" : "Utils..loadJson()",
+  "historyId" : "6c58a29cf99d1393b5e5573145dc5c43",
   "time" : {
-    "start" : 1542819401677,
-    "stop" : 1542819403187,
-    "duration" : 1510
+    "start" : 1544164081167,
+    "stop" : 1544164081252,
+    "duration" : 85
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -18,11 +18,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "works with default options",
+      "name" : "loads plain json file",
       "time" : {
-        "start" : 1542819401679,
-        "stop" : 1542819402684,
-        "duration" : 1005
+        "start" : 1544164081170,
+        "stop" : 1544164081202,
+        "duration" : 32
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,11 +33,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns predicate result if success",
+      "name" : "loads json with comments",
       "time" : {
-        "start" : 1542819402684,
-        "stop" : 1542819403186,
-        "duration" : 502
+        "start" : 1544164081202,
+        "stop" : 1544164081204,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,11 +48,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns false if didn't wait for timeout",
+      "name" : "loads json parents",
       "time" : {
-        "start" : 1542819403186,
-        "stop" : 1542819403186,
-        "duration" : 0
+        "start" : 1544164081204,
+        "stop" : 1544164081211,
+        "duration" : 7
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,11 +63,41 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "throws the same error as predicate",
+      "name" : "throws error if json isn't parsable",
       "time" : {
-        "start" : 1542819403187,
-        "stop" : 1542819403187,
-        "duration" : 0
+        "start" : 1544164081211,
+        "stop" : 1544164081216,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "throws error if json parent isn't parsable",
+      "time" : {
+        "start" : 1544164081216,
+        "stop" : 1544164081239,
+        "duration" : 23
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "throws error if circular parent reference detected",
+      "time" : {
+        "start" : 1544164081239,
+        "stop" : 1544164081252,
+        "duration" : 13
       },
       "status" : "passed",
       "steps" : [ ],
@@ -80,7 +110,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 4,
+    "stepsCount" : 6,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -94,7 +124,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".waitDuring()"
+    "value" : ".loadJson()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -111,7 +141,7 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "eec31aca29c4dcf9.json",
+  "source" : "5297e4ef11896b7d.json",
   "statusDetailsSafe" : {
     "flaky" : false
   },
