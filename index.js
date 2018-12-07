@@ -476,7 +476,7 @@ module.exports.waitDuring = async (predicate, opts) => {
 
 var complete = line => {
     line = colors.strip(line);
-    var tokens = line.split(/ +/).filter(i => i);
+    var tokens = line.split(/[^A-Za-z0-9._$]+/).filter(i => i);
 
     if (!tokens.length) return [[], line];
 
@@ -492,12 +492,12 @@ var complete = line => {
         filterPrefix = targetObject.pop();
         targetObject = targetObject.join(".");
 
-        if (!targetObject) return [[], line];
+        if (!targetObject) return [[], targetToken];
 
         try {
             namespace = eval(targetObject);
         } catch (e) {
-            return [[], line];
+            return [[], targetToken];
         }
     }
 
@@ -515,13 +515,13 @@ var complete = line => {
             .filter(i => /^(\w|\$)+$/.test(i))
             .filter(i => /^\D/.test(i));
     } catch (e) {
-        return [[], line];
+        return [[], targetToken];
     }
 
     if (targetObject) {
         completions = completions.map(i => targetObject + "." + i);
     }
-    return [completions, line];
+    return [completions, targetToken];
 };
 /**
  * Interactive debugger with syntax highlighting and autocomplete.
