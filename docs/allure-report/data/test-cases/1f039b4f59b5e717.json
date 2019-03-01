@@ -1,27 +1,25 @@
 {
-  "uid" : "8f061d5293e8d4b3",
+  "uid" : "1f039b4f59b5e717",
   "name" : ".waitFor()",
   "fullName" : "Utils..waitFor()",
   "historyId" : "12761c85ed7e5a7ededa6d3d9a78fd01",
   "time" : {
-    "start" : 1544164081273,
-    "stop" : 1544164083800,
-    "duration" : 2527
+    "start" : 1551413588853,
+    "stop" : 1551413591415,
+    "duration" : 2562
   },
   "description" : "",
   "descriptionHtml" : "",
   "status" : "passed",
-  "statusDetails" : {
-    "flaky" : false
-  },
+  "flaky" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
       "name" : "works with default options",
       "time" : {
-        "start" : 1544164081274,
-        "stop" : 1544164081275,
+        "start" : 1551413588853,
+        "stop" : 1551413588854,
         "duration" : 1
       },
       "status" : "passed",
@@ -35,9 +33,9 @@
     }, {
       "name" : "returns predicate result if success",
       "time" : {
-        "start" : 1544164081275,
-        "stop" : 1544164081783,
-        "duration" : 508
+        "start" : 1551413588855,
+        "stop" : 1551413589372,
+        "duration" : 517
       },
       "status" : "passed",
       "steps" : [ ],
@@ -50,9 +48,9 @@
     }, {
       "name" : "returns false if didn't wait for timeout",
       "time" : {
-        "start" : 1544164081783,
-        "stop" : 1544164083795,
-        "duration" : 2012
+        "start" : 1551413589372,
+        "stop" : 1551413591413,
+        "duration" : 2041
       },
       "status" : "passed",
       "steps" : [ ],
@@ -65,9 +63,9 @@
     }, {
       "name" : "throws the same error as predicate",
       "time" : {
-        "start" : 1544164083795,
-        "stop" : 1544164083799,
-        "duration" : 4
+        "start" : 1551413591413,
+        "stop" : 1551413591415,
+        "duration" : 2
       },
       "status" : "passed",
       "steps" : [ ],
@@ -105,18 +103,13 @@
   "parameters" : [ ],
   "links" : [ ],
   "hidden" : false,
+  "retry" : false,
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "8f061d5293e8d4b3.json",
-  "statusDetailsSafe" : {
-    "flaky" : false
-  },
-  "statusMessage" : {
-    "present" : false
-  },
+  "source" : "1f039b4f59b5e717.json",
   "parameterValues" : [ ]
 }

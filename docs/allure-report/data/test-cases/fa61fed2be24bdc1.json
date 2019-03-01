@@ -1,28 +1,26 @@
 {
-  "uid" : "60a5d26a3773688f",
-  "name" : ".makeFixture()",
-  "fullName" : "Utils..makeFixture()",
-  "historyId" : "490e58423406fedfec090d99bda2b80a",
+  "uid" : "fa61fed2be24bdc1",
+  "name" : ".textContains()",
+  "fullName" : "Utils..textContains()",
+  "historyId" : "7ad25c0774ba6d5118da340db9e67dc9",
   "time" : {
-    "start" : 1544164085355,
-    "stop" : 1544164085391,
-    "duration" : 36
+    "start" : 1551413592949,
+    "stop" : 1551413592953,
+    "duration" : 4
   },
   "description" : "",
   "descriptionHtml" : "",
   "status" : "passed",
-  "statusDetails" : {
-    "flaky" : false
-  },
+  "flaky" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "without hooks",
+      "name" : "returns false if no text",
       "time" : {
-        "start" : 1544164085357,
-        "stop" : 1544164085363,
-        "duration" : 6
+        "start" : 1551413592950,
+        "stop" : 1551413592951,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,11 +31,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with all hooks",
+      "name" : "returns true if no words",
       "time" : {
-        "start" : 1544164085364,
-        "stop" : 1544164085374,
-        "duration" : 10
+        "start" : 1551413592951,
+        "stop" : 1551413592952,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,11 +46,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with 'before' hook",
+      "name" : "returns false if doesn't contain any word",
       "time" : {
-        "start" : 1544164085375,
-        "stop" : 1544164085379,
-        "duration" : 4
+        "start" : 1551413592952,
+        "stop" : 1551413592952,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,41 +61,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with 'after' hook",
+      "name" : "returns true if contains all words",
       "time" : {
-        "start" : 1544164085380,
-        "stop" : 1544164085384,
-        "duration" : 4
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "with 'beforeChunk' hook",
-      "time" : {
-        "start" : 1544164085384,
-        "stop" : 1544164085386,
-        "duration" : 2
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "with 'afterChunk' hook",
-      "time" : {
-        "start" : 1544164085387,
-        "stop" : 1544164085391,
-        "duration" : 4
+        "start" : 1551413592952,
+        "stop" : 1551413592952,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -110,7 +78,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 6,
+    "stepsCount" : 4,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -124,7 +92,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".makeFixture()"
+    "value" : ".textContains()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -135,18 +103,13 @@
   "parameters" : [ ],
   "links" : [ ],
   "hidden" : false,
+  "retry" : false,
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "60a5d26a3773688f.json",
-  "statusDetailsSafe" : {
-    "flaky" : false
-  },
-  "statusMessage" : {
-    "present" : false
-  },
+  "source" : "fa61fed2be24bdc1.json",
   "parameterValues" : [ ]
 }

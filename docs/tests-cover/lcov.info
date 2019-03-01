@@ -1,5 +1,5 @@
 TN:
-SF:/home/user/vega/projects/glace/glace-utils/index.js
+SF:/Users/sergeichip/user/projects/glace/glace-utils/index.js
 FN:28,(anonymous_0)
 FN:44,(anonymous_1)
 FN:59,(anonymous_2)
@@ -527,7 +527,7 @@ BRF:119
 BRH:46
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-utils/lib/config.js
+SF:/Users/sergeichip/user/projects/glace/glace-utils/lib/config.js
 FN:37,(anonymous_0)
 FNF:1
 FNH:0
@@ -565,7 +565,7 @@ BRF:9
 BRH:1
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-utils/lib/download.js
+SF:/Users/sergeichip/user/projects/glace/glace-utils/lib/download.js
 FN:31,(anonymous_0)
 FN:35,(anonymous_1)
 FN:40,(anonymous_2)
@@ -715,7 +715,7 @@ BRF:34
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-utils/lib/loadJson.js
+SF:/Users/sergeichip/user/projects/glace/glace-utils/lib/loadJson.js
 FN:22,(anonymous_0)
 FN:26,(anonymous_1)
 FNF:2
@@ -756,7 +756,7 @@ BRF:6
 BRH:5
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-utils/lib/logger.js
+SF:/Users/sergeichip/user/projects/glace/glace-utils/lib/logger.js
 FN:30,(anonymous_0)
 FN:47,(anonymous_1)
 FN:63,(anonymous_2)
@@ -818,7 +818,7 @@ BRF:16
 BRH:1
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-utils/lib/pool.js
+SF:/Users/sergeichip/user/projects/glace/glace-utils/lib/pool.js
 FN:20,(anonymous_0)
 FN:33,(anonymous_1)
 FN:36,(anonymous_2)

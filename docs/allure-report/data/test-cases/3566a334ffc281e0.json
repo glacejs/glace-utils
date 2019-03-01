@@ -1,27 +1,25 @@
 {
-  "uid" : "51694b160ff69674",
-  "name" : ".docString()",
-  "fullName" : "Utils..docString()",
-  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
+  "uid" : "3566a334ffc281e0",
+  "name" : ".each2each()",
+  "fullName" : "Utils..each2each()",
+  "historyId" : "727b4397c7518e233afa429bf06d12cc",
   "time" : {
-    "start" : 1544164083801,
-    "stop" : 1544164083811,
-    "duration" : 10
+    "start" : 1551413592953,
+    "stop" : 1551413592956,
+    "duration" : 3
   },
   "description" : "",
   "descriptionHtml" : "",
   "status" : "passed",
-  "statusDetails" : {
-    "flaky" : false
-  },
+  "flaky" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "creates property __doc__",
+      "name" : "with default options",
       "time" : {
-        "start" : 1544164083803,
-        "stop" : 1544164083804,
+        "start" : 1551413592954,
+        "stop" : 1551413592955,
         "duration" : 1
       },
       "status" : "passed",
@@ -33,11 +31,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "creates function bond",
+      "name" : "with custom addition",
       "time" : {
-        "start" : 1544164083804,
-        "stop" : 1544164083810,
-        "duration" : 6
+        "start" : 1551413592955,
+        "stop" : 1551413592955,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -64,7 +62,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".docString()"
+    "value" : ".each2each()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -75,18 +73,13 @@
   "parameters" : [ ],
   "links" : [ ],
   "hidden" : false,
+  "retry" : false,
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "51694b160ff69674.json",
-  "statusDetailsSafe" : {
-    "flaky" : false
-  },
-  "statusMessage" : {
-    "present" : false
-  },
+  "source" : "3566a334ffc281e0.json",
   "parameterValues" : [ ]
 }

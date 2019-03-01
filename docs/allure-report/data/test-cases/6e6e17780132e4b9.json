@@ -1,28 +1,26 @@
 {
-  "uid" : "75c068e2794c0233",
-  "name" : ".each2each()",
-  "fullName" : "Utils..each2each()",
-  "historyId" : "727b4397c7518e233afa429bf06d12cc",
+  "uid" : "6e6e17780132e4b9",
+  "name" : ".docString()",
+  "fullName" : "Utils..docString()",
+  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
   "time" : {
-    "start" : 1544164085339,
-    "stop" : 1544164085347,
-    "duration" : 8
+    "start" : 1551413591416,
+    "stop" : 1551413591419,
+    "duration" : 3
   },
   "description" : "",
   "descriptionHtml" : "",
   "status" : "passed",
-  "statusDetails" : {
-    "flaky" : false
-  },
+  "flaky" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "with default options",
+      "name" : "creates property __doc__",
       "time" : {
-        "start" : 1544164085341,
-        "stop" : 1544164085344,
-        "duration" : 3
+        "start" : 1551413591417,
+        "stop" : 1551413591417,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -33,11 +31,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "with custom addition",
+      "name" : "creates function bond",
       "time" : {
-        "start" : 1544164085345,
-        "stop" : 1544164085346,
-        "duration" : 1
+        "start" : 1551413591418,
+        "stop" : 1551413591418,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -64,7 +62,7 @@
     "value" : "Utils"
   }, {
     "name" : "testMethod",
-    "value" : ".each2each()"
+    "value" : ".docString()"
   }, {
     "name" : "package",
     "value" : "Utils"
@@ -75,18 +73,13 @@
   "parameters" : [ ],
   "links" : [ ],
   "hidden" : false,
+  "retry" : false,
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "75c068e2794c0233.json",
-  "statusDetailsSafe" : {
-    "flaky" : false
-  },
-  "statusMessage" : {
-    "present" : false
-  },
+  "source" : "6e6e17780132e4b9.json",
   "parameterValues" : [ ]
 }

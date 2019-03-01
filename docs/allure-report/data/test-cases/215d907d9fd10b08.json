@@ -1,28 +1,26 @@
 {
-  "uid" : "a9331390137634dd",
+  "uid" : "215d907d9fd10b08",
   "name" : "internal logger",
   "fullName" : "Utils.internal logger",
   "historyId" : "53fcfdf07a321db9e08660a8e9afcc50",
   "time" : {
-    "start" : 1544164080828,
-    "stop" : 1544164081164,
-    "duration" : 336
+    "start" : 1551413588672,
+    "stop" : 1551413588829,
+    "duration" : 157
   },
   "description" : "",
   "descriptionHtml" : "",
   "status" : "passed",
-  "statusDetails" : {
-    "flaky" : false
-  },
+  "flaky" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
       "name" : "is defined if global logger is already created",
       "time" : {
-        "start" : 1544164080835,
-        "stop" : 1544164081161,
-        "duration" : 326
+        "start" : 1551413588675,
+        "stop" : 1551413588829,
+        "duration" : 154
       },
       "status" : "passed",
       "steps" : [ ],
@@ -60,18 +58,13 @@
   "parameters" : [ ],
   "links" : [ ],
   "hidden" : false,
+  "retry" : false,
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a9331390137634dd.json",
-  "statusDetailsSafe" : {
-    "flaky" : false
-  },
-  "statusMessage" : {
-    "present" : false
-  },
+  "source" : "215d907d9fd10b08.json",
   "parameterValues" : [ ]
 }
