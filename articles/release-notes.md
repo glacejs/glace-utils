@@ -1,3 +1,7 @@
+### v1.3.4
+
+- Updated dependencies to fresh versions.
+
 ### v1.3.3
 
 - [Fixed](https://github.com/glacejs/glace-utils/commit/3532e7b495792f70bb8287931679bf4510da0b56) bug in interactive autocompletion.
