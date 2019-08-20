@@ -1,16 +1,14 @@
 /**
  * `GlaceJS` utils.
  *
- * @module
+ * @module glace-utils
  */
 
 var fs = require("fs");
-var os = require("os");
 var path = require("path");
 var readline = require("readline");
 var util = require("util");
 
-var BaseError = require("es6-error");
 var colors = require("colors");
 var espree = require("espree");
 var highlight = require("cli-highlight").highlight;
@@ -19,46 +17,6 @@ var yargs = require("yargs").help(" ");  // disable default `--help` capture
 module.exports.__findProcess = require("find-process");
 var fse = require("fs-extra");
 
-/**
- * Creates new instance of `Glace` error.
- *
- * @class
- * @arg {string} message - Error message.
- */
-var GlaceError = module.exports.GlaceError = function (message) {
-    BaseError.call(this, message);
-};
-util.inherits(GlaceError, BaseError);
-
-/**
- * @property {string} hostname - Machine host name.
- */
-module.exports.hostname = os.hostname().toLowerCase();
-/**
- * Gets default value for variable among passed listed values.
- *
- * @function
- * @arg {...*} values - Sequence of variable values.
- * @return {*} Last specified value or null if last is undefined.
- */
-var defVal = module.exports.defVal = function () {
-    for (var arg of arguments)
-        if (typeof arg !== "undefined")
-            return arg;
-    return null;
-};
-module.exports.coalesce = defVal;
-/**
- * Capitalizes first letter of string. Doesn"t influence to case
- * of other letters.
- *
- * @function
- * @arg {string} string - String to capitalize.
- * @return {string} Capitalized string.
- */
-module.exports.capitalize = string => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-};
 /**
  * Clears empty folders recursive.
  *
@@ -279,10 +237,10 @@ module.exports.wrap = (wrappers, target) => {
  * @return {Promise<void>}
  */
 module.exports.killProcs = procName => {
-    var logger = self.logger;
+    var logger = I.logger;
     logger.debug(`Looking for ${procName} processes to kill...`);
 
-    return self.__findProcess("name", procName).then(procList => {
+    return I.__findProcess("name", procName).then(procList => {
 
         return procList.forEach(proc => {
 
@@ -349,8 +307,8 @@ module.exports.help = d => {
  * @return {boolean} `true` if it is on screen, `false` otherwise.
  */
 module.exports.isInScreen = (obj, screen, opts) => {
-    opts = defVal(opts, {});
-    var fully = defVal(opts.fully, false);
+    opts = I.coalesce(opts, {});
+    var fully = I.coalesce(opts.fully, false);
 
     if (fully) {
         return ((obj.x >= screen.x) &&
@@ -375,7 +333,7 @@ module.exports.isInScreen = (obj, screen, opts) => {
  */
 module.exports.objOnScreenPos = (obj, screen) => {
 
-    if (!self.isInScreen(obj, screen)) {
+    if (!I.isInScreen(obj, screen)) {
         throw new Error(
             `Object { x: ${obj.x}, y: ${obj.y}, width: ${obj.width}, ` +
             `height: ${obj.height} } isn't on screen { x: ${screen.x}, ` +
@@ -430,15 +388,15 @@ module.exports.toKebab = str => {
  * @return {Promise<object>} Predicate truly value.
  */
 module.exports.waitFor = async (predicate, opts) => {
-    opts = self.defVal(opts, {});
-    var timeout = self.defVal(opts.timeout, 1) * 1000;
-    var polling = self.defVal(opts.polling, 0.1) * 1000;
+    opts = I.coalesce(opts, {});
+    var timeout = I.coalesce(opts.timeout, 1) * 1000;
+    var polling = I.coalesce(opts.polling, 0.1) * 1000;
     var limit = new Date().getTime() + timeout;
 
     while(limit > new Date().getTime()) {
         var result = await predicate();
         if (result) return result;
-        await self.sleep(polling);
+        await I.sleep(polling);
     }
 
     return false;
@@ -460,15 +418,15 @@ module.exports.waitFor = async (predicate, opts) => {
  */
 module.exports.waitDuring = async (predicate, opts) => {
 
-    opts = self.defVal(opts, {});
-    var timeout = self.defVal(opts.timeout, 1) * 1000;
-    var polling = self.defVal(opts.polling, 0.1) * 1000;
+    opts = I.coalesce(opts, {});
+    var timeout = I.coalesce(opts.timeout, 1) * 1000;
+    var polling = I.coalesce(opts.polling, 0.1) * 1000;
     var limit = new Date().getTime() + timeout;
 
     while(limit > new Date().getTime()) {
         var result = await predicate();
         if (!result) return false;
-        await self.sleep(polling);
+        await I.sleep(polling);
     }
 
     return result;
@@ -619,7 +577,7 @@ module.exports.debug = async function (helpMessage) {
                     .then(() => {
                         var result = eval(answer);
                         if (varName) {
-                            if (!origGlobals.hasOwnProperty(varName)) {
+                            if (!Object.prototype.hasOwnProperty.call(origGlobals, varName)) {
                                 origGlobals[varName] = global[varName];
                             }
                             global[varName] = eval(varName);
@@ -643,7 +601,7 @@ module.exports.debug = async function (helpMessage) {
  * @function
  */
 module.exports.docString = () => {
-    if (Function.prototype.hasOwnProperty("__doc__")) return;
+    if (Object.prototype.hasOwnProperty.call(Function.prototype, "__doc__")) return;
     require("docstring");
 
     Function.prototype.bond = function (ctx) {
@@ -654,67 +612,6 @@ module.exports.docString = () => {
         });
         return result;
     };
-};
-
-/**
- * Checks whether text contains words or no.
- *
- * @function
- * @arg {string} string - Original text.
- * @arg {string} words - Checking words.
- * @return {boolean} - `true` if text contains words, `false` otherwise.
- */
-module.exports.textContains = (text, words) => {
-    if (!text) return false;
-    if (!words) return true;
-
-    text = text.toLowerCase();
-    words = words.toLowerCase().split(/ +/g);
-
-    for (var word of words) {
-        if (!text.includes(word)) return false;
-    }
-    return true;
-};
-
-/**
- * Creates each to each combinations _(see examples below)_.
- *
- * @function
- * @arg {Array<Array>} l - Array of arrays to combinate.
- * @arg {?function} [add] - Function to add element to combination. Passes two
- *  arguments: `arr` - combination, `el` - element to add. By default it just
- * pushes `el` to `arr`.
- * @return {Array<Array>} List of combinations.
- *
- * @example <caption><b>Simple combination</b></caption>
- *
- * each2each([[1, 2], [3, 4]])
- * // -> [[1, 3], [1, 4], [2, 3], [2, 4]]
- *
- * @example <caption><b>Combination with custom addition</b></caption>
- *
- * each2each([[1, 2], [3, 4]], (arr, el) => arr.push([el]));
- * // -> [[[1], [3]], [[1], [4]], [[2], [3]], [[2], [4]]]
- *
- * each2each([[1, 2], [3, 4]], (a, e) => a.push(_.sum(a) + e))
- * // -> [[1, 4], [1, 5], [2, 5], [2, 6]]
- */
-module.exports.each2each = (l, add) => {
-    var r = [[]];
-    for (var i of l) {
-        var t = [];
-        for (var j of r) {
-            for (var e of i) {
-                var c = _.clone(j);
-                if (add) add(c, e);
-                else c.push(e);
-                t.push(c);
-            }
-        }
-        r = t;
-    }
-    return r;
 };
 
 /**
@@ -741,17 +638,9 @@ module.exports.makeFixture = (opts = {}) => {
     };
 };
 
-/**
- * Splits string to array by delimiter.
- *
- * @function
- * @arg {string} s - String to split.
- * @arg {char} d - String delimiter.
- * @return {array<string>}
- */
-module.exports.splitBy = (s, d) => _.filter(_.map(s.split(d), e => e.trim()));
+Object.assign(exports, require("./lib/small"));
 
 module.exports.download = require("./lib/download");
 module.exports.Pool = require("./lib/pool");
 
-var self = module.exports;
+const I = module.exports;

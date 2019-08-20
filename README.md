@@ -13,8 +13,14 @@ npm i glace-utils
 ## How to use
 
 ```javascript
-var U = require("glace-utils");
+const U = require("glace-utils");
+
+U.splitBy("a, b, c,", ","); // [ 'a', 'b', 'c' ]
 ```
+
+## API
+
+is [here](module-glace-utils.html)
 
 ## Tests and quality
 

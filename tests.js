@@ -6,7 +6,7 @@ var format = require("util").format;
 var _ = require("lodash");
 var temp = require("temp").track();
 
-var U = rewire(".");
+var U = rehire(".");
 
 suite("Utils", () => {
     var sandbox = sinon.createSandbox();
@@ -320,7 +320,7 @@ suite("Utils", () => {
         });
 
         chunk("with custom addition", () => {
-            expect(U.each2each([[1, 2], [3, 4]], (a, e) => a.push(_.sum(a) + e)))
+            expect(U.each2each([[1, 2], [3, 4]], (e, c) => e + _.sum(c)))
                 .to.be.eql([[1, 4], [1, 5], [2, 5], [2, 6]]);
         });
     });
