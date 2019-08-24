@@ -13,7 +13,7 @@
         "test": "nyc glace tests",
         "test:cover": "nyc --reporter=lcov --report-dir ./docs/tests-cover glace tests --allure",
         "allure:report": "npm run test:cover && allure generate report/allure --report-dir ./docs/allure-report",
-        "test:commit": "glace tests.js"
+        "test:commit": "glace tests"
     },
     "nyc": {
         "exclude": [
