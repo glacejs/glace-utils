@@ -393,6 +393,7 @@ suite("small", () => {
         let x, y;
     
         beforeChunk(() => {
+            delete Function.prototype.__doc__;
             small.docString();
             x = function () {
                 /** docstring */
