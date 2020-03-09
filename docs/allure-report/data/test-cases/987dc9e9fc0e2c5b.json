@@ -1,11 +1,11 @@
 {
-  "uid" : "2de4c5c76e975bd9",
-  "name" : ".objOnScreenPos()",
-  "fullName" : "Utils..objOnScreenPos()",
-  "historyId" : "d88aa048c95cc5031b13ce99e0377c69",
+  "uid" : "987dc9e9fc0e2c5b",
+  "name" : "missedWords",
+  "fullName" : "small.missedWords",
+  "historyId" : "5b9cb8b6dad1da3da7bab5b9ee125102",
   "time" : {
-    "start" : 1551413588850,
-    "stop" : 1551413588852,
+    "start" : 1583785403276,
+    "stop" : 1583785403278,
     "duration" : 2
   },
   "description" : "",
@@ -16,10 +16,25 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "throws error if object isn't on screen",
+      "name" : "returns empty array of missed words",
       "time" : {
-        "start" : 1551413588850,
-        "stop" : 1551413588851,
+        "start" : 1583785403277,
+        "stop" : 1583785403277,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns array of all missed words",
+      "time" : {
+        "start" : 1583785403277,
+        "stop" : 1583785403278,
         "duration" : 1
       },
       "status" : "passed",
@@ -31,25 +46,10 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns the same if object is fully on screen",
+      "name" : "returns array with first missed word",
       "time" : {
-        "start" : 1551413588851,
-        "stop" : 1551413588852,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "returns restricted part if object oversizes screen",
-      "time" : {
-        "start" : 1551413588852,
-        "stop" : 1551413588852,
+        "start" : 1583785403278,
+        "stop" : 1583785403278,
         "duration" : 0
       },
       "status" : "passed",
@@ -71,16 +71,16 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "suite",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testClass",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testMethod",
-    "value" : ".objOnScreenPos()"
+    "value" : "missedWords"
   }, {
     "name" : "package",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -95,6 +95,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "2de4c5c76e975bd9.json",
+  "source" : "987dc9e9fc0e2c5b.json",
   "parameterValues" : [ ]
 }

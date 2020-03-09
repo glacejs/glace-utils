@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GlaceJS Utils Module: index</title>
+	<title>GlaceJS Utils Module: glace-utils</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,14 +33,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-index.html">index</a></li><li><a href="module-lib_config.html">lib/config</a></li><li><a href="module-lib_logger.html">lib/logger</a></li>
+					<li><a href="module-glace-utils.html">glace-utils</a></li><li><a href="module-lib_logger.html">lib/logger</a></li><li><a href="module-lib_small.html">lib/small</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="LOG.html">LOG</a></li><li><a href="module-index-GlaceError.html">index~GlaceError</a></li><li><a href="Queue.html">Queue</a></li>
+					<li><a href="LOG.html">LOG</a></li><li><a href="module-glace-utils.GlaceError.html">glace-utils.GlaceError</a></li><li><a href="Queue.html">Queue</a></li>
 				</ul>
 			</li>
 			
@@ -86,7 +86,7 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: index</h1>
+	<h1 class="page-title">Module: glace-utils</h1>
 <section>
 
 <header>
@@ -163,7 +163,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="module-index-GlaceError.html">GlaceError</a></dt>
+            <dt><a href="module-glace-utils.GlaceError.html">GlaceError</a></dt>
             <dd></dd>
         </dl>
     
@@ -277,7 +277,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-253">line 253</a>
+				 <a href="index.js.html#sunlight-1-line-211">line 211</a>
 			</li>
 		</ul>
 	</dd>
@@ -298,7 +298,7 @@
             
 <hr>
 <dt class="name" id=".hostname">
-    <h4 id=".hostname"><span class="type-signature">&lt;static> </span>hostname<span class="type-signature"></span></h4>
+    <h4 id=".hostname"><span class="type-signature">&lt;static, constant> </span>hostname<span class="type-signature"></span></h4>
 
     
 </dt>
@@ -354,7 +354,11 @@
 
             
 
-            <td class="description last"><p>Machine host name.</p></td>
+            <td class="description last"><p>Host name of machine where <code>glacejs</code> framework is
+launched. Despite of machine hostname can be changed during script execution
+the probability that hostname will be changed during tests execution is low.
+That's why it's kept as property and in low case, because hostname is case
+insensitive.</p></td>
         </tr>
 
     
@@ -395,8 +399,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-36">line 36</a>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-37">line 37</a>
 			</li>
 		</ul>
 	</dd>
@@ -431,7 +435,7 @@
 
     
     <div class="description">
-        <p>Capitalizes first letter of string. Doesn&quot;t influence to case
+        <p>Capitalizes the first letter of a string. It doesn't influence to case
 of other letters.</p>
     </div>
     
@@ -528,8 +532,8 @@ of other letters.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-59">line 59</a>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-75">line 75</a>
 			</li>
 		</ul>
 	</dd>
@@ -580,6 +584,198 @@ of other letters.</p>
         
 
     
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">U.capitalize(&#x27;hello&#x27;); // &#x27;Hello&#x27;
+U.capitalize(&#x27;Hello&#x27;); // &#x27;Hello&#x27;
+U.capitalize(&#x27;hEllo&#x27;); // &#x27;HEllo&#x27;</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".coalesce"><span class="type-signature">&lt;static> </span>coalesce(values)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Pick default value for variable among listed values.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>values</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Sequence of variable values.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-54">line 54</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>First defined value or <code>null</code> if no one is defined.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">U.coalesce(); // null
+U.coalesce(undefined); // null
+U.coalesce(undefined, 1); // 1
+U.coalesce(undefined, 1, 2); // 1
+U.coalesce(null, 1); // null</pre>
+
+
+    
 </dd>
 
         
@@ -595,7 +791,7 @@ of other letters.</p>
     
     <div class="description">
         <p>Interactive debugger with syntax highlighting and autocomplete.</p>
-<p><img src="./debug_example.gif" title="Debug example" /></p>
+<img src="./debug_example.gif" title="Debug example" />
     </div>
     
 
@@ -704,7 +900,7 @@ of other letters.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-536">line 536</a>
+				 <a href="index.js.html#sunlight-1-line-494">line 494</a>
 			</li>
 		</ul>
 	</dd>
@@ -812,7 +1008,7 @@ of other letters.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-645">line 645</a>
+				 <a href="index.js.html#sunlight-1-line-603">line 603</a>
 			</li>
 		</ul>
 	</dd>
@@ -845,7 +1041,7 @@ of other letters.</p>
             
 <hr>
 <dt>
-    <h4 class="name" id=".download"><span class="type-signature">&lt;static> </span>download(urls, opts)</h4>
+    <h4 class="name" id=".each2each"><span class="type-signature">&lt;static> </span>each2each(l [, p])</h4>
     
     
 </dt>
@@ -853,459 +1049,7 @@ of other letters.</p>
 
     
     <div class="description">
-        <p>Downloads files.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>urls</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of URLs to download.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>opts</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Options.</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>dir</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Folder to download. Omitted if <code>paths</code> is specified.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>paths</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>List of paths to download. Corresponds to amount of <code>urls</code> list.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>attempts</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    1
-                
-                </td>
-            
-
-            <td class="description last"><p>Number of attempts to download.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>threads</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    1
-                
-                </td>
-            
-
-            <td class="description last"><p>Number of threads to download.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>polling</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    100
-                
-                </td>
-            
-
-            <td class="description last"><p>Number of ms to check downloading state.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>timeout</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    60000
-                
-                </td>
-            
-
-            <td class="description last"><p>Number of ms for socket timeout.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lib_download.js.html">lib/download.js</a>,
-				 <a href="lib_download.js.html#sunlight-1-line-3">line 3</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Object <code>{downloaded: {&quot;http(s)://url&quot;: &quot;/path/to/file&quot;, ...}, failed: [&quot;http(s)://url&quot;, ...]}</code>.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;object></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".each2each"><span class="type-signature">&lt;static> </span>each2each(l [, add])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Creates each to each combinations <em>(see examples below)</em>.</p>
+        <p>Creates each to each combinations of sets.</p>
     </div>
     
 
@@ -1367,14 +1111,14 @@ of other letters.</p>
 
             
 
-            <td class="description last"><p>Array of arrays to combinate.</p></td>
+            <td class="description last"><p>Array of arrays to combine.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>add</code></td>
+                <td class="name"><code>p</code></td>
             
 
             <td class="type">
@@ -1403,9 +1147,11 @@ of other letters.</p>
 
             
 
-            <td class="description last"><p>Function to add element to combination. Passes two
- arguments: <code>arr</code> - combination, <code>el</code> - element to add. By default it just
-pushes <code>el</code> to <code>arr</code>.</p></td>
+            <td class="description last"><p>Function to process element before adding to combination.
+It passes two arguments:
+<code>e</code> - a new element to add;
+<code>c</code> - assembling combination;
+By default it just pushes <code>e</code> to <code>c</code>.</p></td>
         </tr>
 
     
@@ -1449,8 +1195,8 @@ pushes <code>el</code> to <code>arr</code>.</p></td>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-703">line 703</a>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-97">line 97</a>
 			</li>
 		</ul>
 	</dd>
@@ -1501,20 +1247,11 @@ pushes <code>el</code> to <code>arr</code>.</p></td>
         
 
     
-        <h5>Examples</h5>
+        <h5>Example</h5>
         
-        <p class="code-caption"><b>Simple combination</b></p>
-    
-    <pre class="sunlight-highlight-javascript">each2each([[1, 2], [3, 4]])
-// -&gt; [[1, 3], [1, 4], [2, 3], [2, 4]]</pre>
-
-        <p class="code-caption"><b>Combination with custom addition</b></p>
-    
-    <pre class="sunlight-highlight-javascript">each2each([[1, 2], [3, 4]], (arr, el) =&gt; arr.push([el]));
-// -&gt; [[[1], [3]], [[1], [4]], [[2], [3]], [[2], [4]]]
-
-each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
-// -&gt; [[1, 4], [1, 5], [2, 5], [2, 6]]</pre>
+    <pre class="sunlight-highlight-javascript">each2each([[1, 2], [3, 4]]); // [[1, 3], [1, 4], [2, 3], [2, 4]]
+each2each([[1, 2], [3, 4]], e =&gt; e + 1); // [[2, 4], [2, 5], [3, 4], [3, 5]]
+each2each([[1, 2], [3, 4]], (e, c) =&gt; e + _.sum(c)); // [[1, 4], [1, 5], [2, 5], [2, 6]]</pre>
 
 
     
@@ -1629,7 +1366,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-246">line 246</a>
+				 <a href="index.js.html#sunlight-1-line-204">line 204</a>
 			</li>
 		</ul>
 	</dd>
@@ -1905,7 +1642,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-138">line 138</a>
+				 <a href="index.js.html#sunlight-1-line-96">line 96</a>
 			</li>
 		</ul>
 	</dd>
@@ -2181,7 +1918,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-168">line 168</a>
+				 <a href="index.js.html#sunlight-1-line-126">line 126</a>
 			</li>
 		</ul>
 	</dd>
@@ -2343,7 +2080,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-128">line 128</a>
+				 <a href="index.js.html#sunlight-1-line-86">line 86</a>
 			</li>
 		</ul>
 	</dd>
@@ -2517,7 +2254,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-310">line 310</a>
+				 <a href="index.js.html#sunlight-1-line-268">line 268</a>
 			</li>
 		</ul>
 	</dd>
@@ -2825,7 +2562,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-351">line 351</a>
+				 <a href="index.js.html#sunlight-1-line-309">line 309</a>
 			</li>
 		</ul>
 	</dd>
@@ -2987,7 +2724,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-281">line 281</a>
+				 <a href="index.js.html#sunlight-1-line-239">line 239</a>
 			</li>
 		</ul>
 	</dd>
@@ -3322,7 +3059,7 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-733">line 733</a>
+				 <a href="index.js.html#sunlight-1-line-630">line 630</a>
 			</li>
 		</ul>
 	</dd>
@@ -3373,6 +3110,269 @@ each2each([[1, 2], [3, 4]], (a, e) =&gt; a.push(_.sum(a) + e))
 
 
         
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".missedWords"><span class="type-signature">&lt;static> </span>missedWords(text, words [, firstMissedOnly])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Detects words if they are missed in text (case-sensitive).</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Text where words are looked for.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>words</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Filtered words.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstMissedOnly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Flag to return first missed word only.
+It reduces searching time and recommended to use if not need to get all missed words.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-163">line 163</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Array of missed words.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">U.missedWords(&quot;hello world&quot;, [&quot;hello&quot;, &quot;man&quot;]); // [&quot;man&quot;]</pre>
+
 
     
 </dd>
@@ -3499,7 +3499,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-115">line 115</a>
+				 <a href="index.js.html#sunlight-1-line-73">line 73</a>
 			</li>
 		</ul>
 	</dd>
@@ -3685,7 +3685,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-376">line 376</a>
+				 <a href="index.js.html#sunlight-1-line-334">line 334</a>
 			</li>
 		</ul>
 	</dd>
@@ -3887,7 +3887,7 @@ be created.</p>
             
 
             <td class="description last"><p>Flag whether sleep should be
- block code execution.</p></td>
+block code execution.</p></td>
         </tr>
 
     
@@ -3932,7 +3932,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-94">line 94</a>
+				 <a href="index.js.html#sunlight-1-line-52">line 52</a>
 			</li>
 		</ul>
 	</dd>
@@ -4139,8 +4139,8 @@ be created.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-752">line 752</a>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-125">line 125</a>
 			</li>
 		</ul>
 	</dd>
@@ -4185,6 +4185,12 @@ be created.</p>
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">U.splitBy(&quot;a, b, c&quot;, &quot;,&quot;); // [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]</pre>
+
 
     
 </dd>
@@ -4361,7 +4367,7 @@ be created.</p>
             
 
             <td class="description last"><p>Gets only folder names. By default,
- full paths.</p></td>
+full paths.</p></td>
         </tr>
 
     
@@ -4413,7 +4419,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-198">line 198</a>
+				 <a href="index.js.html#sunlight-1-line-156">line 156</a>
 			</li>
 		</ul>
 	</dd>
@@ -4478,7 +4484,7 @@ be created.</p>
 
     
     <div class="description">
-        <p>Checks whether text contains words or no.</p>
+        <p>Checks if text contains words or no.</p>
     </div>
     
 
@@ -4598,8 +4604,8 @@ be created.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-667">line 667</a>
+				<a href="lib_small.js.html">lib/small.js</a>,
+				 <a href="lib_small.js.html#sunlight-1-line-139">line 139</a>
 			</li>
 		</ul>
 	</dd>
@@ -4652,6 +4658,12 @@ be created.</p>
         
 
     
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">U.textContains(&quot;hello world&quot;, &quot;hello world&quot;); // true</pre>
+
+
+    
 </dd>
 
         
@@ -4667,7 +4679,7 @@ be created.</p>
     
     <div class="description">
         <p>Transforms string to kebab case. Replace all symbols, except numbers,
- chars and dots with dashes.</p>
+chars and dots with dashes.</p>
     </div>
     
 
@@ -4764,7 +4776,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-408">line 408</a>
+				 <a href="index.js.html#sunlight-1-line-366">line 366</a>
 			</li>
 		</ul>
 	</dd>
@@ -4892,7 +4904,7 @@ be created.</p>
             
 
             <td class="description last"><p>Function which should return truly value during
- timeout.</p></td>
+timeout.</p></td>
         </tr>
 
     
@@ -5081,7 +5093,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-461">line 461</a>
+				 <a href="index.js.html#sunlight-1-line-419">line 419</a>
 			</li>
 		</ul>
 	</dd>
@@ -5111,7 +5123,7 @@ be created.</p>
             <li>
 <div class="param-desc">
     <p><code>false</code> if predicate didn't return truly value
- during expected time.</p>
+during expected time.</p>
 </div>
 
 
@@ -5232,7 +5244,7 @@ be created.</p>
             
 
             <td class="description last"><p>Function which should return truly value during
- timeout.</p></td>
+timeout.</p></td>
         </tr>
 
     
@@ -5421,7 +5433,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-432">line 432</a>
+				 <a href="index.js.html#sunlight-1-line-390">line 390</a>
 			</li>
 		</ul>
 	</dd>
@@ -5451,7 +5463,7 @@ be created.</p>
             <li>
 <div class="param-desc">
     <p><code>false</code> if predicate didn't return truly value
- during expected time.</p>
+during expected time.</p>
 </div>
 
 
@@ -5630,7 +5642,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-267">line 267</a>
+				 <a href="index.js.html#sunlight-1-line-225">line 225</a>
 			</li>
 		</ul>
 	</dd>
@@ -5792,7 +5804,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-68">line 68</a>
+				 <a href="index.js.html#sunlight-1-line-26">line 26</a>
 			</li>
 		</ul>
 	</dd>
@@ -5817,180 +5829,6 @@ be created.</p>
     
 
     
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="~defVal"><span class="type-signature">&lt;inner> </span>defVal(values)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Gets default value for variable among passed listed values.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>values</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                    &lt;repeatable><br>
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Sequence of variable values.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-44">line 44</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Last specified value or null if last is undefined.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
@@ -6226,7 +6064,7 @@ be created.</p>
 		<ul class="dummy">
 			<li>
 				<a href="index.js.html">index.js</a>,
-				 <a href="index.js.html#sunlight-1-line-226">line 226</a>
+				 <a href="index.js.html#sunlight-1-line-184">line 184</a>
 			</li>
 		</ul>
 	</dd>
@@ -6331,9 +6169,9 @@ be created.</p>
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a>
 	
-		on 2019-03-01T06:13:06+02:00
+		on 2020-03-09T22:23:21+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

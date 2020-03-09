@@ -1,11 +1,11 @@
 {
-  "uid" : "97107eb60404400d",
-  "name" : ".splitBy()",
-  "fullName" : "Utils..splitBy()",
-  "historyId" : "b7ea77911752a195853d844cd1a4b3bf",
+  "uid" : "b0d10f41f6443df3",
+  "name" : "splitBy",
+  "fullName" : "small.splitBy",
+  "historyId" : "53f19d2715fc41e3f63781acb21da553",
   "time" : {
-    "start" : 1551413592956,
-    "stop" : 1551413592958,
+    "start" : 1583785403268,
+    "stop" : 1583785403270,
     "duration" : 2
   },
   "description" : "",
@@ -16,25 +16,10 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "splits by comma",
+      "name" : "a, b, c, -> a,b,c",
       "time" : {
-        "start" : 1551413592957,
-        "stop" : 1551413592957,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "splits by pipe",
-      "time" : {
-        "start" : 1551413592957,
-        "stop" : 1551413592958,
+        "start" : 1583785403268,
+        "stop" : 1583785403269,
         "duration" : 1
       },
       "status" : "passed",
@@ -46,11 +31,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "gets empty array",
+      "name" : "a | b | c, -> a,b,c,",
       "time" : {
-        "start" : 1551413592958,
-        "stop" : 1551413592958,
-        "duration" : 0
+        "start" : 1583785403269,
+        "stop" : 1583785403270,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,7 +48,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
+    "stepsCount" : 2,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -71,16 +56,16 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "suite",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testClass",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testMethod",
-    "value" : ".splitBy()"
+    "value" : "splitBy"
   }, {
     "name" : "package",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -95,6 +80,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "97107eb60404400d.json",
+  "source" : "b0d10f41f6443df3.json",
   "parameterValues" : [ ]
 }

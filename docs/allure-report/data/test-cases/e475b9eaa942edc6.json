@@ -1,12 +1,12 @@
 {
-  "uid" : "967679cae71c297",
-  "name" : ".waitDuring()",
-  "fullName" : "Utils..waitDuring()",
-  "historyId" : "b4f58b1ad0761fe19b86bdfa22af3c45",
+  "uid" : "e475b9eaa942edc6",
+  "name" : "textContains",
+  "fullName" : "small.textContains",
+  "historyId" : "af765759b53348491ff890840b3c72b",
   "time" : {
-    "start" : 1551413591419,
-    "stop" : 1551413592948,
-    "duration" : 1529
+    "start" : 1583785403270,
+    "stop" : 1583785403276,
+    "duration" : 6
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -16,11 +16,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "works with default options",
+      "name" : "\"hello world\" in \"hello world\" -> true",
       "time" : {
-        "start" : 1551413591420,
-        "stop" : 1551413592441,
-        "duration" : 1021
+        "start" : 1583785403272,
+        "stop" : 1583785403273,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -31,11 +31,11 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns predicate result if success",
+      "name" : "\" hello  world \" in \"hello world\" -> true",
       "time" : {
-        "start" : 1551413592441,
-        "stop" : 1551413592946,
-        "duration" : 505
+        "start" : 1583785403273,
+        "stop" : 1583785403274,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -46,10 +46,10 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "returns false if didn't wait for timeout",
+      "name" : "\"hello WORLD\" in \"HELLO world\" -> true",
       "time" : {
-        "start" : 1551413592947,
-        "stop" : 1551413592947,
+        "start" : 1583785403274,
+        "stop" : 1583785403274,
         "duration" : 0
       },
       "status" : "passed",
@@ -61,10 +61,40 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "throws the same error as predicate",
+      "name" : "\"\" in \"hello world\" -> true",
       "time" : {
-        "start" : 1551413592947,
-        "stop" : 1551413592948,
+        "start" : 1583785403275,
+        "stop" : 1583785403275,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "\"bad world\" in \"hello world\" -> false",
+      "time" : {
+        "start" : 1583785403275,
+        "stop" : 1583785403275,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "\"hello world\" in \"\" -> false",
+      "time" : {
+        "start" : 1583785403275,
+        "stop" : 1583785403276,
         "duration" : 1
       },
       "status" : "passed",
@@ -78,7 +108,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 4,
+    "stepsCount" : 6,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -86,16 +116,16 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "suite",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testClass",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testMethod",
-    "value" : ".waitDuring()"
+    "value" : "textContains"
   }, {
     "name" : "package",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -110,6 +140,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "967679cae71c297.json",
+  "source" : "e475b9eaa942edc6.json",
   "parameterValues" : [ ]
 }

@@ -1,0 +1,85 @@
+{
+  "uid" : "482395e33d5e0b51",
+  "name" : "each2each",
+  "fullName" : "small.each2each",
+  "historyId" : "8a746c763b5fc2b78debe8d73a264865",
+  "time" : {
+    "start" : 1583785403265,
+    "stop" : 1583785403267,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "combines sets",
+      "time" : {
+        "start" : 1583785403265,
+        "stop" : 1583785403266,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "combines sets with custom processing",
+      "time" : {
+        "start" : 1583785403266,
+        "stop" : 1583785403267,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "small"
+  }, {
+    "name" : "testClass",
+    "value" : "small"
+  }, {
+    "name" : "testMethod",
+    "value" : "each2each"
+  }, {
+    "name" : "package",
+    "value" : "small"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "482395e33d5e0b51.json",
+  "parameterValues" : [ ]
+}

@@ -1,12 +1,12 @@
 {
-  "uid" : "3566a334ffc281e0",
-  "name" : ".each2each()",
-  "fullName" : "Utils..each2each()",
-  "historyId" : "727b4397c7518e233afa429bf06d12cc",
+  "uid" : "96f0908aac636b32",
+  "name" : "hostname",
+  "fullName" : "small.hostname",
+  "historyId" : "4b2a47eaf8e23cada3c27bc9f6969e05",
   "time" : {
-    "start" : 1551413592953,
-    "stop" : 1551413592956,
-    "duration" : 3
+    "start" : 1583785403258,
+    "stop" : 1583785403260,
+    "duration" : 2
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -16,26 +16,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "with default options",
+      "name" : "is in low case",
       "time" : {
-        "start" : 1551413592954,
-        "stop" : 1551413592955,
+        "start" : 1583785403259,
+        "stop" : 1583785403260,
         "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "with custom addition",
-      "time" : {
-        "start" : 1551413592955,
-        "stop" : 1551413592955,
-        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,7 +33,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 2,
+    "stepsCount" : 1,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -56,16 +41,16 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "suite",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testClass",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testMethod",
-    "value" : ".each2each()"
+    "value" : "hostname"
   }, {
     "name" : "package",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -80,6 +65,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "3566a334ffc281e0.json",
+  "source" : "96f0908aac636b32.json",
   "parameterValues" : [ ]
 }

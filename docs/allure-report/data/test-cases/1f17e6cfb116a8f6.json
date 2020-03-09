@@ -1,12 +1,12 @@
 {
-  "uid" : "6e6e17780132e4b9",
-  "name" : ".docString()",
-  "fullName" : "Utils..docString()",
-  "historyId" : "572e5a72dc4e417f85b522ee78e1638c",
+  "uid" : "1f17e6cfb116a8f6",
+  "name" : "GlaceError",
+  "fullName" : "small.GlaceError",
+  "historyId" : "6a6be182e863ebb7fbeecec30ec7d149",
   "time" : {
-    "start" : 1551413591416,
-    "stop" : 1551413591419,
-    "duration" : 3
+    "start" : 1583785403252,
+    "stop" : 1583785403257,
+    "duration" : 5
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -16,26 +16,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "creates property __doc__",
+      "name" : "can be thrown with message",
       "time" : {
-        "start" : 1551413591417,
-        "stop" : 1551413591417,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
-    }, {
-      "name" : "creates function bond",
-      "time" : {
-        "start" : 1551413591418,
-        "stop" : 1551413591418,
-        "duration" : 0
+        "start" : 1583785403255,
+        "stop" : 1583785403256,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,7 +33,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 2,
+    "stepsCount" : 1,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -56,16 +41,16 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "suite",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testClass",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "testMethod",
-    "value" : ".docString()"
+    "value" : "GlaceError"
   }, {
     "name" : "package",
-    "value" : "Utils"
+    "value" : "small"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -80,6 +65,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "6e6e17780132e4b9.json",
+  "source" : "1f17e6cfb116a8f6.json",
   "parameterValues" : [ ]
 }
