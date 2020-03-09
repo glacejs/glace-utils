@@ -89,16 +89,16 @@ suite("Utils", () => {
         });
     
         chunk("throws error if json isn't parsable", () => {
-            var json = "{ \"a\": 1, }";
+            var json = "{ \"a\": 1";
             var jPath = temp.path({ suffix: ".json" });
     
             fs.writeFileSync(jPath, json);
-    
+
             expect(() => U.loadJson(jPath)).to.throw(jPath);
         });
     
         chunk("throws error if json parent isn't parsable", () => {
-            var json1 = "{ \"a\": 1, \"b\": 1, \"c\": 1, }";
+            var json1 = "{ \"a\": 1, \"b\": 1, \"c\": 1";
             var jPath1 = temp.path({ suffix: ".json" }).replace(/\\/g, "\\\\");
     
             var json2 = "{ \"a\": 2, \"b\": 2, \"__parent\": \"" + jPath1 + "\" }";
