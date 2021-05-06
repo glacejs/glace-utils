@@ -45,7 +45,7 @@
         "espree": "6.2.0",
         "find-process": "1.4.3",
         "fs-extra": "8.1.0",
-        "lodash": "4.17.15",
+        "lodash": "4.17.21",
         "winston": "3.2.1",
         "yargs": "15.3.0"
     },
